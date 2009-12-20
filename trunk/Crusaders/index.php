@@ -3,6 +3,7 @@ session_start();
 
 require_once('Home/Home.php');
 require_once('Login/Login.php');
+require_once('Login/LoggedIn.php');
 require_once('News/News.php');
 require_once('User/User.php');
 require_once('SingleMessage/SingleMessage.php');
@@ -17,19 +18,41 @@ switch($go) {
 		break;
 	case 'news':
 		$news = new News();
-		$news->getView();
-		break;
+		if(LoggedIn::isAdmin() || LoggedIn::isCoach() || LoggedIn::isBlogger()){
+			$news->getView();
+			break;
+		}
+		else{
+			$home = new Home();
+			$home->getView();
+			break;
+		}
 	case 'user':
 		$user = new User();
-		$user->getView();
-		break;
+		if(LoggedIn::isAdmin()){
+			$user->getView();
+			break;
+		}
+		else{
+			$home = new Home();
+			$home->getView();
+			break;
+		}
 	case 'singleMessage':
 		$singleMessage = new SingleMessage();
 		$singleMessage->getView();
+		break;
 	case 'delete':
 		$delete = new Delete();
-		$delete->getView();
-		break;
+		if(LoggedIn::isAdmin()){
+			$delete->getView();
+			break;
+		}
+		else{
+			$home = new Home();
+			$home->getView();
+			break;
+		}
 	case 'logout':
 		unset($_SESSION['eingeloggt']);
 		unset($_SESSION['userid']);

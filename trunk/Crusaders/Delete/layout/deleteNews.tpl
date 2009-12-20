@@ -21,5 +21,5 @@
 			<?php $i++; ?>
 		<?php endforeach; ?>
 	</table>
-	<input type="submit" value="Erfassen" />
+	<input type="submit" value="L&ouml;schen" />
 </form>

@@ -51,7 +51,7 @@
 							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>			
 				            <li><a href="index.php?go=delete&action=deleteNews">Newsbeitrag l&ouml;schen</a></li>
 				            <li><a href="index.php?go=user">User erfassen</a></li>
-				            <li><a href="#">User l&ouml;schen</a></li>
+				            <li><a href="index.php?go=delete&action=deleteUser">User l&ouml;schen</a></li>
 				            <li><a href="#">G&auml;stebucheintrag l&ouml;schen</a></li>
 				            <li><a href="index.php?go=logout">log out</a></li>
 						</ul>
