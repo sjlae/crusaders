@@ -9,7 +9,14 @@
 						<td>
 							<i><?php echo $news['timestamp']?>&nbsp;(<?php echo $news['vorname']?>&nbsp;<?php echo $news['nachname']?>)</i>&nbsp;-&nbsp;<b><?php echo $news['titel'] ?></b>
 							<br><br>
-							<?php echo $news['text'] ?>
+							<?php 
+								echo $news['text'];
+								if($news['more']){
+							?>
+									<a href="index.php?go=singleMessage&action=news&id=<?php echo $news['newsid']; ?>">Mehr...</a>
+							<?php		
+								}
+							?>
 						</td>
 					</tr>		
 					<tr><td><hr/></td></tr>		

@@ -49,7 +49,7 @@
 					<li class="top"><a href="#" class="top_link"><span>Admin</span></a>
 						<ul class="sub">
 							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>			
-				            <li><a href="#">Newsbeitrag l&ouml;schen</a></li>
+				            <li><a href="index.php?go=delete&action=deleteNews">Newsbeitrag l&ouml;schen</a></li>
 				            <li><a href="index.php?go=user">User erfassen</a></li>
 				            <li><a href="#">User l&ouml;schen</a></li>
 				            <li><a href="#">G&auml;stebucheintrag l&ouml;schen</a></li>

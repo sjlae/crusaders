@@ -39,6 +39,10 @@ class Home extends HTMLPage implements Page{
 			$this->news[$counter]['timestamp'] = date('d.m.Y H:i', strtotime($row['timestamp']));
 			$this->news[$counter]['titel'] = $row['titel'];
 			$this->news[$counter]['text'] = substr($row['text'], 0, 250);
+			$this->news[$counter]['more'] = true;
+			if(strlen($row['text']) <= 250){
+				$this->news[$counter]['more'] = false;
+			}
 			$counter++;
 		}
 	}
