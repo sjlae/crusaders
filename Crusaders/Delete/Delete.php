@@ -8,19 +8,28 @@ class Delete extends HTMLPage implements Page{
 	private $delete = '';
 	private $link = '';
 	private $news = '';
+	private $user = '';
 	
 	public function __construct() {
 		$this->action = isset($_GET['action']) ? $_GET['action'] : '';
 		$this->delete = isset($_GET['delete']) ? $_GET['delete'] : '';
 		$this->link = Db::getConnection();
-		if($this->delete == 'true'){
-			$this->delete();		
+		if($this->delete != null){
+			switch ($this->action) {
+			    case 'deleteNews':
+			        $this->deleteNews();
+			        break;
+			    case 'deleteUser':
+			        $this->deleteUser();
+			        break;
+			    case 'deleteBlog':
+			        $this->deleteBlog();
+			        break;
+			}
 		}
 	}
 	
 	private function getNews(){
-		$this->link = Db::getConnection();
-
 		$abfrage = "Select * from news order by timestamp DESC";
 
 		$ergebnis = mysql_query($abfrage);
@@ -44,7 +53,7 @@ class Delete extends HTMLPage implements Page{
 		}
 	}
 	
-	private function delete(){
+	private function deleteNews(){
 		if($this->action == 'deleteNews'){
 			if(isset($_POST['news_del'])){
 				foreach($_POST['news_del'] as $news_id){
@@ -54,10 +63,57 @@ class Delete extends HTMLPage implements Page{
 		}
 	}
 	
+	
+	private function getUser(){
+		$userQuery = "Select * from user";
+		$userData = mysql_query($userQuery);
+		
+		$counter = 0;
+		while($row = mysql_fetch_assoc($userData))
+		{
+			$this->user[$counter]['userid'] = $row['userid'];
+			$this->user[$counter]['vorname'] = $row['vorname'];
+			$this->user[$counter]['nachname'] = $row['nachname'];
+			$this->user[$counter]['email'] = $row['email'];
+			
+			$counter++;
+		}
+	}
+	
+	private function deleteUser(){
+		if($this->action == 'deleteUser'){
+			if(isset($_POST['user_del'])){
+				foreach($_POST['user_del'] as $user_id){
+					mysql_query("Delete from user where userid = $user_id");
+				}
+			}
+		}
+	}
+	
+	
+	private function getBlog(){
+	}
+	
+	private function deleteBlog(){
+	}
+	
 	public function getHTML() {
-		if($this->action == 'deleteNews'){
-			$this->getNews();
-			include('layout/deleteNews.tpl');
+		switch ($this->action) {
+		    case 'deleteNews':
+		        $this->getNews();
+				include('layout/deleteNews.tpl');
+		        break;
+		    case 'deleteUser':
+		        $this->getUser();
+				include('layout/deleteUser.tpl');
+		        break;
+		    case 'deleteBlog':
+		        $this->getBlog();
+				include('layout/deleteBlog.tpl');
+		        break;
+		    default:
+		    	$this->getNews();
+				include('layout/deleteNews.tpl');
 		}
 	}
 }

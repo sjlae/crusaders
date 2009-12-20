@@ -18,5 +18,9 @@
 			</table>
 		</td>
 	</tr>
-	<tr><a href="index.php">zur&uuml;ck</a>
+	<tr>
+		<td>
+			<a href="index.php">zur&uuml;ck</a>
+		</td>
+	</tr>
 </table>
