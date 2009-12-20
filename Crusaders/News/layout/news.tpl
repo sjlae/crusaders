@@ -5,15 +5,15 @@
 			Titel:
 		</td>
 		<td>
-			<input type="text" name="titel" value="<?php echo $this->titel; ?>" style="width: 150px"/>
+			<input type="text" name="titel" value="<?php echo $this->titel; ?>" style="width: 400px"/>
 		</td>
 	</tr>
 	<tr>
-		<td style="padding-top: 5px">	
+		<td valign="top">	
 			Text:
 		</td>
 		<td>
-			<textarea name="text" rows="5" style="width: 100%;"><?php echo $this->text ?></textarea>
+			<textarea name="text" rows="5" style="width: 400px;"><?php echo $this->text ?></textarea>
 		</td>
 	</tr>
 	<tr>
