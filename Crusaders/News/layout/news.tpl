@@ -1,3 +1,4 @@
+<?php require_once('Layout/infos.tpl'); ?>
 <form action="index.php?go=news&action=save" method="POST">
 <table>
 	<tr>
@@ -18,7 +19,7 @@
 	</tr>
 	<tr>
 		<td style="padding-top: 10px">
-			<input type="submit" value="Speichern" />
+			<input type="submit" value="Erfassen" />
 		</td
 	</tr>
 </table>

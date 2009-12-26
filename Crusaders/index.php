@@ -8,6 +8,7 @@ require_once('News/News.php');
 require_once('User/User.php');
 require_once('SingleMessage/SingleMessage.php');
 require_once('Delete/Delete.php');
+require_once('Comments/Comments.php');
 
 $go = isset($_GET['go']) ? $_GET['go'] : '';
 
@@ -41,6 +42,10 @@ switch($go) {
 	case 'singleMessage':
 		$singleMessage = new SingleMessage();
 		$singleMessage->getView();
+		break;
+	case 'comments':
+		$comments = new Comments();
+		$comments->getView();
 		break;
 	case 'delete':
 		$delete = new Delete();

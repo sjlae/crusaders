@@ -24,6 +24,8 @@ class News extends HTMLPage implements Page{
 		$query = "Insert into news(userfsid, titel, text) values('".$userid."', '".$title."', '".$text."')";
 				
 		mysql_query($query,$this->link);
+		
+		$_SESSION['infos'][] = "Die Nachricht wurde erfolgreich erfasst";
 	}
 	
 	public function getHTML() {

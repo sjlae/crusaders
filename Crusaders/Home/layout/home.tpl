@@ -6,11 +6,20 @@
 					foreach($this->news as $news): 
 				?>	
 					<tr>
-						<td>
+						<td colspan="2">
 							<i><?php echo $news['timestamp']?>&nbsp;(<?php echo $news['vorname']?>&nbsp;<?php echo $news['nachname']?>)</i>&nbsp;-&nbsp;<b><?php echo $news['titel'] ?></b>
 							<br><br>
-							<?php 
-								echo $news['text'];
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<?php echo $news['text']; ?>	
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<?php
 								if($news['more']){
 							?>
 									<a href="index.php?go=singleMessage&action=news&id=<?php echo $news['newsid']; ?>">Mehr...</a>
@@ -18,8 +27,11 @@
 								}
 							?>
 						</td>
+						<td align="right">
+							<a href="index.php?type=1&go=comments&id=<?php echo $news['newsid']; ?>">[<?php echo $news['comments'] ?>]&nbsp;Kommentar(e)</a>
+						</td>
 					</tr>		
-					<tr><td><hr/></td></tr>		
+					<tr><td colspan="2"><hr/></td></tr>		
 				<?php
 					endforeach;
 				?>
