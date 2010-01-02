@@ -9,6 +9,7 @@ class Delete extends HTMLPage implements Page{
 	private $link = '';
 	private $news = '';
 	private $user = '';
+	private $comment = '';
 	
 	public function __construct() {
 		$this->action = isset($_GET['action']) ? $_GET['action'] : '';
@@ -24,6 +25,9 @@ class Delete extends HTMLPage implements Page{
 			        break;
 			    case 'deleteBlog':
 			        $this->deleteBlog();
+			        break;
+			    case 'deleteComment':
+			        $this->deleteComment();
 			        break;
 			}
 		}
@@ -97,6 +101,34 @@ class Delete extends HTMLPage implements Page{
 	private function deleteBlog(){
 	}
 	
+	
+	private function getComment(){
+		$abfrage = "Select * from comments order by timestamp DESC";
+
+		$ergebnis = mysql_query($abfrage);
+		$counter = 0;
+		while($row = mysql_fetch_assoc($ergebnis))
+		{
+			$this->comment[$counter]['id'] = $row['commentsid'];
+			$this->comment[$counter]['vorname'] = $row['vorname'];
+			$this->comment[$counter]['nachname'] = $row['nachname'];
+			$this->comment[$counter]['timestamp'] = date('d.m.Y H:i', strtotime($row['timestamp']));
+			$this->comment[$counter]['text'] = substr($row['text'], 0, 50);
+			
+			$counter++;
+		}
+	}
+	
+	private function deleteComment(){
+		if($this->action == 'deleteComment'){
+			if(isset($_POST['comment_del'])){
+				foreach($_POST['comment_del'] as $comment_id){
+					mysql_query("Delete from comments where commentsid = $comment_id");
+				}
+			}
+		}
+	}
+	
 	public function getHTML() {
 		switch ($this->action) {
 		    case 'deleteNews':
@@ -110,6 +142,10 @@ class Delete extends HTMLPage implements Page{
 		    case 'deleteBlog':
 		        $this->getBlog();
 				include('layout/deleteBlog.tpl');
+		        break;
+		    case 'deleteComment':
+		        $this->getComment();
+				include('layout/deleteComment.tpl');
 		        break;
 		    default:
 		    	$this->getNews();

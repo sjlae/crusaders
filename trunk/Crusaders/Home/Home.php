@@ -10,6 +10,8 @@ class Home extends HTMLPage implements Page{
 	private $results = array();
 	
 	public function __construct() {
+		$this->link = Db::getConnection();
+		
 		$this->getNews();
 		$this->getResults();
 	}
@@ -18,11 +20,40 @@ class Home extends HTMLPage implements Page{
 		include('layout/home.tpl');
 	}
 	
-	private function getNews(){
-		$this->link = Db::getConnection();
+	private function pagingValues(){
+		$count = "SELECT COUNT(*) FROM news";
+		$countComments = mysql_query($count);
+		$numberOfNews = mysql_result($countComments,0);
 		
-		$abfrage = "Select * from news order by timestamp DESC LIMIT 5";
-
+		if($numberOfNews - $_SESSION['actualPage'] <= 4){
+			$_SESSION['hasNext'] = false;
+		}
+		else{
+			$_SESSION['hasNext'] = true;
+		}
+		
+		if(isset($_SESSION['actualPage']) && $_SESSION['actualPage'] <= 0){
+			$_SESSION['hasPrevious'] = false;
+		}
+		else{
+			$_SESSION['hasPrevious'] = true;
+		}
+	}
+	
+	private function getNews(){
+		if(isset($_GET['clickedNext'])){
+			$_SESSION['actualPage'] = $_SESSION['actualPage'] + 4;
+		}
+		else if(isset($_GET['clickedPrevious'])){
+			$_SESSION['actualPage'] = $_SESSION['actualPage'] - 4;
+		}
+		
+		$this->pagingValues();
+		
+		$this->next = isset($_SESSION['actualPage']) ? $_SESSION['actualPage'] : 0;
+		
+		$abfrage = "Select * from news order by timestamp DESC LIMIT $this->next, 4";
+		
 		$ergebnis = mysql_query($abfrage);
 		$counter = 0;
 		while($row = mysql_fetch_assoc($ergebnis))
@@ -44,7 +75,7 @@ class Home extends HTMLPage implements Page{
 			$this->news[$counter]['titel'] = $row['titel'];
 			$this->news[$counter]['text'] = substr($row['text'], 0, 250);
 			$this->news[$counter]['more'] = true;
-			$this->news[$counter]['comments'] = mysql_result($countComments,0);;
+			$this->news[$counter]['comments'] = mysql_result($countComments,0);
 			if(strlen($row['text']) <= 250){
 				$this->news[$counter]['more'] = false;
 			}

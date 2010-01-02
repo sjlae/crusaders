@@ -35,6 +35,36 @@
 				<?php
 					endforeach;
 				?>
+					<?php
+						if($_SESSION['hasNext'] || $_SESSION['hasPrevious']){
+					?>
+							<tr>
+								<td>
+									<?php
+										if($_SESSION['hasPrevious']){
+									?>
+											<a href="index.php?clickedPrevious=true">
+												Neuere 4 News
+											</a>
+									<?php
+										}
+									?>
+								</td>
+								<td align="right">
+									<?php
+										if($_SESSION['hasNext']){
+									?>
+											<a href="index.php?clickedNext=true">
+												&Auml;ltere 4 News
+											</a>
+									<?php
+										}
+									?>
+								</td>
+							</tr>
+					<?php
+						}
+					?>
 			</table>
 		</td>
 		<td width="50%" align="right" valign="top">

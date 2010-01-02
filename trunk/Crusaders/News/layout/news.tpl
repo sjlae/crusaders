@@ -1,4 +1,5 @@
 <?php require_once('Layout/infos.tpl'); ?>
+<?php require_once('Layout/errors.tpl'); ?>
 <form action="index.php?go=news&action=save" method="POST">
 <table>
 	<tr>
