@@ -68,6 +68,11 @@ switch($go) {
 		$login = new Login();
 		$login->getView();
 		break;
+	case 'home':
+		$_SESSION['actualPage'] = 0;
+		$home = new Home();
+		$home->getView();
+		break;
 	default:
 		$home = new Home();
 		$home->getView();

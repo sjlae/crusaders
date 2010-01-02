@@ -18,13 +18,20 @@ class News extends HTMLPage implements Page{
 	
 	private function createNews(){
 		$userid = $_SESSION['userid'];
-		$title = htmlentities(trim($_POST['titel']), ENT_QUOTES, 'UTF-8');
-		$text = htmlentities(trim($_POST['text']), ENT_QUOTES, 'UTF-8');
+		$this->titel = htmlentities(trim($_POST['titel']), ENT_QUOTES, 'UTF-8');
+		$this->text = htmlentities(trim($_POST['text']), ENT_QUOTES, 'UTF-8');
 		
-		$query = "Insert into news(userfsid, titel, text) values('".$userid."', '".$title."', '".$text."')";
+		if($this->titel == '' || $this->text == ''){
+			$_SESSION['errors'][] = "Bitte alle Felder (Titel und Text) ausf&uuml;llen!";
+			return;
+		}
+		
+		$query = "Insert into news(userfsid, titel, text) values('".$userid."', '".$this->titel."', '".$this->text."')";
 				
 		mysql_query($query,$this->link);
 		
+		$this->titel = '';
+		$this->text = '';
 		$_SESSION['infos'][] = "Die Nachricht wurde erfolgreich erfasst";
 	}
 	

@@ -53,6 +53,7 @@
 				            <li><a href="index.php?go=user">User erfassen</a></li>
 				            <li><a href="index.php?go=delete&action=deleteUser">User l&ouml;schen</a></li>
 				            <li><a href="#">G&auml;stebucheintrag l&ouml;schen</a></li>
+				            <li><a href="index.php?go=delete&action=deleteComment">Kommentar l&ouml;schen</a></li>
 				            <li><a href="index.php?go=logout">log out</a></li>
 						</ul>
 					</li>
