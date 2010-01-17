@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-
+<?php require_once('Constants.php'); ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de">
 	<head>
 		<title>UHC Crusaders 95 Z&uuml;rich</title>
@@ -25,15 +25,14 @@
 		</li>
 		<li class="top"><a href="#" class="top_link"><span>TEAMS</span></a>
 			<ul class="sub">
-				<li><a href="#">Herren GF</a></li>			
-	            <li><a href="#">Damen KF</a></li>
-	            <li><a href="#">A-Juniorinnen</a></li>
-	            <li><a href="#">U18</a></li>
-	            <li><a href="#">U16</a></li>
-	            <li><a href="#">B-Junioren</a></li>
-	            <li><a href="#">D-Junioren I</a></li>
-	            <li><a href="#">D-Junioren II</a></li>
-	            <li><a href="#">E-Junioren</a></li>
+				<?php
+					$teamArray = Constants::getTeams();
+					for($i = 0; $i < $teamArray[size]; $i++) {
+				?>
+						<li><a href="index.php?go=team&name=<?php echo $teamArray[$i][0] ?>&ligaCode=<?php echo $teamArray[$i][1] ?>&gruppe=<?php echo $teamArray[$i][2] ?>&verein=<?php echo $teamArray[$i][3] ?>"><?php echo $teamArray[$i][0] ?></a></li>
+				<?php 
+					} 
+				?>
 			</ul>
 		</li>
 		<li class="top"><a href="#" class="top_link"><span>G&Auml;STEBUCH</span></a></li>
