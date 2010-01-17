@@ -9,6 +9,7 @@ require_once('User/User.php');
 require_once('SingleMessage/SingleMessage.php');
 require_once('Delete/Delete.php');
 require_once('Comments/Comments.php');
+require_once('Team/Team.php');
 
 $go = isset($_GET['go']) ? $_GET['go'] : '';
 
@@ -16,6 +17,10 @@ switch($go) {
 	case 'login':
 		$login = new Login();
 		$login->getView();
+		break;
+	case 'team':
+		$team = new Team();
+		$team->getView();
 		break;
 	case 'news':
 		$news = new News();
