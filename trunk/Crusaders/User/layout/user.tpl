@@ -1,7 +1,7 @@
 <?php require_once('Layout/infos.tpl'); ?>
 <h2>User erfassen</h2>
 <form action="index.php?go=user&action=save" method="POST">
-	<table>
+	<table cellpadding="0" cellspacing="0" border="0">
 		<tr>
 			<td style="padding-top: 5px">	
 				Vorname:
