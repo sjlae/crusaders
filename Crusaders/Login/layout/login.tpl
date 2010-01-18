@@ -2,7 +2,7 @@
 <?php require_once('Layout/errors.tpl'); ?>
 <h2>Login</h2>
 <form action="index.php?go=login&action=login" method="POST">
-<table>
+<table cellpadding="0" cellspacing="0" border="0">
 	<tr>
 		<td>
 			E-Mail:

@@ -1,7 +1,7 @@
 <?php require_once('Layout/errors.tpl'); ?>
 <form action="index.php?type=1&go=comments&action=save" method="POST">
 	<input type="hidden" name="id" value="<?php echo $this->id ?>" />
-	<table border="0">
+	<table cellpadding="0" cellspacing="0" border="0">
 		<tr>
 			<td>
 				Vorname:
@@ -38,10 +38,10 @@
 		</tr>
 	</table>
 </form>
-<table border="0" width="100%">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
 	<tr>
 		<td>
-			<table>
+			<table cellpadding="0" cellspacing="0" border="0">
 				<?php
 					if($this->comments != ''){
 						foreach($this->comments as $comment): 

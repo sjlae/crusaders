@@ -1,7 +1,7 @@
-<table border="0" width="100%">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
 	<tr>
 		<td>
-			<table>
+			<table cellpadding="0" cellspacing="0" border="0">
 				<tr>
 					<td>
 						<?php

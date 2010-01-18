@@ -1,7 +1,7 @@
 <?php require_once('Layout/infos.tpl'); ?>
 <?php require_once('Layout/errors.tpl'); ?>
 <form action="index.php?go=news&action=save" method="POST">
-<table>
+<table cellpadding="0" cellspacing="0" border="0">
 	<tr>
 		<td>
 			Titel:

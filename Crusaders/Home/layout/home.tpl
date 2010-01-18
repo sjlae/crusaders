@@ -1,7 +1,7 @@
-<table border="0" width="100%">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
 	<tr>
 		<td width="50%" valign="top">
-			<table>
+			<table cellpadding="0" cellspacing="0" border="0">
 				<?php
 					foreach($this->news as $news): 
 				?>	
@@ -68,7 +68,7 @@
 			</table>
 		</td>
 		<td width="50%" align="right" valign="top">
-			<table>
+			<table cellpadding="0" cellspacing="0" border="0">
 				<?php
 					foreach($this->results as $games): 
 						

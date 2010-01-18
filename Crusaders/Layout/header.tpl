@@ -29,7 +29,7 @@
 					$teamArray = Constants::getTeams();
 					for($i = 0; $i < $teamArray[size]; $i++) {
 				?>
-						<li><a href="index.php?go=team&name=<?php echo $teamArray[$i][0] ?>&ligaCode=<?php echo $teamArray[$i][1] ?>&gruppe=<?php echo $teamArray[$i][2] ?>&verein=<?php echo $teamArray[$i][3] ?>"><?php echo $teamArray[$i][0] ?></a></li>
+						<li><a href="index.php?go=team&number=<?php echo $i ?>"><?php echo $teamArray[$i][0] ?></a></li>
 				<?php 
 					} 
 				?>
