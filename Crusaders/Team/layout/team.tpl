@@ -1,5 +1,5 @@
 <?php if($this->gruppe != ''){ ?>
-	<h3><?php echo $this->name?>&nbsp;-&nbsp;Gruppe&nbsp;<?php echo $this->gruppe ?></h3>
+	<h3 id="team_name"><?php echo $this->name?>&nbsp;-&nbsp;Gruppe&nbsp;<?php echo $this->gruppe ?></h3>
 	<table cellpadding="0" cellspacing="0" border="0">
 		<?php
 			foreach($this->results as $result): 
@@ -63,7 +63,7 @@
 		?>
 	</table>
 <?php } else{ ?>
-	<h3><?php echo $this->name?></h3>		
+	<h3 id="team_name"><?php echo $this->name?></h3>		
 <?php } ?>
 
 
