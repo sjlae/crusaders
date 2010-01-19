@@ -14,8 +14,8 @@
 
 <div id="header">
 	<ul class="menu">
-		<li class="top"><a href="index.php?go=home" class="top_link"><span>HOME</span></a></li>
-		<li class="top"><a href="#" class="top_link"><span>&Uuml;BER UNS</span></a>
+		<li class="top"><a href="index.php?go=home" class="top_link_home"><span>HOME</span></a></li>
+		<li class="top"><a href="#" class="top_link_ueber_uns"><span>&Uuml;BER UNS</span></a>
 			<ul class="sub">
 				<li><a href="#">Vorstand</a></li>			
 				<li><a href="#">Trainer</a></li>
@@ -23,7 +23,7 @@
 	            <li><a href="#">Geschichte</a></li>
 			</ul>
 		</li>
-		<li class="top"><a href="#" class="top_link"><span>TEAMS</span></a>
+		<li class="top"><a href="#" class="top_link_teams"><span>TEAMS</span></a>
 			<ul class="sub">
 				<?php
 					$teamArray = Constants::getTeams();
@@ -35,11 +35,11 @@
 				?>
 			</ul>
 		</li>
-		<li class="top"><a href="#" class="top_link"><span>G&Auml;STEBUCH</span></a></li>
+		<li class="top"><a href="#" class="top_link_gaestebuch"><span>G&Auml;STEBUCH</span></a></li>
 		<?php
 			if(!$_SESSION['eingeloggt']){
 		?>
-				<li class="top"><a href="index.php?go=login" class="top_link"><span>log in</span></a></li>
+				<li class="top"><a href="index.php?go=login" class="top_link_login"><span>log in</span></a></li>
 		<?php
 			}
 			else{
