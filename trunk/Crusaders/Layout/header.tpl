@@ -10,7 +10,7 @@
 		
 		<link rel="stylesheet" href="Layout/style.css" type="text/css"/>
 	</head>
-<body>
+<body id="body">
 
 <div id="header">
 	<ul class="menu">
@@ -45,7 +45,7 @@
 			else{
 				if($_SESSION['admin']){
 		?>
-					<li class="top"><a href="#" class="top_link"><span>Admin</span></a>
+					<li class="top"><a href="#" class="top_link_login"><span>Admin</span></a>
 						<ul class="sub">
 							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>			
 				            <li><a href="index.php?go=delete&action=deleteNews">Newsbeitrag l&ouml;schen</a></li>
@@ -81,3 +81,5 @@
 			}
 		?>
 	</ul>
+</div>
+<div id="content">
