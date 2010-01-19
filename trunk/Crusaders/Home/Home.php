@@ -4,7 +4,7 @@ require_once('Home/Home.php');
 require_once('Datenbank/db.php');
 
 class Home extends HTMLPage implements Page{
-
+ 
 	private $link = '';
 	private $news = array();
 	private $results = array();
