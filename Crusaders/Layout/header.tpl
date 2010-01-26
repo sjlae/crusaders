@@ -14,8 +14,8 @@
 
 <div id="header">
 	<ul class="menu">
-		<li class="top"><a href="index.php?go=home" class="top_link_home"><span>HOME</span></a></li>
-		<li class="top"><a href="#" class="top_link_ueber_uns"><span>&Uuml;BER UNS</span></a>
+		<li class="top"><a href="index.php?go=home" class="top_link_home"><div id="home"></div></a></li>
+		<li class="top"><a href="#" class="top_link_ueber_uns"><div id="ueber_uns"></div></a>
 			<ul class="sub">
 				<li><a href="#">Vorstand</a></li>			
 				<li><a href="#">Trainer</a></li>
