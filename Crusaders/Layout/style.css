@@ -1,5 +1,7 @@
 #body {
 	background: url(../images/mauer.jpg) repeat;
+	font-family:arial, verdana, sans-serif;
+	font-size: 10px;
 }
 
 #header {
@@ -51,11 +53,11 @@
 .bg {background: url(../images/button4.gif);}
 .menu {padding:0 0 0 20px; margin:0; list-style:none; height:170px; background:#fff url(../images/header.gif) no-repeat; position:relative; font-family:arial, verdana, sans-serif; }
 .menu li.top {display:block; float:left; position:relative;}
-.menu li a.top_link_home {display:block; float:left; height:142px; width:124px; text-align:center; line-height:210px; color:black; text-decoration:none; font-size:13px; font-weight:bold; cursor:pointer;}
-.menu li a.top_link_ueber_uns {display:block; float:left; height:142px; width:126px; text-align:center; line-height:210px; color:black; text-decoration:none; font-size:13px; font-weight:bold; cursor:pointer;}
-.menu li a.top_link_teams {display:block; float:left; height:142px; width:154px; text-align:center; line-height:210px; color:black; text-decoration:none; font-size:13px; font-weight:bold; cursor:pointer;}
-.menu li a.top_link_gaestebuch {display:block; float:left; height:142px; width:136px; text-align:center; line-height:210px; color:black; text-decoration:none; font-size:13px; font-weight:bold; cursor:pointer;}
-.menu li a.top_link_login {display:block; float:left; height:142px; width:164px; text-align:center; line-height:210px; color:black; text-decoration:none; font-size:13px; font-weight:bold; cursor:pointer;}
+.menu li a.top_link_home {display:block; float:left; height:170px; width:124px; text-align:center; line-height:170px; color:black; text-decoration:none; font-size:13px; font-weight:bold; cursor:pointer;}
+.menu li a.top_link_ueber_uns {display:block; float:left; height:170px; width:126px; text-align:center; line-height:170px; color:black; text-decoration:none; font-size:13px; font-weight:bold; cursor:pointer;}
+.menu li a.top_link_teams {display:block; float:left; height:170px; width:154px; text-align:center; line-height:170px; color:black; text-decoration:none; font-size:13px; font-weight:bold; cursor:pointer;}
+.menu li a.top_link_gaestebuch {display:block; float:left; height:170px; width:136px; text-align:center; line-height:170px; color:black; text-decoration:none; font-size:13px; font-weight:bold; cursor:pointer;}
+.menu li a.top_link_login {display:block; float:left; height:170px; width:164px; text-align:center; line-height:170px; color:black; text-decoration:none; font-size:13px; font-weight:bold; cursor:pointer;}
 
 .menu table {border-collapse:collapse; width:0; height:0; position:absolute; top:0; left:0;}
 
