@@ -11,19 +11,10 @@
 		<link rel="stylesheet" href="Layout/style.css" type="text/css"/>
 	</head>
 <body id="body">
-
-<div id="header">
+<div id="main">
 	<ul class="menu">
-		<li class="top"><a href="index.php?go=home" class="top_link_home"><div id="home"></div></a></li>
-		<li class="top"><a href="#" class="top_link_ueber_uns"><div id="ueber_uns"></div></a>
-			<ul class="sub">
-				<li><a href="#">Vorstand</a></li>			
-				<li><a href="#">Trainer</a></li>
-	            <li><a href="#">Schiedsrichter</a></li>
-	            <li><a href="#">Geschichte</a></li>
-			</ul>
-		</li>
-		<li class="top"><a href="#" class="top_link_teams"><span>TEAMS</span></a>
+		<li class="home"><a href="index.php?go=home" class="top_link_home"></a></li>
+		<li class="teams"><a href="#" class="top_link_teams"></a>
 			<ul class="sub">
 				<?php
 					$teamArray = Constants::getTeams();
@@ -35,17 +26,25 @@
 				?>
 			</ul>
 		</li>
-		<li class="top"><a href="#" class="top_link_gaestebuch"><span>G&Auml;STEBUCH</span></a></li>
+		<li class="kontakt"><a href="#" class="top_link_ueber_uns"></a>
+			<ul class="sub">
+				<li><a href="#">Vorstand</a></li>			
+				<li><a href="#">Trainer</a></li>
+	            <li><a href="#">Schiedsrichter</a></li>
+	            <li><a href="#">Geschichte</a></li>
+			</ul>
+		</li>		
+		<li class="gaestebuch"><a href="#" class="top_link_gaestebuch"></a></li>
 		<?php
 			if(!$_SESSION['eingeloggt']){
 		?>
-				<li class="top"><a href="index.php?go=login" class="top_link_login"><span>log in</span></a></li>
+				<li class="login"><a href="index.php?go=login" class="top_link_login"></a></li>
 		<?php
 			}
 			else{
 				if($_SESSION['admin']){
 		?>
-					<li class="top"><a href="#" class="top_link_login"><span>Admin</span></a>
+					<li class="login"><a href="#" class="top_link_login"></a>
 						<ul class="sub">
 							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>			
 				            <li><a href="index.php?go=delete&action=deleteNews">Newsbeitrag l&ouml;schen</a></li>
@@ -60,7 +59,7 @@
 				}
 				else if($_SESSION['coach']){
 		?>
-					<li class="top"><a href="#" class="top_link"><span>Admin</span></a>
+					<li class="login"><a href="#" class="top_link"></a>
 						<ul class="sub">
 							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>			
 				            <li><a href="index.php?go=logout">log out</a></li>
@@ -70,7 +69,7 @@
 				}
 				else if($_SESSION['blogger']){
 		?>
-					<li class="top"><a href="#" class="top_link"><span>Admin</span></a>
+					<li class="login"><a href="#" class="top_link"></a>
 						<ul class="sub">
 							<li><a href="index.php?go=news">Blogbeitrag erfassen</a></li>			
 				            <li><a href="index.php?go=logout">log out</a></li>
@@ -80,6 +79,7 @@
 				}
 			}
 		?>
+					<li class="zeitung"><a href="" title="Zeitung" class="zeitung"></a></li> 
+					<li class="knaecke"><a href="" title="Knaeckeblog" class="knaecke"></a></li> 
 	</ul>
-</div>
 <div id="content">
