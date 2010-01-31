@@ -1,3 +1,4 @@
+<div id="content">
 <?php require_once('Layout/errors.tpl'); ?>
 <form action="index.php?type=1&go=comments&action=save" method="POST">
 	<input type="hidden" name="id" value="<?php echo $this->id ?>" />
@@ -72,3 +73,4 @@
 		</td>
 	</tr>
 </table>
+</div>

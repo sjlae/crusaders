@@ -1,3 +1,4 @@
+<div id="content">
 <?php require_once('Layout/infos.tpl'); ?>
 User erfassen
 <form action="index.php?go=user&action=save" method="POST">
@@ -53,3 +54,4 @@ User erfassen
 		</tr>
 	</table>
 </form>
+</div>

@@ -1,3 +1,4 @@
+<div id="content">
 <?php require_once('Layout/infos.tpl'); ?>
 <?php require_once('Layout/errors.tpl'); ?>
 <h2>Login</h2>
@@ -26,3 +27,4 @@
 	</tr>
 </table>
 </form>
+</div>
