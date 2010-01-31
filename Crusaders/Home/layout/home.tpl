@@ -1,7 +1,4 @@
-<table cellpadding="0" cellspacing="0" border="0" width="100%">
-	<tr>
-		<td width="50%" valign="top">
-			<table cellpadding="0" cellspacing="0" border="0">
+			<table width="650" cellpadding="0" cellspacing="0" border="0">
 				<?php
 					foreach($this->news as $news): 
 				?>	
@@ -66,9 +63,8 @@
 						}
 					?>
 			</table>
-		</td>
-		<td width="50%" align="right" valign="top">
-			<table cellpadding="0" cellspacing="0" border="0">
+	</div>		
+	<div id="spiegel"><table id="resultate">
 				<?php
 					foreach($this->results as $games): 
 						
@@ -77,7 +73,6 @@
 				?>
 							<tr>
 								<!-- <td><?php echo $games->League; ?></td> -->	
-								<td><?php echo $games->Date; ?></td> 
 								<td><?php echo $games->HomeTeam; ?></td>	
 								<td><?php echo $games->AwayTeam; ?></td>
 								<td><?php echo $games->GoalsHomeTeam; ?></td>
@@ -87,7 +82,5 @@
 						}
 					endforeach;
 				?>
-			</table>	
-		</td>
-	</tr>
-</table>
+			</table></div>	
+
