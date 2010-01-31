@@ -10,6 +10,7 @@ require_once('SingleMessage/SingleMessage.php');
 require_once('Delete/Delete.php');
 require_once('Comments/Comments.php');
 require_once('Team/Team.php');
+require_once('Picture/Picture.php');
 
 $go = isset($_GET['go']) ? $_GET['go'] : '';
 
@@ -37,6 +38,17 @@ switch($go) {
 		$user = new User();
 		if(LoggedIn::isAdmin()){
 			$user->getView();
+			break;
+		}
+		else{
+			$home = new Home();
+			$home->getView();
+			break;
+		}
+	case 'picture':
+		$picture = new Picture();
+		if(LoggedIn::isAdmin() || LoggedIn::isCoach()){
+			$picture->getView();
 			break;
 		}
 		else{
