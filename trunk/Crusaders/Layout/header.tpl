@@ -44,7 +44,7 @@
 			else{
 				if($_SESSION['admin']){
 		?>
-					<li class="login"><a href="#" title="Login" class="top"></a>
+					<li class="login"><a href="#" title="Admin" class="top"></a>
 						<ul class="sub">
 							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>			
 				            <li><a href="index.php?go=delete&action=deleteNews">Newsbeitrag l&ouml;schen</a></li>
@@ -60,7 +60,7 @@
 				}
 				else if($_SESSION['coach']){
 		?>
-					<li class="login"><a href="#" class="top"></a>
+					<li class="login"><a href="#" class="top" title="Admin"></a>
 						<ul class="sub">
 							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>		
 							<li><a href="index.php?go=picture">Teambild Upload</a></li>	
@@ -71,7 +71,7 @@
 				}
 				else if($_SESSION['blogger']){
 		?>
-					<li class="login"><a href="#" class="top"></a>
+					<li class="login"><a href="#" class="top" title="Admin"></a>
 						<ul class="sub">
 							<li><a href="index.php?go=news">Blogbeitrag erfassen</a></li>			
 				            <li><a href="index.php?go=logout">log out</a></li>

@@ -75,10 +75,10 @@ class Home extends HTMLPage implements Page{
 				$this->news[$counter]['newsid'] = $newsid;
 				$this->news[$counter]['timestamp'] = date('d.m.Y H:i', strtotime($row['timestamp']));
 				$this->news[$counter]['titel'] = $row['titel'];
-				$this->news[$counter]['text'] = substr($row['text'], 0, 250);
+				$this->news[$counter]['text'] = substr($row['text'], 0, 220);
 				$this->news[$counter]['more'] = true;
 				$this->news[$counter]['comments'] = mysql_result($countComments,0);
-				if(strlen($row['text']) <= 250){
+				if(strlen($row['text']) <= 220){
 					$this->news[$counter]['more'] = false;
 				}
 				$counter++;
