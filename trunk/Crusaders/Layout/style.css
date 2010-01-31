@@ -2,9 +2,9 @@
 
 #main {background: url(../images/main.gif) no-repeat;position: relative;margin: 0 auto;width: 1080px;height: 828px;}
 
-#content {position:absolute;left:20px;top:170px;width: 650px;height: 440px;margin: 0;}
+#content {position:absolute;left:20px;top:170px;width: 650px;height: 440px;margin: 0;z-index:10;}
 
-#spiegel {position:absolute;left:700px;top:150px;height: 260px;width: 360px;overflow: auto;	}
+#spiegel {position:absolute;left:700px;top:150px;height: 260px;width: 360px;overflow: auto;	z-index:11;}
 
 #stats {background: url(../images/zahlen.gif) no-repeat; padding:0; margin:0; position:absolute;left:420px;top:530px;height: 150px;width: 150px; }
 .stats {position:relative; height:150px; width:150px; text-decoration:none; cursor:pointer;}
@@ -13,7 +13,7 @@
 
 #team_name{font-family:arial, verdana, sans-serif;font-size: 15px;margin: 0;}
 .bg {background: url(../images/button4.gif);}
-.menu {padding:0; margin:0; list-style:none; position:relative; font-family:arial, verdana, sans-serif; }
+.menu {padding:0; margin:0; list-style:none; position:relative; z-index:100;font-family:arial, verdana, sans-serif; }
 .menu li.home {position:absolute; top:60px; left:20px; height:90px; width:90px;}
 .menu li.teams {position:absolute; top:60px; left:170px; height:90px; width:90px;}
 .menu li.kontakt {position:absolute; top:60px; left:310px; height:90px; width:90px;}
