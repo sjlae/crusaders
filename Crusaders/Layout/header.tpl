@@ -13,8 +13,8 @@
 <body id="body">
 <div id="main">
 	<ul class="menu">
-		<li class="home"><a href="index.php?go=home" class="top_link_home"></a></li>
-		<li class="teams"><a href="#" class="top_link_teams"></a>
+		<li class="home"><a href="index.php?go=home" title="Home" class="top_link_home"></a></li>
+		<li class="teams"><a href="#" title="Teams" class="top_link_teams"></a>
 			<ul class="sub">
 				<?php
 					$teamArray = Constants::getTeams();
@@ -26,7 +26,7 @@
 				?>
 			</ul>
 		</li>
-		<li class="kontakt"><a href="#" class="top_link_ueber_uns"></a>
+		<li class="kontakt"><a href="#" title="Kontakt" class="top_link_ueber_uns"></a>
 			<ul class="sub">
 				<li><a href="#">Vorstand</a></li>			
 				<li><a href="#">Trainer</a></li>
@@ -34,17 +34,17 @@
 	            <li><a href="#">Geschichte</a></li>
 			</ul>
 		</li>		
-		<li class="gaestebuch"><a href="#" class="top_link_gaestebuch"></a></li>
+		<li class="gaestebuch"><a href="#" title="G&auml;stebuch" class="top_link_gaestebuch"></a></li>
 		<?php
 			if(!$_SESSION['eingeloggt']){
 		?>
-				<li class="login"><a href="index.php?go=login" class="top_link_login"></a></li>
+				<li class="login"><a href="index.php?go=login" title="Login" class="top_link_login"></a></li>
 		<?php
 			}
 			else{
 				if($_SESSION['admin']){
 		?>
-					<li class="login"><a href="#" class="top_link_login"></a>
+					<li class="login"><a href="#" title="Login" class="top_link_login"></a>
 						<ul class="sub">
 							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>			
 				            <li><a href="index.php?go=delete&action=deleteNews">Newsbeitrag l&ouml;schen</a></li>
@@ -80,6 +80,6 @@
 			}
 		?>
 					<li class="zeitung"><a href="" title="Zeitung" class="zeitung"></a></li> 
-					<li class="knaecke"><a href="" title="Knaeckeblog" class="knaecke"></a></li> 
+					<li class="knaecke"><a href="" title="Kn&auml;ckeblog" class="knaecke"></a></li> 
 	</ul>
 <div id="content">
