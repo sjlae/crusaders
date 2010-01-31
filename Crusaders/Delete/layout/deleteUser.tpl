@@ -1,3 +1,4 @@
+<div id="content">
 <form action="index.php?go=delete&action=deleteUser&delete=true" method="POST">
 	<table cellpadding="0" cellspacing="0" border="0">
 		<tr>
@@ -19,3 +20,4 @@
 	</table>
 	<input type="submit" value="L&ouml;schen" />
 </form>
+</div>

@@ -1,3 +1,4 @@
+<div id="content">
 <?php if(count($_SESSION['errors']) > 0): ?>
 	<div style="background-color: #FF0000; padding-top: 5px; padding-bottom: 5px" id="errors">
 		<p><b>Fehler:</b></p>
@@ -10,3 +11,4 @@
 	</div>
 	<br/>
 <?php endif?>
+</div>

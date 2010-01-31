@@ -1,3 +1,4 @@
+<div id="content">
 <form enctype="multipart/form-data" method="post" action="index.php?go=picture&action=save">
 	<input type="file" id="picture" name="picture" />
 	<br>
@@ -20,3 +21,4 @@
 	<br>
 	<input type="submit" value="Bild speichern" />
 </form>
+</div>
