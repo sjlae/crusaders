@@ -12,13 +12,8 @@
 	</tr>	
 </table>
 </div>
-<div id="stats" class="stats">
-<ul class="menu">
-		<li class="stats"><a href="" title="Zahlen" class="stats"></a>
-		<ul class="sub">
-			<li>Resultate und Spielplan</li>
-		</ul></li>
-</ul>
+<div id="stats" class="stats" title="Resultate und Spielplan">
+	<a href="" title="Zahlen" class="stats">&nbsp;</a>
 </div>
 <div id="spiegel">
 <?php if($this->gruppe != ''){ ?>
