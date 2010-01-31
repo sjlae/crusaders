@@ -11,6 +11,7 @@ require_once('Delete/Delete.php');
 require_once('Comments/Comments.php');
 require_once('Team/Team.php');
 require_once('Picture/Picture.php');
+require_once('Video/Video.php');
 
 $go = isset($_GET['go']) ? $_GET['go'] : '';
 
@@ -49,6 +50,17 @@ switch($go) {
 		$picture = new Picture();
 		if(LoggedIn::isAdmin() || LoggedIn::isCoach()){
 			$picture->getView();
+			break;
+		}
+		else{
+			$home = new Home();
+			$home->getView();
+			break;
+		}
+	case 'video':
+		$video = new Video();
+		if(LoggedIn::isAdmin() || LoggedIn::isCoach()){
+			$video->getView();
 			break;
 		}
 		else{

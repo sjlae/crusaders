@@ -8,16 +8,24 @@ class Home extends HTMLPage implements Page{
 	private $link = '';
 	private $news = array();
 	private $results = array();
+	private $url = '';
 	
 	public function __construct() {
 		$this->link = Db::getConnection();
 		
 		$this->getNews();
 		$this->getResults();
+		$this->getUrl();
 	}
 	
 	public function getHTML() {
 		include('layout/home.tpl');
+	}
+	
+	private function getUrl(){
+		$abfrage = "Select * from video";
+		$ergebnis = mysql_query($abfrage);
+		$this->url = mysql_result($ergebnis, 0);
 	}
 	
 	private function pagingValues(){

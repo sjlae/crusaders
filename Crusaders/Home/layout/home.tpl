@@ -67,6 +67,6 @@
 	</div>		
 	<div id="spiegel">
 		<table id="resultate">
-			<object width="320" height="265"><param name="movie" value="http://www.youtube.com/v/kdjKHBbD7ys&hl=de_DE&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/kdjKHBbD7ys&hl=de_DE&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="265"></embed></object>
+			<?php echo $this->url ?>
 		</table>
 	</div>	

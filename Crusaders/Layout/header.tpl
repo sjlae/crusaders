@@ -52,6 +52,7 @@
 				            <li><a href="index.php?go=delete&action=deleteUser">User l&ouml;schen</a></li>
 				            <li><a href="#">G&auml;stebucheintrag l&ouml;schen</a></li>
 				            <li><a href="index.php?go=delete&action=deleteComment">Kommentar l&ouml;schen</a></li>
+				            <li><a href="index.php?go=video">Youtube Video Upload</a></li>
 				            <li><a href="index.php?go=picture">Teambild Upload</a></li>
 				            <li><a href="index.php?go=logout">log out</a></li>
 						</ul>
@@ -62,7 +63,8 @@
 		?>
 					<li class="login"><a href="#" class="top" title="Admin"></a>
 						<ul class="sub">
-							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>		
+							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>
+							<li><a href="index.php?go=video">Youtube Video Upload</a></li>		
 							<li><a href="index.php?go=picture">Teambild Upload</a></li>	
 				            <li><a href="index.php?go=logout">log out</a></li>
 						</ul>
