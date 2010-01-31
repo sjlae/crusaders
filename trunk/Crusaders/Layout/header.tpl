@@ -21,7 +21,7 @@
 					for($i = 0; $i < $teamArray[size]; $i++) {
 				?>
 						<li><a href="index.php?go=team&number=<?php echo $i ?>"><?php echo $teamArray[$i][0] ?></a></li>
-				<?php 
+				<?php
 					} 
 				?>
 			</ul>
