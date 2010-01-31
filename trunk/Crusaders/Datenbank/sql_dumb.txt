@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 14. Januar 2010 um 23:02
+-- Erstellungszeit: 31. Januar 2010 um 21:44
 -- Server Version: 5.1.33
 -- PHP-Version: 5.2.9
 
@@ -28,14 +28,15 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `type` int(11) NOT NULL,
   `text` varchar(5000) NOT NULL,
   PRIMARY KEY (`commentsid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
 -- Daten für Tabelle `comments`
 --
 
 INSERT INTO `comments` (`commentsid`, `newsfsid`, `vorname`, `nachname`, `timestamp`, `type`, `text`) VALUES
-(19, 40, 'peter', 'zwicky', '2010-01-02 22:52:34', 1, 'haha, das kann ja nicht sein.');
+(19, 40, 'peter', 'zwicky', '2010-01-02 22:52:34', 1, 'haha, das kann ja nicht sein.'),
+(22, 45, 'Luigi', 'Tester', '2010-01-31 21:03:50', 1, 'heieiei, das &lt;b&gt; geht nicht &lt;/b&gt;');
 
 -- --------------------------------------------------------
 
@@ -93,3 +94,20 @@ INSERT INTO `user` (`userid`, `vorname`, `nachname`, `email`, `passwort`, `admin
 (3, 'Joshua', 'Herbst', 'joshua@holland.nl', 'tulpe', 0, 1, 0),
 (4, 'Susanne', 'Bold', 'susi@susi.ch', 'susi', 0, 1, 0),
 (10, 'Andreas', 'Ahlm', 'andiahlm@hotmail.com', 'ahlm', 1, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `video`
+--
+
+CREATE TABLE IF NOT EXISTS `video` (
+  `url` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `video`
+--
+
+INSERT INTO `video` (`url`) VALUES
+('<object width="320" height="265"><param name="movie" value="http://www.youtube.com/v/N0NDguA-wUA&hl=de_DE&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/N0NDguA-wUA&hl=de_DE&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="265"></embed></object>');
