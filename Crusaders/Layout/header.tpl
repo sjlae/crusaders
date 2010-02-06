@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<?php require_once('Constants.php'); ?>
+<?php require_once('Teams.php'); ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de">
 	<head>
 		<title>UHC Crusaders 95 Z&uuml;rich</title>
@@ -17,23 +17,18 @@
 		<li class="teams"><a href="#" title="Teams" class="top"></a>
 			<ul class="sub">
 				<?php
-					$teamArray = Constants::getTeams();
-					for($i = 0; $i < $teamArray[size]; $i++) {
+					$teamArray = Teams::getTeams();
+					for($i = 0; $i < count($teamArray); $i++) {
 				?>
-						<li><a href="index.php?go=team&number=<?php echo $i ?>"><?php echo $teamArray[$i][0] ?></a></li>
+						<li><a href="index.php?go=team&teamid=<?php echo $teamArray[$i]['teamid'] ?>"><?php echo $teamArray[$i]['teamname'] ?></a></li>
 				<?php
 					} 
 				?>
 			</ul>
 		</li>
-		<li class="kontakt"><a href="#" title="Kontakt" class="top"></a>
-			<ul class="sub">
-				<li><a href="#">Vorstand</a></li>			
-				<li><a href="#">Trainer</a></li>
-	            <li><a href="#">Schiedsrichter</a></li>
-	            <li><a href="#">Geschichte</a></li>
-			</ul>
-		</li>		
+		
+		<li class="kontakt"><a href="#" title="Kontakte" class="top"></a></li>
+				
 		<li class="gaestebuch"><a href="#" title="G&auml;stebuch" class="top"></a></li>
 		<?php
 			if(!$_SESSION['eingeloggt']){
@@ -53,6 +48,7 @@
 				            <li><a href="#">G&auml;stebucheintrag l&ouml;schen</a></li>
 				            <li><a href="index.php?go=delete&action=deleteComment">Kommentar l&ouml;schen</a></li>
 				            <li><a href="index.php?go=video">Youtube Video Upload</a></li>
+				            <li><a href="index.php?go=teaminfo">Teaminfos erfassen</a></li>
 				            <li><a href="index.php?go=picture">Teambild Upload</a></li>
 				            <li><a href="index.php?go=logout">log out</a></li>
 						</ul>
@@ -64,7 +60,8 @@
 					<li class="login"><a href="#" class="top" title="Admin"></a>
 						<ul class="sub">
 							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>
-							<li><a href="index.php?go=video">Youtube Video Upload</a></li>		
+							<li><a href="index.php?go=video">Youtube Video Upload</a></li>
+							<li><a href="index.php?go=teaminfo">Teaminfos erfassen</a></li>		
 							<li><a href="index.php?go=picture">Teambild Upload</a></li>	
 				            <li><a href="index.php?go=logout">log out</a></li>
 						</ul>

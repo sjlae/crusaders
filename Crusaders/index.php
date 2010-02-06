@@ -12,6 +12,7 @@ require_once('Comments/Comments.php');
 require_once('Team/Team.php');
 require_once('Picture/Picture.php');
 require_once('Video/Video.php');
+require_once('Teaminfo/Teaminfo.php');
 
 $go = isset($_GET['go']) ? $_GET['go'] : '';
 
@@ -50,6 +51,17 @@ switch($go) {
 		$picture = new Picture();
 		if(LoggedIn::isAdmin() || LoggedIn::isCoach()){
 			$picture->getView();
+			break;
+		}
+		else{
+			$home = new Home();
+			$home->getView();
+			break;
+		}
+	case 'teaminfo':
+		$teaminfo = new Teaminfo();
+		if(LoggedIn::isAdmin() || LoggedIn::isCoach()){
+			$teaminfo->getView();
 			break;
 		}
 		else{
