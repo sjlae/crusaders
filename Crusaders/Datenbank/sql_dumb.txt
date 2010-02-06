@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 31. Januar 2010 um 21:44
+-- Erstellungszeit: 07. Februar 2010 um 00:20
 -- Server Version: 5.1.33
 -- PHP-Version: 5.2.9
 
@@ -65,6 +65,56 @@ INSERT INTO `news` (`newsid`, `userfsid`, `timestamp`, `titel`, `text`) VALUES
 (44, 1, '2010-01-02 23:00:25', 'Bern siegt - Davos verliert beim Schlusslicht', 'Bern - Biel: Bern setzte Heimserie gegen Biel fort\r\n\r\nTrotz dreimaliger F&uuml;hrung muss Biel weiter auf den ersten Sieg in Bern seit dem 17. Februar 1990 warten. Der Leader kehrte mit dem 7:3 nach zwei Niederlagen auf die Siegesstrasse zur&uuml;ck.\r\n\r\nDie 16 510 Zuschauer wurden insbesondere in den ersten 10 Minuten des zweiten Drittels exzellent unterhalten; in dieser Zeitspanne fielen nicht weniger als sechs Tore. Die Berner drehten dank drei Treffern innerhalb von 237 Sekunden bis zur 30. Minute ein 2:3 in ein 5:3. Es re&uuml;ssierten Marc Reichert, Beat Gerber und Jean-Pierre Vigier. W&auml;hrend Reichert zum vierten Mal in dieser Saison und zum dritten Mal gegen Biel traf, schoss Gerber sein erstes Saisontor. In der 42. Minute knickte Caryl Neuenschwander mit dem 6:3 die letzten Hoffnungen der G&auml;ste. Quasi mit der Schlusssirene doppelte der St&uuml;rmer nach; zuvor hatte Neuenschwander 14 Partien hintereinander nicht getroffen.\r\n\r\nDie mutigen Seel&auml;nder hatten verdient dreimal vorgelegt. F&uuml;r das 3:2 (23.) zeichnete Noah Schneeberger verantwortlich; der 21- j&auml;hrige Verteidiger feierte mit dem 1. Treffer in der NLA nicht nur eine Premiere - er bezwang SCB-Goalie Marco B&uuml;hrer mit einem &laquo;Buebetrickli&raquo; -, sondern liess sich auch noch zwei Assists gutschreiben. Dass die Bieler die zehnte Niederlage in den letzten elf Ausw&auml;rtsspielen erlitten, lag an der Defensivleistung. Mit zum Teil haarstr&auml;ubenden Fehlern luden sie die Berner f&ouml;rmlich zum Toreschiessen ein.'),
 (45, 1, '2010-01-02 23:01:12', 'Basel - Brand geht glimpflich aus', 'An der Bruderholzstrasse in Basel dringt starker Rauch aus einem Laden: Die Feuerwehr r&uuml;ckt aus &ndash; hat aber nicht viel zu l&ouml;schen. Der Rauch stammt von einer brennenden Baumwoll-Sitzgelegenheit im Hinterraum des Lokals.\r\n\r\nDie mit einem grossen L&ouml;schzug ausger&uuml;ckte Feuerwehr l&ouml;scht das Feuer schnell. Anschliessend wird das Haus entl&uuml;ftet. Jetzt wird untersucht, was den Brand ausgel&ouml;st hat. Personen werden keine verletzt.\r\n\r\nF&uuml;r rund zwanzig Minuten mussten die Basler Verkehrs-Betriebe (BVB) den Tramverkehr zwischen Tellplatz und Jakobsberg in beiden Fahrtrichtungen unterbrechen.'),
 (46, 1, '2010-01-02 23:01:43', 'RIO DE JANEIRO - Schlammlawine', 'Auf Fernsehbildern waren mehrere Geb&auml;ude zu sehen, die nahezu v&ouml;llig mit braunrotem Schlamm bedeckt waren. Da das Gel&auml;nde schwer zug&auml;nglich sei, k&ouml;nne kein schweres Ger&auml;t zur Bergung der Opfer eingesetzt werden, sagte eine Sprecherin der Rettungskr&auml;fte.\r\n\r\n&laquo;Es ist ein Horrorszenario&raquo;, sagte der Vize-Gouverneur des Bundesstaates Rio de Janeiro, Luiz Fernando Pezao, dem Radiosender CBN. &laquo;Ein Berg aus Schlamm, Ger&ouml;ll und B&auml;umen bedeckt mehrere H&auml;user.&raquo;\r\n\r\nNach Angaben von Pezao, der bei den Bergungsarbeiten anwesend war, wurde ein grosser Teil des Hotels &laquo;Sankay&raquo;, in dem rund 40 G&auml;ste wohnten, unter Tonnen von Schlamm und Pflanzen versch&uuml;ttet.\r\n\r\nZur Nationalit&auml;t der Ferieng&auml;ste machte Pezao keine Angaben. Etwa 100 Feuerwehrleute und Helfer waren am Strand von Bananal im Einsatz, wo sich das &uuml;ber Silvester ausgebuchte Hotel befand.\r\n\r\nBis Samstagabend bargen Rettungskr&auml;fte 39 Leichen aus den Tr&uuml;mmern des Luxushotels.\r\n\r\nWeiter schlechtes Wetter\r\n\r\nDamit stieg die Zahl der Toten durch &Uuml;berschwemmungen und Erdrutsche im Bundesstaat Rio de Janeiro mittlerweile auf &uuml;ber 60. Etwa 20 Menschen kamen gestern vor allem in der Metropole Rio ums Leben, unter ihnen mehrere Kinder und ein drei Tage altes Baby.\r\n\r\nIn der Favela Jacarapagua starben nach Angaben des Zivilschutzes f&uuml;nf Mitglieder einer Familie, als sie von Schlammmassen begraben wurden.\r\n\r\nIn Rio de Janeiro regnete es seit Mittwoch unaufh&ouml;rlich. Im Norden der Stadt traten drei Fl&uuml;sse &uuml;ber die Ufer und zwangen rund 200 Menschen, ihre H&auml;user zu verlassen.\r\n\r\nBesonders gef&auml;hrdet waren die Favelas genannten Elendsviertel auf den H&uuml;geln im Norden und Westen der Metropole. Der Zivilschutz warnte die Einwohner vor Erdrutschen. Und f&uuml;r die n&auml;chsten Tage wurde weiter schlechtes Wetter erwartet.');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `teams`
+--
+
+CREATE TABLE IF NOT EXISTS `teams` (
+  `teamid` int(3) NOT NULL AUTO_INCREMENT,
+  `teamname` varchar(255) NOT NULL,
+  `teamcode` int(5) NOT NULL,
+  `teamgroup` int(5) DEFAULT NULL,
+  `club` varchar(255) NOT NULL,
+  `trainingDay1_tag` varchar(20) NOT NULL,
+  `trainingDay1_halle` varchar(100) NOT NULL,
+  `trainingDay1_fromHour` varchar(2) NOT NULL,
+  `trainingDay1_fromMinutes` varchar(2) NOT NULL,
+  `trainingDay1_toHour` varchar(2) NOT NULL,
+  `trainingDay1_toMinutes` varchar(2) NOT NULL,
+  `trainingDay2_tag` varchar(20) NOT NULL,
+  `trainingDay2_halle` varchar(100) NOT NULL,
+  `trainingDay2_fromHour` varchar(2) NOT NULL,
+  `trainingDay2_fromMinutes` varchar(2) NOT NULL,
+  `trainingDay2_toHour` varchar(2) NOT NULL,
+  `trainingDay2_toMinutes` varchar(2) NOT NULL,
+  `coach1_vorname` varchar(20) NOT NULL,
+  `coach1_nachname` varchar(20) NOT NULL,
+  `coach1_email` varchar(50) NOT NULL,
+  `coach1_phone` varchar(20) NOT NULL,
+  `coach2_vorname` varchar(20) NOT NULL,
+  `coach2_nachname` varchar(20) NOT NULL,
+  `coach2_email` varchar(50) NOT NULL,
+  `coach2_phone` varchar(20) NOT NULL,
+  PRIMARY KEY (`teamid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Daten für Tabelle `teams`
+--
+
+INSERT INTO `teams` (`teamid`, `teamname`, `teamcode`, `teamgroup`, `club`, `trainingDay1_tag`, `trainingDay1_halle`, `trainingDay1_fromHour`, `trainingDay1_fromMinutes`, `trainingDay1_toHour`, `trainingDay1_toMinutes`, `trainingDay2_tag`, `trainingDay2_halle`, `trainingDay2_fromHour`, `trainingDay2_fromMinutes`, `trainingDay2_toHour`, `trainingDay2_toMinutes`, `coach1_vorname`, `coach1_nachname`, `coach1_email`, `coach1_phone`, `coach2_vorname`, `coach2_nachname`, `coach2_email`, `coach2_phone`) VALUES
+(1, 'Herren GF 3. Liga', 115, 9, 'Crusaders 95', 'Mittwoch', 'Falletsche', '20', '30', '22', '00', 'Freitag', 'Falletsche 2', '20', '15', '21', '45', 'Joshua', 'Herbst', 'josh@herbst.ch', '111', 'Erik', 'BergstrÃ¶m', 'erik@bergstrom.se', '222'),
+(2, 'Damen KF 2. Liga', 224, 9, 'Crusaders 95', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(3, 'A-Juniorinnen', 414, 0, 'Crusaders 95', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(4, 'U18', 184, 3, 'Crusaders 95', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(5, 'U16', 164, 4, 'THS Adliswil', 'Montag', 'T&uuml;fi, Adliswil', '19', '00', '21', '00', '', '', '', '', '', '', 'Daniel', 'Volkart', 'dani@volki.ch', '079 333 22 11', '', '', '', ''),
+(6, 'B-Junioren', 324, 9, 'THS Adliswil', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(7, 'D-Junioren I', 344, 14, 'Crusaders 95', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(8, 'D-Junioren II', 344, 15, 'Crusaders 95', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(9, 'E-Junioren', 354, 7, 'Crusaders 95', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
