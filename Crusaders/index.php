@@ -13,6 +13,8 @@ require_once('Team/Team.php');
 require_once('Picture/Picture.php');
 require_once('Video/Video.php');
 require_once('Teaminfo/Teaminfo.php');
+require_once('ClubResults/ClubResults.php');
+require_once('Contact/Contact.php');
 
 $go = isset($_GET['go']) ? $_GET['go'] : '';
 
@@ -24,6 +26,14 @@ switch($go) {
 	case 'team':
 		$team = new Team();
 		$team->getView();
+		break;
+	case 'contact':
+		$contact = new Contact();
+		$contact->getView();
+		break;
+	case 'clubResults':
+		$clubResults = new ClubResults();
+		$clubResults->getView();
 		break;
 	case 'news':
 		$news = new News();
