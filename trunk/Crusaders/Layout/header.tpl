@@ -27,7 +27,7 @@
 			</ul>
 		</li>
 		
-		<li class="kontakt"><a href="#" title="Kontakte" class="top"></a></li>
+		<li class="kontakt"><a href="index.php?go=contact" title="Kontakte" class="top"></a></li>
 				
 		<li class="gaestebuch"><a href="#" title="G&auml;stebuch" class="top"></a></li>
 		<?php
@@ -80,6 +80,6 @@
 				}
 			}
 		?>
-					<li class="zeitung"><a href="" title="Zeitung" class="zeitung"></a></li> 
+					<li class="zeitung"><a href="index.php?go=clubResults" title="Zeitung" class="zeitung"></a></li> 
 					<li class="knaecke"><a href="" title="Kn&auml;ckeblog" class="knaecke"></a></li> 
 	</ul>
