@@ -25,7 +25,7 @@ class Home extends HTMLPage implements Page{
 	private function getUrl(){
 		$abfrage = "Select * from video";
 		$ergebnis = mysql_query($abfrage);
-		$this->url = mysql_result($ergebnis, 0);
+		$this->url = mysql_result($ergebnis,0);
 	}
 	
 	private function pagingValues(){

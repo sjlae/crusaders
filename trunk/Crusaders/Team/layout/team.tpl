@@ -1,6 +1,6 @@
 <div id="content">
-<h3 id="team_name"><?php echo $this->name?>&nbsp;-&nbsp;Gruppe&nbsp;<?php echo $this->gruppe ?></h3>
-<table cellpadding="0" cellspacing="0" border="0">
+<h1 id="team_name"><?php echo $this->name?>&nbsp;-&nbsp;Gruppe&nbsp;<?php echo $this->gruppe ?></h1>
+<table cellpadding="5px" cellspacing="0" border="0">
 	<tr>
 		<td valign="top">
 			<div style="width: 400px; height: 300px;">

@@ -1,19 +1,35 @@
-#body {background: url(../images/background.gif) repeat-x;font-family:arial, verdana, sans-serif;font-size: 13px;}
+#body {background: url(../images/background.gif) repeat-x;font-family:Comic Sans MS;font-size: 12px; margin:0px; padding:0px;}
 
-#main {background: url(../images/main.gif) no-repeat;position: relative;margin: 0 auto;width: 1080px;height: 828px;}
+#main {background: url(../images/main.gif) no-repeat; margin:0 auto; position: relative; top:0px; width:1080px; height:828px;}
 
-#content {position:absolute;left:20px;top:170px;width: 650px;height: 440px;margin: 0;z-index:10;}
+#content {position:absolute;left:20px;top:180px;width: 650px;height: 390px;margin: 0;z-index:10;overflow:auto;}
+.content {position:absolute;left:20px;top:180px;width: 650px;height: 390px;margin: 0;z-index:10;overflow:auto;}
 
-#spiegel {position:absolute;left:700px;top:150px;height: 260px;width: 360px;overflow: auto;	z-index:11;}
+#blog {background: url(../images/einstein.gif) no-repeat; position:absolute;left:5px;top:175px;width: 665px;height: 416px;margin: 0;padding:0;z-index:10;overflow:auto;}
+.blogcontent {position:absolute;left:210px;top:25px;width: 420px;height: 350px;margin: 0;overflow:auto;color:#fff;}
 
-#stats {background: url(../images/zahlen.gif) no-repeat; padding:0; margin:0; position:absolute;left:420px;top:530px;height: 150px;width: 150px; }
-.stats {position:relative; height:150px; width:150px; text-decoration:none; cursor:pointer;}
+#guestbook {background: url(../images/buch.gif) no-repeat; position:absolute;left:30px;top:160px;width: 6638px;height: 415px;margin: 0;padding:0;z-index:10;overflow:auto;}
+.bookcontent {position:absolute;left:30px;top:60px;width: 300px;height: 350px;margin: 0;}
+.bookwrite {position:absolute;left:400px;top:60px;width: 200px;height: 350px;margin: 0;}
+
+#spiegel {position:absolute;left:710px;top:130px;height: 280px;width: 350px;overflow: auto;	z-index:11;margin:0px; padding:0px;}
+
+#stats {background: url(../images/zahlen.gif) no-repeat; padding:0; margin:0; position:absolute;left:438px;top:545px; height:130px; width: 118px; }
+.stats {position:relative; height:131px; width:118px; text-decoration:none; cursor:pointer;}
 
 #resultate {font-size: 12px;}
+#tabelle {position:absolute;left:10px;}
 
-#team_name{font-family:arial, verdana, sans-serif;font-size: 15px;margin: 0;}
+#kontakt {position:relative; width:"100%"; padding:0;margin:0;}
+#kontakt2 {position:relative; width:"100%"; padding:0;margin:0;}
+.amt {width:120px;}
+.name {width:150px;}
+.telnummer {width:100px;}
+.email {width:200px;}
+
+#team_name{font-size: 15px;margin: 0;}
 .bg {background: url(../images/button4.gif);}
-.menu {padding:0; margin:0; list-style:none; position:relative; z-index:100;font-family:arial, verdana, sans-serif; }
+.menu {padding:0; margin:0; list-style:none; position:relative; z-index:100; font-family:Comic Sans MS; }
 .menu li.home {position:absolute; top:60px; left:20px; height:90px; width:90px;}
 .menu li.teams {position:absolute; top:60px; left:170px; height:90px; width:90px;}
 .menu li.kontakt {position:absolute; top:60px; left:310px; height:90px; width:90px;}
@@ -39,10 +55,11 @@
 .menu :hover ul.sub {left:2px; top:85px; background: #fff; padding:3px 0; border:1px solid #999999; white-space:nowrap; width:150px; height:auto;}
 .menu :hover ul.sub li {display:block; height:20px; position:relative; float:left; width:150px;}
 .menu :hover ul.sub li a {font-weight:normal;display:block; font-size:11px; height:20px; width:144px; line-height:20px; text-indent:5px; color:#000; text-decoration:none; border:3px solid #fff; border-width:0 0 0 3px;}
-.menu :hover ul.sub li a.fly {background:#fff url(../images/arrow.gif) 80px 7px no-repeat;}
+.menu :hover ul.sublogin {left:-75px; top:85px; background: #fff; padding:3px 0; border:1px solid #999999; white-space:nowrap; width:150px; height:auto;}
+.menu :hover ul.sublogin li {display:block; height:20px; position:relative; float:left; width:150px;}
+.menu :hover ul.sublogin li a {font-weight:normal;display:block; font-size:11px; height:20px; width:144px; line-height:20px; text-indent:5px; color:#000; text-decoration:none; border:3px solid #fff; border-width:0 0 0 3px;}
 .menu :hover ul.sub li a:hover {background:#999999; color:#fff;}
-.menu :hover ul.sub li a.fly:hover {background:#999999 url(../images/arrow_over.gif) 80px 7px no-repeat; color:#fff;}
-.menu :hover ul li:hover > a.fly {background:#999999 url(../images/arrow_over.gif) 80px 7px no-repeat; color:#fff;} 
+.menu :hover ul.sublogin li a:hover {background:#999999; color:#fff;}
 
 .menu :hover ul :hover ul,
 .menu :hover ul :hover ul :hover ul,
