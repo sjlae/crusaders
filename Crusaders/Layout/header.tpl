@@ -40,7 +40,7 @@
 				if($_SESSION['admin']){
 		?>
 					<li class="login"><a href="#" title="Admin" class="top"></a>
-						<ul class="sub">
+						<ul class="sublogin">
 							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>			
 				            <li><a href="index.php?go=delete&action=deleteNews">Newsbeitrag l&ouml;schen</a></li>
 				            <li><a href="index.php?go=user">User erfassen</a></li>

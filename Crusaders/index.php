@@ -16,6 +16,7 @@ require_once('Teaminfo/Teaminfo.php');
 require_once('ClubResults/ClubResults.php');
 require_once('Contact/Contact.php');
 
+
 $go = isset($_GET['go']) ? $_GET['go'] : '';
 
 switch($go) {

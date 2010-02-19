@@ -1,8 +1,8 @@
-<div id="content">
+<div class="content">
 <?php require_once('Layout/infos.tpl'); ?>
 <?php require_once('Layout/errors.tpl'); ?>
 <form action="index.php?go=news&action=save" method="POST">
-<table cellpadding="0" cellspacing="0" border="0">
+<table width="100%" heigth="100%" cellpadding="0" cellspacing="0" border="0">
 	<tr>
 		<td>
 			Titel:
@@ -20,6 +20,9 @@
 		</td>
 	</tr>
 	<tr>
+		<td valign="top">	
+			&nbsp;
+		</td>
 		<td style="padding-top: 10px">
 			<input type="submit" value="Erfassen" />
 		</td
