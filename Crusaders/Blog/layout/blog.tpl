@@ -9,7 +9,7 @@
 						<?php echo $blog['titel'] ?>
 					</td>
 					<td align="right" style="white-space: nowrap;" valign="top">
-						<i><?php echo $blog['timestamp']?>&nbsp;(<?php echo $blog['vorname']?>&nbsp;<?php echo $blog['nachname']?>)</i>
+						<i><?php echo $blog['timestamp']?>&nbsp;(<?php echo $blog['vorname']?>)</i>
 					</td>
 				</tr>
 				<tr>
