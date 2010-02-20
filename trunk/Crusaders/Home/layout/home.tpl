@@ -1,5 +1,5 @@
 <div id="content">
-			<table width="650" cellpadding="0" cellspacing="0" border="0">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
 				<?php
 					foreach($this->news as $news): 
 				?>	
