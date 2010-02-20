@@ -79,7 +79,7 @@
 </div>
 
 <div id="stats" class="stats" title="Resultate und Spielplan">
-	<a href="" title="Zahlen" class="stats">&nbsp;</a>
+	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>" class="stats"/>
 </div>
 
 <div id="spiegel">
