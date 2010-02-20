@@ -1,5 +1,28 @@
 <div id="content">
 <?php require_once('Layout/errors.tpl'); ?>
+		<table cellpadding="0" cellspacing="0" border="0" width="60%">
+				<?php
+					if($this->comments != ''){
+						foreach($this->comments as $comment): 
+				?>	
+						<tr>
+							<td>
+								<i><?php echo $comment['timestamp']?>&nbsp;(<?php echo $comment['vorname']?>&nbsp;<?php echo $comment['nachname']?>)</i>
+								<br><br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<?php echo $comment['text']; ?>	
+								&nbsp;
+							</td>
+						</tr>
+						<tr><td colspan="2"><hr/></td></tr>		
+				<?php
+						endforeach;
+					}
+				?>
+		</table>
 <form action="index.php?type=1&go=comments&action=save" method="POST">
 	<input type="hidden" name="id" value="<?php echo $this->id ?>" />
 	<table cellpadding="0" cellspacing="0" border="0">
@@ -32,45 +55,9 @@
 				<input type="submit" value="Erfassen" />
 			</td
 		</tr>
-		<tr>
-			<td colspan="4">
-				<hr/>
-			</td>
-		</tr>
 	</table>
 </form>
-<table cellpadding="0" cellspacing="0" border="0" width="100%">
-	<tr>
-		<td>
-			<table cellpadding="0" cellspacing="0" border="0">
-				<?php
-					if($this->comments != ''){
-						foreach($this->comments as $comment): 
-				?>	
-						<tr>
-							<td>
-								<i><?php echo $comment['timestamp']?>&nbsp;(<?php echo $comment['vorname']?>&nbsp;<?php echo $comment['nachname']?>)</i>
-								<br><br>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<?php echo $comment['text']; ?>	
-								&nbsp;
-							</td>
-						</tr>
-						<tr><td colspan="2"><hr/></td></tr>		
-				<?php
-						endforeach;
-					}
-				?>
-			</table>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<a href="index.php">zur&uuml;ck</a>
-		</td>
-	</tr>
-</table>
+</br><br>
+<a href="index.php?go=home">zur&uuml;ck</a>
+
 </div>

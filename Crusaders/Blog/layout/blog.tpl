@@ -1,6 +1,6 @@
 <div id="blog">
 	<div class="blogcontent">
-		<table width="100%" cellpadding="0" cellspacing="0" border="0">
+		<table width="99%" cellpadding="0" cellspacing="0" border="0">
 			<?php
 				foreach($this->blog as $blog): 
 			?>	
@@ -25,7 +25,7 @@
 				</tr>
 				<tr>
 					<td align="right" colspan="2">
-						<a href="index.php?type=2&go=comments&id=<?php echo $blog['blogid']; ?>"><?php echo $blog['comments'] ?>&nbsp;Kommentar(e)</a>
+						<a href="index.php?type=2&go=comments&id=<?php echo $blog['blogid']; ?>" style="color:#fff;"><?php echo $blog['comments'] ?>&nbsp;Kommentar(e)</a>
 					</td>
 				</tr>
 				<tr>
@@ -45,7 +45,7 @@
 								<?php
 									if($_SESSION['hasPrevious_Blog']){
 								?>
-										<a href="index.php?go=blog&clickedPrevious=true">
+										<a href="index.php?go=blog&clickedPrevious=true" style="color:#fff;">
 											Neuerer
 										</a>
 								<?php
@@ -56,7 +56,7 @@
 								<?php
 									if($_SESSION['hasNext_Blog']){
 								?>
-										<a href="index.php?go=blog&clickedNext=true">
+										<a href="index.php?go=blog&clickedNext=true" style="color:#fff;">
 											&Auml;lterer
 										</a>
 								<?php

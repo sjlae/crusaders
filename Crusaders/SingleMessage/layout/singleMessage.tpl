@@ -1,28 +1,38 @@
 <div id="content">
-<table cellpadding="0" cellspacing="0" border="0" width="100%">
-	<tr>
-		<td>
-			<table cellpadding="0" cellspacing="0" border="0">
+
+<?php
+		if($this->news != null){
+			?>
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				<tr>
-					<td>
-						<?php
-							if($this->news != null){
-						?>
-								<i><?php echo $this->news['timestamp']?>&nbsp;(<?php echo $this->news['vorname']?>&nbsp;<?php echo $this->news['nachname']?>)</i>&nbsp;-&nbsp;<b><?php echo $this->news['titel'] ?></b>
-								<br><br>
+					<td style="font-size: 13px; font-weight: bold;">
+							<?php echo $this->news['titel'] ?>
+					</td>
+					<td align="right">
+							<i><?php echo $this->news['timestamp']?>&nbsp;(<?php echo $this->news['vorname']?>&nbsp;<?php echo $this->news['nachname']?>)</i>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="font-size: 6px;">	
+							&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
 								<?php echo $this->news['text']; ?>
-						<?php
-							}
-						?>
+						
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="right">
+							<a href="index.php?type=1&go=comments&id=<?php echo $this->news['newsid']; ?>"><?php echo $news['comments'] ?>&nbsp;Kommentar(e)</a>
 					</td>
 				</tr>
 			</table>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<a href="index.php">zur&uuml;ck</a>
-		</td>
-	</tr>
-</table>
+			<?php
+							}
+						?>
+
+</br><br><a href="index.php">zur&uuml;ck</a>
+
 </div>

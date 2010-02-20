@@ -1,10 +1,36 @@
 <div id="blog">
 	<div class="blogcontent">
 		<?php require_once('Layout/errors.tpl'); ?>
-		<form action="index.php?type=2&go=comments&action=save" method="POST">
+
+					<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						<?php
+							if($this->comments != ''){
+								foreach($this->comments as $comment): 
+						?>	
+								<tr>
+									<td>
+										<i><?php echo $comment['timestamp']?>&nbsp;(<?php echo $comment['vorname']?>&nbsp;<?php echo $comment['nachname']?>)</i>
+									</td>
+								</tr>
+								<tr>
+									<td style="font-size: 6px;">&nbsp;</td>	
+								</tr>
+								<tr>
+									<td>
+										<?php echo $comment['text']; ?>	
+										&nbsp;
+									</td>
+								</tr>
+								<tr><td colspan="2"><hr/></td></tr>		
+						<?php
+								endforeach;
+							}
+						?>
+					</table>
+			<form action="index.php?type=2&go=comments&action=save" method="POST">
 			<input type="hidden" name="id" value="<?php echo $this->id ?>" />
 			<table cellpadding="0" cellspacing="0" border="0" width="100%">
-				<tr>
+				<tr style="padding-top: 10px">
 					<td>
 						Vorname:
 					</td>
@@ -25,7 +51,7 @@
 				</tr>
 				<tr>
 					<td colspan="4">
-						<textarea name="text" rows="2" style="width: 100%"><?php echo $this->text ?></textarea>
+						<textarea name="text" rows="2" style="width: 97%"><?php echo $this->text ?></textarea>
 					</td>
 				</tr>
 				<tr>
@@ -40,39 +66,8 @@
 				</tr>
 			</table>
 		</form>
-		<table cellpadding="0" cellspacing="0" border="0" width="100%">
-			<tr>
-				<td>
-					<table cellpadding="0" cellspacing="0" border="0" width="100%">
-						<?php
-							if($this->comments != ''){
-								foreach($this->comments as $comment): 
-						?>	
-								<tr>
-									<td>
-										<i><?php echo $comment['timestamp']?>&nbsp;(<?php echo $comment['vorname']?>&nbsp;<?php echo $comment['nachname']?>)</i>
-										<br><br>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<?php echo $comment['text']; ?>	
-										&nbsp;
-									</td>
-								</tr>
-								<tr><td colspan="2"><hr/></td></tr>		
-						<?php
-								endforeach;
-							}
-						?>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="index.php?go=blog">zur&uuml;ck</a>
-				</td>
-			</tr>
-		</table>
+
+		<a href="index.php?go=blog" style="color:#fff;">zur&uuml;ck</a>
+
 	</div>
 </div>

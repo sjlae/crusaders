@@ -2,10 +2,10 @@
 
 #main {background: url(../images/main.gif) no-repeat;position: relative; margin:0 auto; text-align:left; width:1080px; height:828px;}
 
-#content {position:absolute;left:20px;top:180px;width: 650px;height: 390px;margin: 0;z-index:10;}
+#content {position:absolute;left:20px;top:180px;width: 650px;height: 390px;margin: 0; padding:0;z-index:10;}
 
 #blog {background: url(../images/einstein.gif) no-repeat; position:absolute;left:5px;top:175px;width: 665px;height: 416px;margin: 0;padding:0;z-index:10;overflow:auto;}
-.blogcontent {position:absolute;left:210px;top:25px;width: 420px;height: 350px;margin: 0;overflow:auto;color:#fff;}
+.blogcontent {position:absolute;left:210px;top:25px;width: 425px;height: 350px;margin: 0; padding:0;overflow:auto;color:#fff;}
 
 #guestbook {background: url(../images/buch.gif) no-repeat; position:absolute;left:30px;top:160px;width: 6638px;height: 415px;margin: 0;padding:0;z-index:10;overflow:auto;}
 .bookcontent {position:absolute;left:30px;top:60px;width: 300px;height: 350px;margin: 0;}
@@ -14,7 +14,7 @@
 #spiegel {position:absolute;left:710px;top:130px;height: 280px;width: 350px;overflow: auto;	z-index:11;margin:0px; padding:0px;}
 
 #stats {background: url(../images/zahlen.gif) no-repeat; padding:0; margin:0; position:absolute;left:438px;top:545px; height:130px; width: 118px; }
-.stats {position:relative; height:131px; width:118px; text-decoration:none; cursor:pointer;}
+.stats {position:relative; height:131px; width:118px; border: 0; display: block; text-indent:-1000em;}
 
 #resultate {font-size: 12px;}
 #tabelle {position:absolute;left:10px;}

@@ -1,5 +1,5 @@
 <div id="content">
-<h1 id="team_name"><?php echo $this->name?>&nbsp;-&nbsp;Gruppe&nbsp;<?php echo $this->gruppe ?></h1>
+<h1 id="team_name"><?php echo $this->name?></h1>
 <table cellpadding="5px" cellspacing="0" border="0">
 	<tr>
 		<td valign="top">
@@ -79,38 +79,37 @@
 </div>
 
 <div id="stats" class="stats" title="Resultate und Spielplan">
-	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>" class="stats"/>
+	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>" class="stats">Zur nächsten Seite</a>
 </div>
 
 <div id="spiegel">
 	<?php if($this->gruppe != 0){ ?>
-		<h2 id="team_name"><?php echo $this->name?>&nbsp;-&nbsp;Gruppe&nbsp;<?php echo $this->gruppe ?></h2>	
-		</br><br>
+		<h2 id="team_name"><?php echo $this->name?></h2>
 		<table cellpadding="0" cellspacing="0" border="0">
 			<tr>
-				<td><b>#</b></td>
-				<td><b>Team</b></td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
 				<td style="text-align: right; padding-left: 10px;"><b>Sp</b></td>
 				<td style="text-align: right; padding-left: 10px;"><b>S</b></td>
 				<td style="text-align: right; padding-left: 10px;"><b>U</b></td>
 				<td style="text-align: right; padding-left: 10px;"><b>N</b></td>
-				<td style="text-align: center; padding-left: 10px;" colspan="2"><b>Tore</b></td>
+				<td style="text-align: center; padding-left: 10px;"><b>Tore</b></td>
 				<td style="text-align: right; padding-left: 10px;"><b>P</b></td>
 			</tr>
 			<?php
 				foreach($this->ranking as $ranking): 
 			?>
 					<tr>
-						<td><?php echo $ranking->Rank; ?>.</td> 
+						<td><?php echo $ranking->Rank; ?>.&nbsp;</td> 
 						<td><?php echo $ranking->Team; ?></td> 
 						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->GamesPlayed; ?></td>	
 						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->Wins; ?></td>
 						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->Draws; ?></td>
 						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->Defeats; ?></td>	
-						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->GoalsScored; ?></td>	
-						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->GoalsReceived; ?></td>	
+						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->GoalsScored; ?> : <?php echo $ranking->GoalsReceived; ?></td>		
 						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->Points; ?></td>	
 					</tr>
+
 			<?php
 				endforeach;
 			?>
