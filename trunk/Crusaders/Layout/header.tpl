@@ -43,6 +43,8 @@
 						<ul class="sublogin">
 							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>			
 				            <li><a href="index.php?go=delete&action=deleteNews">Newsbeitrag l&ouml;schen</a></li>
+				            <li><a href="index.php?go=blogEntry">Blogbeitrag erfassen</a></li>	
+				            <li><a href="index.php?go=delete&action=deleteBlog">Blogbeitrag l&ouml;schen</a></li>	
 				            <li><a href="index.php?go=user">User erfassen</a></li>
 				            <li><a href="index.php?go=delete&action=deleteUser">User l&ouml;schen</a></li>
 				            <li><a href="#">G&auml;stebucheintrag l&ouml;schen</a></li>
@@ -72,7 +74,7 @@
 		?>
 					<li class="login"><a href="#" class="top" title="Admin"></a>
 						<ul class="sub">
-							<li><a href="index.php?go=news">Blogbeitrag erfassen</a></li>			
+							<li><a href="index.php?go=blogEntry">Blogbeitrag erfassen</a></li>			
 				            <li><a href="index.php?go=logout">log out</a></li>
 						</ul>
 					</li>
@@ -81,5 +83,5 @@
 			}
 		?>
 					<li class="zeitung"><a href="index.php?go=clubResults" title="Letzte Resultate Club" class="zeitung"></a></li> 
-					<li class="knaecke"><a href="" title="Kn&auml;ckeblog" class="knaecke"></a></li> 
+					<li class="knaecke"><a href="index.php?go=blog" title="Kn&auml;ckeblog" class="knaecke"></a></li> 
 	</ul>

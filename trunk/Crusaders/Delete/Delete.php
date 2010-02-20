@@ -10,6 +10,7 @@ class Delete extends HTMLPage implements Page{
 	private $news = '';
 	private $user = '';
 	private $comment = '';
+	private $blog = '';
 	
 	public function __construct() {
 		$this->action = isset($_GET['action']) ? $_GET['action'] : '';
@@ -28,6 +29,9 @@ class Delete extends HTMLPage implements Page{
 			        break;
 			    case 'deleteComment':
 			        $this->deleteComment();
+			        break;
+			    case 'deleteBlog':
+			        $this->deleteBlog();
 			        break;
 			}
 		}
@@ -96,9 +100,37 @@ class Delete extends HTMLPage implements Page{
 	
 	
 	private function getBlog(){
+		$abfrage = "Select * from blog order by timestamp DESC";
+
+		$ergebnis = mysql_query($abfrage);
+		$counter = 0;
+		while($row = mysql_fetch_assoc($ergebnis))
+		{
+			$userId = $row['userfsid'];
+			
+			$userQuery = "Select vorname, nachname from user where userid=$userId";
+			$userData = mysql_query($userQuery);
+			$row_user = mysql_fetch_assoc($userData);
+						
+			$this->blog[$counter]['vorname'] = $row_user['vorname'];
+			$this->blog[$counter]['nachname'] = $row_user['nachname'];
+			$this->blog[$counter]['blogid'] = $row['blogid'];
+			$this->blog[$counter]['timestamp'] = date('d.m.Y H:i', strtotime($row['timestamp']));
+			$this->blog[$counter]['titel'] = substr($row['titel'], 0, 50);
+			$this->blog[$counter]['text'] = substr($row['text'], 0, 50);
+			
+			$counter++;
+		}
 	}
 	
 	private function deleteBlog(){
+		if($this->action == 'deleteBlog'){
+			if(isset($_POST['blog_del'])){
+				foreach($_POST['blog_del'] as $blog_id){
+					mysql_query("Delete from blog where blogid = $blog_id");
+				}
+			}
+		}
 	}
 	
 	
@@ -114,6 +146,7 @@ class Delete extends HTMLPage implements Page{
 			$this->comment[$counter]['nachname'] = $row['nachname'];
 			$this->comment[$counter]['timestamp'] = date('d.m.Y H:i', strtotime($row['timestamp']));
 			$this->comment[$counter]['text'] = substr($row['text'], 0, 50);
+			$this->comment[$counter]['type'] = $row['type'];
 			
 			$counter++;
 		}
@@ -146,6 +179,10 @@ class Delete extends HTMLPage implements Page{
 		    case 'deleteComment':
 		        $this->getComment();
 				include('layout/deleteComment.tpl');
+		        break;
+		    case 'deleteBlog':
+		        $this->getBlog();
+				include('layout/deleteBlog.tpl');
 		        break;
 		    default:
 		    	$this->getNews();

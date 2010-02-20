@@ -16,6 +16,8 @@ require_once('Teaminfo/Teaminfo.php');
 require_once('ClubResults/ClubResults.php');
 require_once('Contact/Contact.php');
 require_once('Stats/Stats.php');
+require_once('Blog/Blog.php');
+require_once('BlogEntry/BlogEntry.php');
 
 $go = isset($_GET['go']) ? $_GET['go'] : '';
 
@@ -27,6 +29,10 @@ switch($go) {
 	case 'team':
 		$team = new Team();
 		$team->getView();
+		break;
+	case 'blog':
+		$blog = new Blog();
+		$blog->getView();
 		break;
 	case 'stats':
 		$stats = new Stats();
@@ -42,8 +48,19 @@ switch($go) {
 		break;
 	case 'news':
 		$news = new News();
-		if(LoggedIn::isAdmin() || LoggedIn::isCoach() || LoggedIn::isBlogger()){
+		if(LoggedIn::isAdmin() || LoggedIn::isCoach()){
 			$news->getView();
+			break;
+		}
+		else{
+			$home = new Home();
+			$home->getView();
+			break;
+		}
+	case 'blogEntry':
+		$blogEntry = new BlogEntry();
+		if(LoggedIn::isAdmin() || LoggedIn::isBlogger()){
+			$blogEntry->getView();
 			break;
 		}
 		else{
@@ -126,6 +143,7 @@ switch($go) {
 		break;
 	case 'home':
 		$_SESSION['actualPage'] = 0;
+		$_SESSION['actualPage_Blog'] = 0;
 		$home = new Home();
 		$home->getView();
 		break;
