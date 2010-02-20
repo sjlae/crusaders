@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 07. Februar 2010 um 00:20
+-- Erstellungszeit: 20. Februar 2010 um 18:22
 -- Server Version: 5.1.33
 -- PHP-Version: 5.2.9
 
@@ -12,6 +12,29 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Datenbank: `crusaders`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `blog`
+--
+
+CREATE TABLE IF NOT EXISTS `blog` (
+  `blogid` int(11) NOT NULL AUTO_INCREMENT,
+  `userfsid` int(11) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `titel` varchar(255) NOT NULL,
+  `text` varchar(5000) NOT NULL,
+  PRIMARY KEY (`blogid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Daten für Tabelle `blog`
+--
+
+INSERT INTO `blog` (`blogid`, `userfsid`, `timestamp`, `titel`, `text`) VALUES
+(5, 1, '2010-02-20 17:53:23', 'Ein Debakel f&uuml;r die &Ouml;sterreicher!!!', '&laquo;Das ist ohne Zweifel ein Debakel&raquo;, sagte Giger. Erstmals in der olympischen Geschichte hatte es am Freitag kein &Ouml;SV-Athlet in einem Speedrennen der M&auml;nner in die Top 10 geschafft.\r\n\r\nTechniker Benjamin Raich war als 14. f&uuml;r die beste Platzierung im Super-G besorgt. Klammert man den Slalom von 1984 in Sarajevo aus, wo alle vier &Ouml;sterreicher ausgeschieden waren, wurde das schlechteste Olympia-Ergebnis bei den M&auml;nnern egalisiert. 1976 in Innsbruck hatte der beste &Ouml;sterreicher ebenfalls lediglich den 14. Platz erreicht (Hansi Hinterseer im Riesenslalom).'),
+(4, 1, '2010-02-20 17:41:55', 'Geht die Hockeyparty weiter?', 'In Turin besiegten wir in den bedeutungslosen Gruppenspielen Weltmeister Tschechien (3:2) und Olympiasieger Kanada (2:0). Doch dann gingen die Lichter aus: Lediglich noch zwei Remis (gegen Deutschland und Italien) und ein ruhmloses Ausscheiden im Viertelfinale gegen Schweden (2:6).\r\n\r\nAuch 1988 in Calgary ging es nach dem Sensationssieg im Auftaktspiel gegen den sp&auml;teren Silbermedaillengewinner Finnland (2:1) nicht mehr richtig weiter. Am Ende stand eine Niederlage gegen die USA (4:8) im Platzierungsspiel um Rang 7.');
 
 -- --------------------------------------------------------
 
@@ -28,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `type` int(11) NOT NULL,
   `text` varchar(5000) NOT NULL,
   PRIMARY KEY (`commentsid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Daten für Tabelle `comments`
@@ -36,7 +59,11 @@ CREATE TABLE IF NOT EXISTS `comments` (
 
 INSERT INTO `comments` (`commentsid`, `newsfsid`, `vorname`, `nachname`, `timestamp`, `type`, `text`) VALUES
 (19, 40, 'peter', 'zwicky', '2010-01-02 22:52:34', 1, 'haha, das kann ja nicht sein.'),
-(22, 45, 'Luigi', 'Tester', '2010-01-31 21:03:50', 1, 'heieiei, das &lt;b&gt; geht nicht &lt;/b&gt;');
+(22, 45, 'Luigi', 'Tester', '2010-01-31 21:03:50', 1, 'heieiei, das &lt;b&gt; geht nicht &lt;/b&gt;'),
+(23, 44, 'Roger', 'Peter', '2010-02-17 22:36:10', 1, 'wieso ist das so? verstehe ich nicht.'),
+(27, 5, 'Karin', 'Stauchli', '2010-02-20 18:07:42', 2, 'ich verstehe das nicht.'),
+(25, 5, 'Emmanuel', 'Dalcin', '2010-02-20 18:04:04', 2, 'heieiei, wieso denn das?'),
+(28, 4, 'J&uuml;rgen', 'Schmid', '2010-02-20 18:07:57', 2, 'hohoho');
 
 -- --------------------------------------------------------
 
