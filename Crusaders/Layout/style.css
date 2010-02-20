@@ -1,8 +1,8 @@
-#body {background: url(../images/background.gif) repeat-x;font-family:Comic Sans MS;font-size: 12px; margin:0px; padding:0px;}
+#body {background: url(../images/background.gif) repeat-x; font-family:Comic Sans MS;font-size: 12px; margin:0; padding:0;text-align:center;}
 
-#main {background: url(../images/main.gif) no-repeat; margin:0 auto; position: relative; top:0px; width:1080px; height:828px;}
+#main {background: url(../images/main.gif) no-repeat;position: relative; margin:0 auto; text-align:left; width:1080px; height:828px;}
 
-#content {position:absolute;left:20px;top:180px;width: 650px;height: 390px;margin: 0;z-index:10;overflow:auto;}
+#content {position:absolute;left:20px;top:180px;width: 650px;height: 390px;margin: 0;z-index:10;}
 
 #blog {background: url(../images/einstein.gif) no-repeat; position:absolute;left:5px;top:175px;width: 665px;height: 416px;margin: 0;padding:0;z-index:10;overflow:auto;}
 .blogcontent {position:absolute;left:210px;top:25px;width: 420px;height: 350px;margin: 0;overflow:auto;color:#fff;}

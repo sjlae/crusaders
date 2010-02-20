@@ -80,6 +80,6 @@
 				}
 			}
 		?>
-					<li class="zeitung"><a href="index.php?go=clubResults" title="Zeitung" class="zeitung"></a></li> 
+					<li class="zeitung"><a href="index.php?go=clubResults" title="Letzte Resultate Club" class="zeitung"></a></li> 
 					<li class="knaecke"><a href="" title="Kn&auml;ckeblog" class="knaecke"></a></li> 
 	</ul>
