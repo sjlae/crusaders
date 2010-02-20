@@ -7,6 +7,7 @@
 			<td style="padding-left: 5px"><b>Nachname</b></td>
 			<td style="padding-left: 5px"><b>Zeit</b></td>
 			<td style="padding-left: 5px"><b>Text</b></td>
+			<td style="padding-left: 5px"><b>Kommentartyp</b></td>
 		</tr>
 		<?php if($this->comment != ''){ ?>
 			<?php $i=0; ?>
@@ -17,6 +18,7 @@
 					<td style="padding-left: 5px"><?php echo $comment['nachname']; ?></td>
 					<td style="padding-left: 5px"><?php echo $comment['timestamp']; ?></td>
 					<td style="padding-left: 5px"><?php echo $comment['text']; ?></td>
+					<td style="padding-left: 5px"><?php echo $comment['type'] == 1 ? Newskommentar : Blogkommentar; ?></td>
 				</tr>
 				<?php $i++; ?>
 			<?php endforeach; ?>

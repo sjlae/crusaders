@@ -14,7 +14,7 @@
 			<?php foreach($this->news as $news): ?>
 				<tr>
 					<td><input type="checkbox" name="news_del[]" value="<?php echo $news['newsid']; ?>" /></td>
-					<td style="padding-left: 5px"><?php echo $news['timestamp']; ?></td>
+					<td style="padding-left: 5px; white-space: nowrap"><?php echo $news['timestamp']; ?></td>
 					<td style="padding-left: 5px"><?php echo $news['vorname']; ?></td>
 					<td style="padding-left: 5px"><?php echo $news['nachname']; ?></td>
 					<td style="padding-left: 5px"><?php echo $news['titel']; ?></td>

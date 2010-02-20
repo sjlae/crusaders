@@ -75,7 +75,7 @@ class Home extends HTMLPage implements Page{
 				$row_user = mysql_fetch_assoc($userData);
 				
 				$newsid = $row['newsid'];
-				$count = "SELECT COUNT(*) FROM comments where newsfsid=$newsid";
+				$count = "SELECT COUNT(*) FROM comments where newsfsid=$newsid and type=1";
 				$countComments = mysql_query($count);
 							
 				$this->news[$counter]['vorname'] = $row_user['vorname'];

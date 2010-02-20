@@ -7,7 +7,7 @@ class Comments extends HTMLPage implements Page{
 	private $comments = '';
 	private $link = '';
 	private $id = '';
-	
+	private $type = '';
 	private $vorname = '';
 	private $nachname = '';
 	private $text = '';
@@ -42,9 +42,9 @@ class Comments extends HTMLPage implements Page{
 	
 	private function getComments(){
 		$this->id = isset($_GET['id']) ? $_GET['id'] : $_POST['id'];
-		$type = isset($_GET['type']) ? $_GET['type'] : '';
+		$this->type = isset($_GET['type']) ? $_GET['type'] : '';
 		
-		$abfrage = "Select * from comments where newsfsid=$this->id and type=$type order by timestamp DESC";
+		$abfrage = "Select * from comments where newsfsid=$this->id and type=$this->type order by timestamp DESC";
 
 		$ergebnis = mysql_query($abfrage);
 		
@@ -64,7 +64,12 @@ class Comments extends HTMLPage implements Page{
 	
 	public function getHTML() {
 		$this->getComments();
-		include('layout/comments.tpl');
+		if($this->type == 2){
+			include('layout/blogComments.tpl');
+		}
+		else{
+			include('layout/comments.tpl');
+		}
 	}
 }
 
