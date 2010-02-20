@@ -1,7 +1,7 @@
 <div id="content">
 	<table cellpadding="1" cellspacing="0" border="0"style="font-size: 11px; width:100%;">
 			<tr>
-				<td style="font-size: 13px; font-weight: bold;">Letze Resultate</td>	
+				<td style="font-size: 13px; font-weight: bold;">Letzte Resultate</td>	
 			</tr>
 			<tr>
 				<td style="font-size: 6px;">&nbsp;</td>	

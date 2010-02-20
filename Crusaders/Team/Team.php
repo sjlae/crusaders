@@ -56,8 +56,6 @@ class Team extends HTMLPage implements Page{
 			if($this->name != ''){
 				$this->link = Db::getConnection();
 				$this->getTeamInfos();
-				$this->getTeamResults();
-				$this->getTeamGames();
 				$this->getTeamRanking();
 			}
 			else{
@@ -98,44 +96,6 @@ class Team extends HTMLPage implements Page{
 			$this->coach2_nachname = $row['coach2_nachname'];
 			$this->coach2_email = $row['coach2_email'];
 			$this->coach2_phone = $row['coach2_phone'];
-		}
-	}
-	
-	private function getTeamResults(){
-		$client = new
-		SoapClient("http://www.swissunihockey.ch/weblounge/webservices/league?wsdl");
-
-		if($this->gruppe != 0){
-			$aResult = array('DevId'           => 1398,
-							 'DevCode'         => 'NXzGSazaqsyT6ofpXpOmBwfRdlk=',
-					 		 'Language'        => 1,
-					 		 'Season'          => 0,
-					 		 'Club'            => $this->verein,
-					 		 'LeagueCode' 	   => $this->ligaCode,
-					  		 'Group' 	       => $this->gruppe,
-					 		 'Rounds'      	   => 1);
-					
-			// SOAP call ausf�hren 
-			$this->results = $client->__call("resultsTeamGroup", $aResult)->Results;
-		}
-	}
-	
-	private function getTeamGames(){
-		$client = new
-		SoapClient("http://www.swissunihockey.ch/weblounge/webservices/league?wsdl");
-		
-		if($this->gruppe != 0){
-			$aResult = array('DevId'           => 1398,
-							 'DevCode'         => 'NXzGSazaqsyT6ofpXpOmBwfRdlk=',
-					 		 'Language'        => 1,
-					 		 'Season'          => 0,
-					 		 'Club'            => $this->verein,
-					 		 'LeagueCode' 	   => $this->ligaCode,
-					  		 'Group' 	       => $this->gruppe,
-					 		 'Rounds'      	   => 1);
-					
-			// SOAP call ausf�hren 
-			$this->games = $client->__call("gamesTeamGroup", $aResult)->Games;
 		}
 	}
 	
