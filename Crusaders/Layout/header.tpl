@@ -29,7 +29,7 @@
 		
 		<li class="kontakt"><a href="index.php?go=contact" title="Kontakte" class="top"></a></li>
 				
-		<li class="gaestebuch"><a href="#" title="G&auml;stebuch" class="top"></a></li>
+		<li class="gaestebuch"><a href="index.php?go=guestbook" title="G&auml;stebuch" class="top"></a></li>
 		<?php
 			if(!$_SESSION['eingeloggt']){
 		?>
@@ -47,7 +47,7 @@
 				            <li><a href="index.php?go=delete&action=deleteBlog">Blogbeitrag l&ouml;schen</a></li>	
 				            <li><a href="index.php?go=user">User erfassen</a></li>
 				            <li><a href="index.php?go=delete&action=deleteUser">User l&ouml;schen</a></li>
-				            <li><a href="#">G&auml;stebucheintrag l&ouml;schen</a></li>
+				            <li><a href="index.php?go=delete&action=deleteGuestbook">G&auml;stebucheintrag l&ouml;schen</a></li>
 				            <li><a href="index.php?go=delete&action=deleteComment">Kommentar l&ouml;schen</a></li>
 				            <li><a href="index.php?go=video">Youtube Video Upload</a></li>
 				            <li><a href="index.php?go=teaminfo">Teaminfos erfassen</a></li>

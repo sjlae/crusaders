@@ -109,7 +109,6 @@
 						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->GoalsScored; ?> : <?php echo $ranking->GoalsReceived; ?></td>		
 						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->Points; ?></td>	
 					</tr>
-
 			<?php
 				endforeach;
 			?>

@@ -18,6 +18,7 @@ require_once('Contact/Contact.php');
 require_once('Stats/Stats.php');
 require_once('Blog/Blog.php');
 require_once('BlogEntry/BlogEntry.php');
+require_once('Guestbook/Guestbook.php');
 
 $go = isset($_GET['go']) ? $_GET['go'] : '';
 
@@ -37,6 +38,10 @@ switch($go) {
 	case 'stats':
 		$stats = new Stats();
 		$stats->getView();
+		break;
+	case 'guestbook':
+		$guestbook = new Guestbook();
+		$guestbook->getView();
 		break;
 	case 'contact':
 		$contact = new Contact();
