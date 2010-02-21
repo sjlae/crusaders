@@ -29,6 +29,7 @@ class Home extends HTMLPage implements Page{
 	}
 	
 	private function pagingValues(){
+		echo "aktuelle seite: ".$_SESSION['actualPage'];
 		$count = "SELECT COUNT(*) FROM news";
 		$countComments = mysql_query($count);
 		$numberOfNews = mysql_result($countComments,0);

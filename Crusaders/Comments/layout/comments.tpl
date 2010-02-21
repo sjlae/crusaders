@@ -58,6 +58,10 @@
 	</table>
 </form>
 </br><br>
-<a href="index.php?go=home">zur&uuml;ck</a>
+<?php if($this->fromSingleMessage != ''){ ?>
+	<a href="index.php?go=singleMessage&action=news&id=<?php echo $this->id; ?>">zur&uuml;ck</a>
+<?php }else{ ?>
+	<a href="index.php">zur&uuml;ck</a>
+<?php } ?>
 
 </div>

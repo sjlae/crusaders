@@ -11,6 +11,7 @@ class Comments extends HTMLPage implements Page{
 	private $vorname = '';
 	private $nachname = '';
 	private $text = '';
+	private $fromSingleMessage = '';
 	
 	public function __construct() {
 		$this->action = isset($_GET['action']) ? $_GET['action'] : $this->action;
@@ -43,6 +44,7 @@ class Comments extends HTMLPage implements Page{
 	private function getComments(){
 		$this->id = isset($_GET['id']) ? $_GET['id'] : $_POST['id'];
 		$this->type = isset($_GET['type']) ? $_GET['type'] : '';
+		$this->fromSingleMessage = isset($_GET['fromSingleMessage']) ? $_GET['fromSingleMessage'] : '';
 		
 		$abfrage = "Select * from comments where newsfsid=$this->id and type=$this->type order by timestamp DESC";
 
