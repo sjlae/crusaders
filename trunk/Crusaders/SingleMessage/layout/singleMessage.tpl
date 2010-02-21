@@ -25,7 +25,7 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="right">
-							<a href="index.php?type=1&go=comments&id=<?php echo $this->news['newsid']; ?>"><?php echo $news['comments'] ?>&nbsp;Kommentar(e)</a>
+						<a href="index.php?type=1&go=comments&fromSingleMessage=true&id=<?php echo $this->news['newsid']; ?>"><?php echo $this->news['comments'] ?>&nbsp;Kommentar(e)</a>
 					</td>
 				</tr>
 			</table>

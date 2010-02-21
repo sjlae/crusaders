@@ -36,6 +36,10 @@ class SingleMessage extends HTMLPage implements Page{
 			$this->news['timestamp'] = date('d.m.Y H:i', strtotime($row['timestamp']));
 			$this->news['titel'] = $row['titel'];
 			$this->news['text'] = $row['text'];
+			
+			$count = "SELECT COUNT(*) FROM comments where newsfsid=$newsid and type=1";
+			$countComments = mysql_query($count);
+			$this->news['comments'] = mysql_result($countComments,0);
 		}
 	}
 	
