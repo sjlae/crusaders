@@ -11,6 +11,7 @@ class Delete extends HTMLPage implements Page{
 	private $user = '';
 	private $comment = '';
 	private $blog = '';
+	private $guestbook = '';
 	
 	public function __construct() {
 		$this->action = isset($_GET['action']) ? $_GET['action'] : '';
@@ -33,6 +34,9 @@ class Delete extends HTMLPage implements Page{
 			    case 'deleteBlog':
 			        $this->deleteBlog();
 			        break;
+			    case 'deleteGuestbook':
+			        $this->deleteGuestbook();
+			        break;    
 			}
 		}
 	}
@@ -162,6 +166,33 @@ class Delete extends HTMLPage implements Page{
 		}
 	}
 	
+	private function getGuestbook(){
+		$abfrage = "Select * from guestbook order by timestamp DESC";
+
+		$ergebnis = mysql_query($abfrage);
+		$counter = 0;
+		while($row = mysql_fetch_assoc($ergebnis))
+		{
+			$this->guestbook[$counter]['id'] = $row['guestbookid'];
+			$this->guestbook[$counter]['vorname'] = $row['vorname'];
+			$this->guestbook[$counter]['nachname'] = $row['nachname'];
+			$this->guestbook[$counter]['timestamp'] = date('d.m.Y H:i', strtotime($row['timestamp']));
+			$this->guestbook[$counter]['text'] = substr($row['text'], 0, 50);
+			
+			$counter++;
+		}
+	}
+	
+	private function deleteGuestbook(){
+		if($this->action == 'deleteGuestbook'){
+			if(isset($_POST['guestbook_del'])){
+				foreach($_POST['guestbook_del'] as $guestbook_id){
+					mysql_query("Delete from guestbook where guestbookid = $guestbook_id");
+				}
+			}
+		}
+	}
+	
 	public function getHTML() {
 		switch ($this->action) {
 		    case 'deleteNews':
@@ -183,6 +214,10 @@ class Delete extends HTMLPage implements Page{
 		    case 'deleteBlog':
 		        $this->getBlog();
 				include('layout/deleteBlog.tpl');
+		        break;
+		   	case 'deleteGuestbook':
+		        $this->getGuestbook();
+				include('layout/deleteGuestbook.tpl');
 		        break;
 		    default:
 		    	$this->getNews();

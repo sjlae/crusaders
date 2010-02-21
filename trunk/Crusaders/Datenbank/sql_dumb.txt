@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 20. Februar 2010 um 18:22
+-- Erstellungszeit: 21. Februar 2010 um 17:22
 -- Server Version: 5.1.33
 -- PHP-Version: 5.2.9
 
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `type` int(11) NOT NULL,
   `text` varchar(5000) NOT NULL,
   PRIMARY KEY (`commentsid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
 
 --
 -- Daten für Tabelle `comments`
@@ -63,7 +63,35 @@ INSERT INTO `comments` (`commentsid`, `newsfsid`, `vorname`, `nachname`, `timest
 (23, 44, 'Roger', 'Peter', '2010-02-17 22:36:10', 1, 'wieso ist das so? verstehe ich nicht.'),
 (27, 5, 'Karin', 'Stauchli', '2010-02-20 18:07:42', 2, 'ich verstehe das nicht.'),
 (25, 5, 'Emmanuel', 'Dalcin', '2010-02-20 18:04:04', 2, 'heieiei, wieso denn das?'),
-(28, 4, 'J&uuml;rgen', 'Schmid', '2010-02-20 18:07:57', 2, 'hohoho');
+(28, 4, 'J&uuml;rgen', 'Schmid', '2010-02-20 18:07:57', 2, 'hohoho'),
+(29, 5, 'Luigi', 'Castello', '2010-02-20 23:48:33', 2, 'blablabla'),
+(30, 44, 'Hugo', 'Pfeifer', '2010-02-21 15:21:50', 1, 'die gewinnen tats&auml;chlich so hoch?'),
+(31, 41, 'Ursi', 'Schweizer', '2010-02-21 15:31:33', 1, 'wirklich? unglaublich.'),
+(32, 41, 'Katrin', 'Zettel', '2010-02-21 15:36:39', 1, 'jaja, kann ich au nicht verstehen.');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `guestbook`
+--
+
+CREATE TABLE IF NOT EXISTS `guestbook` (
+  `guestbookid` int(11) NOT NULL AUTO_INCREMENT,
+  `vorname` varchar(255) NOT NULL,
+  `nachname` varchar(255) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `text` varchar(5000) NOT NULL,
+  PRIMARY KEY (`guestbookid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Daten für Tabelle `guestbook`
+--
+
+INSERT INTO `guestbook` (`guestbookid`, `vorname`, `nachname`, `timestamp`, `text`) VALUES
+(1, 'silvan', 'osullivan', '2010-02-21 16:00:26', 'das ist der erste testeintrag'),
+(3, 'Katrin', 'Hensler', '2010-02-21 17:08:48', 'Autoankauf aller Marken (PW, JEEP, 4x4, PickUP).\r\n\r\n  Autokauf von Lieferwagen und Nutzfahrzeuge,\r\n  Zustand und KM spielen keine Rolle.\r\n\r\n  Der gr&ouml;sste Fahrzeugmarkt f&uuml;r Gebrauchtwagen im     Kanton Z&uuml;rich.\r\n\r\n  Automarkt und Auto-Occasionen f&uuml;r den Export.'),
+(4, 'Joachim', 'Beppler', '2010-02-21 17:09:21', 'Vor kurzem stand die franz&ouml;sische Rossignol-Gruppe, zu der auch die Marken Dynastar oder Look geh&ouml;ren, am Rande der Pleite. Auf den Riesenverlust von rund 80 Millionen im Gesch&auml;ftsjahr 2008 folgten 2009 Massenentlassungen. Die Lage war so prek&auml;r, dass die Weltcup-Athleten in der laufenden Saison auf die H&auml;lfte ihrer Fixl&ouml;hne verzichten m&uuml;ssen. Lindsay Vonn, die st&auml;rkste Athletin im Rossignol-Stall, wechselte deshalb zu Konkurrent Head.');
 
 -- --------------------------------------------------------
 

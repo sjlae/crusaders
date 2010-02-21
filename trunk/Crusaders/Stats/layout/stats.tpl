@@ -58,8 +58,7 @@
 
 <div id="spiegel">
 	<?php if($this->gruppe != 0){ ?>
-		<h2 id="team_name"><?php echo $this->name?>&nbsp;-&nbsp;Gruppe&nbsp;<?php echo $this->gruppe ?></h2>	
-		</br><br>
+		<h2 id="team_name"><?php echo $this->name?></h2>
 		<table cellpadding="0" cellspacing="0" border="0">
 			<tr>
 				<td>&nbsp;</td>
