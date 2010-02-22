@@ -60,7 +60,7 @@
 				else if($_SESSION['coach']){
 		?>
 					<li class="login"><a href="#" class="top" title="Admin"></a>
-						<ul class="sub">
+						<ul class="sublogin">
 							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>
 							<li><a href="index.php?go=video">Youtube Video Upload</a></li>
 							<li><a href="index.php?go=teaminfo">Teaminfos erfassen</a></li>		
@@ -73,7 +73,7 @@
 				else if($_SESSION['blogger']){
 		?>
 					<li class="login"><a href="#" class="top" title="Admin"></a>
-						<ul class="sub">
+						<ul class="sublogin">
 							<li><a href="index.php?go=blogEntry">Blogbeitrag erfassen</a></li>			
 				            <li><a href="index.php?go=logout">log out</a></li>
 						</ul>
