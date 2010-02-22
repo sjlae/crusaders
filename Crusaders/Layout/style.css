@@ -7,8 +7,8 @@
 #blog {background: url(../images/einstein.gif) no-repeat; position:absolute;left:5px;top:175px;width: 665px;height: 416px;margin: 0;padding:0;z-index:10;overflow:auto;}
 .blogcontent {position:absolute;left:210px;top:25px;width: 425px;height: 350px;margin: 0; padding:0;overflow:auto;color:#fff;}
 
-#guestbook {background: url(../images/buch.gif) no-repeat; position:absolute;left:30px;top:160px;width: 6638px;height: 415px;margin: 0;padding:0;z-index:10;overflow:auto;}
-.bookcontent {position:absolute;left:30px;top:60px;width: 300px;height: 350px;margin: 0;}
+#guestbook {background: url(../images/buch.gif) no-repeat; position:absolute;left:30px;top:160px;width: 638px;height: 415px;margin: 0;padding:0;z-index:10;overflow:auto;}
+.bookcontent {position:absolute;left:30px;top:60px;width: 300px;height: 350px;margin: 0; overflow:auto;}
 .bookwrite {position:absolute;left:400px;top:60px;width: 200px;height: 350px;margin: 0;}
 
 #spiegel {position:absolute;left:710px;top:130px;height: 280px;width: 350px;overflow: auto;	z-index:11;margin:0px; padding:0px;}
