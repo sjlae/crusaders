@@ -46,7 +46,7 @@
 		?>
 				<tr>
 					<td class="amt"><?php echo $coach['teamname'] ?></td>
-					<td class="name"><?php echo $coach['vorname'] ?><?php echo $coach['nachname'] ?></td>
+					<td class="name"><?php echo $coach['vorname'] ?>&nbsp;<?php echo $coach['nachname'] ?></td>
 					<td class="telnummer"><?php echo $coach['phone'] ?></td>
 					<td class="email"><?php echo $coach['email'] ?></td>
 				</tr>
