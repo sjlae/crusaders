@@ -87,7 +87,9 @@ class Delete extends HTMLPage implements Page{
 			$this->user[$counter]['vorname'] = $row['vorname'];
 			$this->user[$counter]['nachname'] = $row['nachname'];
 			$this->user[$counter]['email'] = $row['email'];
-			
+			$this->user[$counter]['admin'] = $row['adminflag'] == 1 ? "Ja" : "Nein";
+			$this->user[$counter]['coach'] = $row['coachflag'] == 1 ? "Ja" : "Nein";
+			$this->user[$counter]['blogger'] = $row['bloggerflag'] == 1 ? "Ja" : "Nein";
 			$counter++;
 		}
 	}
