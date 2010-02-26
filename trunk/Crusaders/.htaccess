@@ -1,0 +1,2 @@
+Action php /cgi-php52/php
+AddHandler php52 .php
