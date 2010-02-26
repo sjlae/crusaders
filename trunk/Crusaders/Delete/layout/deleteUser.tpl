@@ -6,6 +6,9 @@
 			<td style="padding-left: 5px"><b>Vorname</b></td>
 			<td style="padding-left: 5px"><b>Nachname</b></td>
 			<td style="padding-left: 5px"><b>Email</b></td>
+			<td style="padding-left: 5px"><b>Admin</b></td>
+			<td style="padding-left: 5px"><b>Coach</b></td>
+			<td style="padding-left: 5px"><b>Blogger</b></td>
 		</tr>
 		<?php $i=0; ?>
 		<?php foreach($this->user as $user): ?>
@@ -14,6 +17,9 @@
 				<td style="padding-left: 5px"><?php echo $user['vorname']; ?></td>
 				<td style="padding-left: 5px"><?php echo $user['nachname']; ?></td>
 				<td style="padding-left: 5px"><?php echo $user['email']; ?></td>
+				<td style="padding-left: 5px"><?php echo $user['admin']; ?></td>
+				<td style="padding-left: 5px"><?php echo $user['coach']; ?></td>
+				<td style="padding-left: 5px"><?php echo $user['blogger']; ?></td>
 			</tr>
 			<?php $i++; ?>
 		<?php endforeach; ?>
