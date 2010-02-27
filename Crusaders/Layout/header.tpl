@@ -9,6 +9,7 @@
 		<meta name="language" content="de" />
 		
 		<link rel="stylesheet" href="Layout/style.css" type="text/css"/>
+		<script type="text/javascript" src="script/js_functions.js"></script>
 	</head>
 <body id="body">
 <div id="main">
