@@ -16,26 +16,26 @@ class Teaminfo extends HTMLPage implements Page{
 	
 	public function saveTeaminfos(){
 		$team = $_POST['team'];
-		$trainingDay1_tag = htmlentities(trim($_POST['trainingDay1_tag']), ENT_QUOTES, 'UTF-8');;
-		$trainingDay1_halle = htmlentities(trim($_POST['trainingDay1_halle']), ENT_QUOTES, 'UTF-8');;
-		$trainingDay1_fromHour = htmlentities(trim($_POST['trainingDay1_fromHour']), ENT_QUOTES, 'UTF-8');;
-		$trainingDay1_fromMinutes = htmlentities(trim($_POST['trainingDay1_fromMinutes']), ENT_QUOTES, 'UTF-8');;
-		$trainingDay1_toHour = htmlentities(trim($_POST['trainingDay1_toHour']), ENT_QUOTES, 'UTF-8');;
-		$trainingDay1_toMinutes = htmlentities(trim($_POST['trainingDay1_toMinutes']), ENT_QUOTES, 'UTF-8');;
-		$trainingDay2_tag = htmlentities(trim($_POST['trainingDay2_tag']), ENT_QUOTES, 'UTF-8');;
-		$trainingDay2_halle = htmlentities(trim($_POST['trainingDay2_halle']), ENT_QUOTES, 'UTF-8');;
-		$trainingDay2_fromHour = htmlentities(trim($_POST['trainingDay2_fromHour']), ENT_QUOTES, 'UTF-8');;
-		$trainingDay2_fromMinutes = htmlentities(trim($_POST['trainingDay2_fromMinutes']), ENT_QUOTES, 'UTF-8');;
-		$trainingDay2_toHour = htmlentities(trim($_POST['trainingDay2_toHour']), ENT_QUOTES, 'UTF-8');;
-		$trainingDay2_toMinutes = htmlentities(trim($_POST['trainingDay2_toMinutes']), ENT_QUOTES, 'UTF-8');;
-		$coach1_vorname = htmlentities(trim($_POST['coach1_vorname']), ENT_QUOTES, 'UTF-8');;
-		$coach1_nachname = htmlentities(trim($_POST['coach1_nachname']), ENT_QUOTES, 'UTF-8');;
-		$coach1_email = htmlentities(trim($_POST['coach1_email']), ENT_QUOTES, 'UTF-8');;
-		$coach1_phone = htmlentities(trim($_POST['coach1_phone']), ENT_QUOTES, 'UTF-8');;
-		$coach2_vorname = htmlentities(trim($_POST['coach2_vorname']), ENT_QUOTES, 'UTF-8');;
-		$coach2_nachname = htmlentities(trim($_POST['coach2_nachname']), ENT_QUOTES, 'UTF-8');;
-		$coach2_email = htmlentities(trim($_POST['coach2_email']), ENT_QUOTES, 'UTF-8');;
-		$coach2_phone = htmlentities(trim($_POST['coach2_phone']), ENT_QUOTES, 'UTF-8');;
+		$trainingDay1_tag = htmlentities(trim($_POST['trainingDay1_tag']), ENT_QUOTES, 'UTF-8');
+		$trainingDay1_halle = htmlentities(trim($_POST['trainingDay1_halle']), ENT_QUOTES, 'UTF-8');
+		$trainingDay1_fromHour = htmlentities(trim($_POST['trainingDay1_fromHour']), ENT_QUOTES, 'UTF-8');
+		$trainingDay1_fromMinutes = htmlentities(trim($_POST['trainingDay1_fromMinutes']), ENT_QUOTES, 'UTF-8');
+		$trainingDay1_toHour = htmlentities(trim($_POST['trainingDay1_toHour']), ENT_QUOTES, 'UTF-8');
+		$trainingDay1_toMinutes = htmlentities(trim($_POST['trainingDay1_toMinutes']), ENT_QUOTES, 'UTF-8');
+		$trainingDay2_tag = htmlentities(trim($_POST['trainingDay2_tag']), ENT_QUOTES, 'UTF-8');
+		$trainingDay2_halle = htmlentities(trim($_POST['trainingDay2_halle']), ENT_QUOTES, 'UTF-8');
+		$trainingDay2_fromHour = htmlentities(trim($_POST['trainingDay2_fromHour']), ENT_QUOTES, 'UTF-8');
+		$trainingDay2_fromMinutes = htmlentities(trim($_POST['trainingDay2_fromMinutes']), ENT_QUOTES, 'UTF-8');
+		$trainingDay2_toHour = htmlentities(trim($_POST['trainingDay2_toHour']), ENT_QUOTES, 'UTF-8');
+		$trainingDay2_toMinutes = htmlentities(trim($_POST['trainingDay2_toMinutes']), ENT_QUOTES, 'UTF-8');
+		$coach1_vorname = htmlentities(trim($_POST['coach1_vorname']), ENT_QUOTES, 'UTF-8');
+		$coach1_nachname = htmlentities(trim($_POST['coach1_nachname']), ENT_QUOTES, 'UTF-8');
+		$coach1_email = htmlentities(trim($_POST['coach1_email']), ENT_QUOTES, 'UTF-8');
+		$coach1_phone = htmlentities(trim($_POST['coach1_phone']), ENT_QUOTES, 'UTF-8');
+		$coach2_vorname = htmlentities(trim($_POST['coach2_vorname']), ENT_QUOTES, 'UTF-8');
+		$coach2_nachname = htmlentities(trim($_POST['coach2_nachname']), ENT_QUOTES, 'UTF-8');
+		$coach2_email = htmlentities(trim($_POST['coach2_email']), ENT_QUOTES, 'UTF-8');
+		$coach2_phone = htmlentities(trim($_POST['coach2_phone']), ENT_QUOTES, 'UTF-8');
 		
 		$abfrage = "Update teams set trainingDay1_tag='".$trainingDay1_tag."',
 			trainingDay1_halle='".$trainingDay1_halle."',
