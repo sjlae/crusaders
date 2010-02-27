@@ -53,6 +53,7 @@
 				            <li><a href="index.php?go=video">Youtube Video Upload</a></li>
 				            <li><a href="index.php?go=teaminfo">Teaminfos erfassen</a></li>
 				            <li><a href="index.php?go=picture">Teambild Upload</a></li>
+				            <li><a href="index.php?go=vorstandsinfos">Vorstandsinfos erfassen</a></li>
 				            <li><a href="index.php?go=logout">log out</a></li>
 						</ul>
 					</li>

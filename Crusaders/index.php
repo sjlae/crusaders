@@ -19,6 +19,7 @@ require_once('Stats/Stats.php');
 require_once('Blog/Blog.php');
 require_once('BlogEntry/BlogEntry.php');
 require_once('Guestbook/Guestbook.php');
+require_once('Vorstandsinfos/Vorstandsinfos.php');
 
 $go = isset($_GET['go']) ? $_GET['go'] : '';
 
@@ -66,6 +67,17 @@ switch($go) {
 		$blogEntry = new BlogEntry();
 		if(LoggedIn::isAdmin() || LoggedIn::isBlogger()){
 			$blogEntry->getView();
+			break;
+		}
+		else{
+			$home = new Home();
+			$home->getView();
+			break;
+		}
+	case 'vorstandsinfos':
+		$vorstandsinfos = new Vorstandsinfos();
+		if(LoggedIn::isAdmin()){
+			$vorstandsinfos->getView();
 			break;
 		}
 		else{
