@@ -56,7 +56,11 @@
 							<?php echo $this->coach1_vorname ?>
 							<?php echo $this->coach1_nachname ?>
 							<br>
-							<?php echo $this->coach1_email ?>
+							<?php if($this->coach1_vorname != '' && $this->coach1_email != ''){ ?>
+								<script language=javascript>
+									hideEmailAddress('<?php echo $this->coach1_email ?>', 'Mail an <?php echo $this->coach1_vorname ?>');
+								</script>
+							<?php } ?>
 							<br>
 							<?php echo $this->coach1_phone ?>
 						</td>
@@ -66,7 +70,11 @@
 							<?php echo $this->coach2_vorname ?>
 							<?php echo $this->coach2_nachname ?>
 							<br>
-							<?php echo $this->coach2_email ?>
+							<?php if($this->coach2_vorname != '' && $this->coach2_email != ''){ ?>
+								<script language=javascript>
+									hideEmailAddress('<?php echo $this->coach2_email ?>', 'Mail an <?php echo $this->coach2_vorname ?>');
+								</script>
+							<?php } ?>
 							<br>
 							<?php echo $this->coach2_phone ?>
 						</td>
