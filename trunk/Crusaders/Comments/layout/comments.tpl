@@ -74,6 +74,6 @@
 	<?php if($this->fromSingleMessage != ''){ ?>
 		<a href="index.php?go=singleMessage&action=news&id=<?php echo $this->id; ?>">zur&uuml;ck</a>
 	<?php }else{ ?>
-		<a href="index.php">zur&uuml;ck</a>
+		<a href="index.php?go=session">zur&uuml;ck</a>
 	<?php } ?>
 </div>

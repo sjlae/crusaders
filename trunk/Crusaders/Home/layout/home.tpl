@@ -53,7 +53,7 @@
 							<?php
 								if($_SESSION['hasPrevious']){
 							?>
-									<a href="index.php?clickedPrevious=true">
+									<a href="index.php?go=session&clickedPrevious=true">
 										Neuere 4 News
 									</a>
 							<?php
@@ -64,7 +64,7 @@
 							<?php
 								if($_SESSION['hasNext']){
 							?>
-									<a href="index.php?clickedNext=true">
+									<a href="index.php?go=session&clickedNext=true">
 										&Auml;ltere 4 News
 									</a>
 							<?php

@@ -14,7 +14,7 @@
 <body id="body">
 <div id="main">
 	<ul class="menu">
-		<li class="home"><a href="index.php?go=home" title="Home" class="top"></a></li>
+		<li class="home"><a href="index.php" title="Home" class="top"></a></li>
 		<li class="teams"><a href="#" title="Teams" class="top"></a>
 			<ul class="sub">
 				<?php
