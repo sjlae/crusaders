@@ -33,6 +33,6 @@
 							}
 						?>
 
-</br><br><a href="index.php">zur&uuml;ck</a>
+</br><br><a href="index.php?go=session">zur&uuml;ck</a>
 
 </div>

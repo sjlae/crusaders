@@ -158,13 +158,13 @@ switch($go) {
 		$login = new Login();
 		$login->getView();
 		break;
-	case 'home':
-		$_SESSION['actualPage'] = 0;
-		$_SESSION['actualPage_Blog'] = 0;
+	case 'session':
 		$home = new Home();
 		$home->getView();
 		break;
 	default:
+		$_SESSION['actualPage'] = 0;
+		$_SESSION['actualPage_Blog'] = 0;
 		$home = new Home();
 		$home->getView();
 }
