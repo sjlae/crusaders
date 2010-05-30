@@ -13,8 +13,12 @@
 
 #spiegel {position:absolute;left:710px;top:130px;height: 280px;width: 350px;overflow: auto;	z-index:11;margin:0px; padding:0px;}
 
-#stats {background: url(../images/zahlen.gif) no-repeat; padding:0; margin:0; position:absolute;left:438px;top:545px; height:130px; width: 118px; }
+#stats {padding:0; margin:0; position:absolute;left:286px;top:541px; height:132px; width: 117px; }
 .stats {position:relative; height:131px; width:118px; border: 0; display: block; text-indent:-1000em;}
+
+#teamshit {padding:0; margin:0; position:absolute;left:445px;top:571px; height:102px; width: 89px; }
+
+#gallery {padding:0; margin:0; position:absolute;left:553px;top:590px; height:83px; width: 108px; }
 
 #resultate {font-size: 12px;}
 #tabelle {position:absolute;left:10px;}
