@@ -41,7 +41,7 @@
 
 .menu li a.top {display:block; position:relative; height:90px; width:90px; text-decoration:none; cursor:pointer;}
 
-.menu li a.zeitung {position:absolute; top: 595px;left: 125px; height:80px; width:200px; }
+.menu li a.zeitung {position:absolute; top: 595px;left: 55px; height:80px; width:200px; }
 .menu li a.knaecke {position:absolute; top: 500px;left: 870px; height:60px; width:160px; }
 
 .menu table {border-collapse:collapse; width:0; height:0; position:absolute; top:0; left:0;}
