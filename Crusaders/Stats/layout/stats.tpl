@@ -52,8 +52,16 @@
 	</table>
 </div>
 
-<div id="stats" class="stats" title="Resultate und Spielplan">
-	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>" class="stats">&nbsp;</a>
+<div id="stats" title="Resultate und Spielplan">
+	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/zahlen.gif" border="0"></a>
+</div>
+
+<div id="teamshit" title="Team Shizzl">
+	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/shit.gif" border="0"></a>
+</div>
+
+<div id="gallery" title="Gallerie">
+	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/gallery.gif" border="0"></a>
 </div>
 
 <div id="spiegel">
