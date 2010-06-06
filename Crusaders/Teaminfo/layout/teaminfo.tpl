@@ -119,7 +119,7 @@
 								<input type="text" name="coach1_email" style="width: 150px"/>
 							</td>
 							<td>
-								&nbsp;[bspw. kurt.meier[at]gmail.com]
+								&nbsp;[bspw. kurt.meier@gmail.com]
 							</td>
 						</tr>
 						<tr>
@@ -168,7 +168,7 @@
 								<input type="text" name="coach2_email" style="width: 150px"/>
 							</td>
 							<td>
-								&nbsp;[bspw. kurt.meier[at]gmail.com]
+								&nbsp;[bspw. kurt.meier@gmail.com]
 							</td>
 						</tr>
 						<tr>
