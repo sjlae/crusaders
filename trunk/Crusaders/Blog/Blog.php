@@ -11,7 +11,10 @@ class Blog extends HTMLPage implements Page{
 	
 	public function __construct() {
 		$this->link = Db::getConnection();
-		
+		$del = isset($_GET['del']) ? $_GET['del'] : '';
+		if($del == 1){
+			$_SESSION['actualPage_Blog'] = 0;
+		}
 		$this->getBlog();
 	}
 	
