@@ -25,7 +25,7 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="right">
-						<a href="index.php?type=1&go=comments&fromSingleMessage=true&id=<?php echo $this->news['newsid']; ?>"><?php echo $this->news['comments'] ?>&nbsp;Kommentar(e)</a>
+						<a href="index.php?type=<?php echo $this->teamnews ? 3 : 1 ?>&teamid=<?php echo $this->teamid ?>&go=comments&fromSingleMessage=true&id=<?php echo $this->news['newsid']; ?>"><?php echo $this->news['comments'] ?>&nbsp;Kommentar(e)</a>
 					</td>
 				</tr>
 			</table>
@@ -33,6 +33,24 @@
 							}
 						?>
 
-</br><br><a href="index.php?go=session">zur&uuml;ck</a>
+</br><br><a href="index.php?go=<?php echo $this->teamnews ? teamnews : session ?>&teamid=<?php echo $this->teamid ?>">zur&uuml;ck</a>
 
 </div>
+
+<?php if($this->teamnews){ ?>
+
+<div id="stats" title="Resultate und Spielplan">
+	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/zahlen.gif" border="0"></a>
+</div>
+
+<div id="teamshit" title="Team News">
+	<a href="index.php?go=teamnews&teamid=<?php echo $this->teamid ?>&del=1"><img src="images/shit.gif" border="0"></a>
+</div>
+
+<!--
+<div id="gallery" title="Gallerie">
+	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/gallery.gif" border="0"></a>
+</div>
+--!>
+
+<?php } ?>

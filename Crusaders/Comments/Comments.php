@@ -12,6 +12,7 @@ class Comments extends HTMLPage implements Page{
 	private $nachname = '';
 	private $text = '';
 	private $fromSingleMessage = '';
+	private $teamid= '';
 	
 	public function __construct() {
 		$this->action = isset($_GET['action']) ? $_GET['action'] : $this->action;
@@ -68,6 +69,10 @@ class Comments extends HTMLPage implements Page{
 		$this->getComments();
 		if($this->type == 2){
 			include('layout/blogComments.tpl');
+		}
+		else if($this->type == 3){
+			$this->teamid = $_GET['teamid']; 
+			include('layout/teamComments.tpl');
 		}
 		else{
 			include('layout/comments.tpl');

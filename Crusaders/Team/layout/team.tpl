@@ -4,7 +4,7 @@
 	<tr>
 		<td valign="top">
 			<div style="width: 400px; height: 300px;">
-				<img src="images/<?php echo $this->teamid ?>.jpg" width="400" height="300">
+				<a href="images/<?php echo $this->teamid ?>.jpg" target="_blank"><img border="0" src="images/<?php echo $this->teamid ?>.jpg" width="400" height="300"></a>
 				&nbsp;
 			</div>
 		</td>
@@ -90,13 +90,15 @@
 	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/zahlen.gif" border="0"></a>
 </div>
 
-<div id="teamshit" title="Team Shizzl">
-	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/shit.gif" border="0"></a>
+<div id="teamshit" title="Team News">
+	<a href="index.php?go=teamnews&teamid=<?php echo $this->teamid ?>&del=1"><img src="images/shit.gif" border="0"></a>
 </div>
 
+<!--
 <div id="gallery" title="Gallerie">
 	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/gallery.gif" border="0"></a>
 </div>
+--!>
 
 <div id="spiegel">
 	<?php if($this->gruppe != 0){ ?>

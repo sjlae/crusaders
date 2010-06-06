@@ -6,6 +6,8 @@ class SingleMessage extends HTMLPage implements Page{
 
 	private $link = '';
 	private $news = '';
+	private $teamnews = false;
+	private $teamid = '';
 	
 	public function __construct() {
 		$action = isset($_GET['action']) ? $_GET['action'] : '';
@@ -18,8 +20,17 @@ class SingleMessage extends HTMLPage implements Page{
 	private function getNews(){
 		$this->link = Db::getConnection();
 		$newsid = $_GET['id'];
-
-		$abfrage = "Select * from news where newsid='$newsid'";
+		$this->teamnews = isset($_GET['teamnews']) ? true : false;
+		
+		$abfrage = '';
+		if($this->teamnews){
+			$this->teamid = $_GET['teamid'];
+			$abfrage = "Select * from teamnews where newsid='$newsid'";
+		}
+		else{
+			$abfrage = "Select * from news where newsid='$newsid'";
+		}
+		
 		$ergebnis = mysql_query($abfrage);
 		$row = mysql_fetch_assoc($ergebnis);
 		
@@ -37,7 +48,12 @@ class SingleMessage extends HTMLPage implements Page{
 			$this->news['titel'] = $row['titel'];
 			$this->news['text'] = $row['text'];
 			
-			$count = "SELECT COUNT(*) FROM comments where newsfsid=$newsid and type=1";
+			if($this->teamnews){
+				$count = "SELECT COUNT(*) FROM comments where newsfsid=$newsid and type=3";
+			}
+			else{
+				$count = "SELECT COUNT(*) FROM comments where newsfsid=$newsid and type=1";
+			}
 			$countComments = mysql_query($count);
 			$this->news['comments'] = mysql_result($countComments,0);
 		}

@@ -52,6 +52,7 @@
 				            <li><a href="index.php?go=delete&action=deleteComment">Kommentar l&ouml;schen</a></li>
 				            <li><a href="index.php?go=video">Youtube Video Upload</a></li>
 				            <li><a href="index.php?go=teaminfo">Teaminfos erfassen</a></li>
+				            <li><a href="index.php?go=teamnewsentry">Teamnews Beitrag erfassen</a></li>
 				            <li><a href="index.php?go=picture">Teambild Upload</a></li>
 				            <li><a href="index.php?go=vorstandsinfos">Vorstandsinfos erfassen</a></li>
 				            <li><a href="index.php?go=logout">log out</a></li>
@@ -65,7 +66,8 @@
 						<ul class="sublogin">
 							<li><a href="index.php?go=news">Newsbeitrag erfassen</a></li>
 							<li><a href="index.php?go=video">Youtube Video Upload</a></li>
-							<li><a href="index.php?go=teaminfo">Teaminfos erfassen</a></li>		
+							<li><a href="index.php?go=teaminfo">Teaminfos erfassen</a></li>	
+							<li><a href="index.php?go=teamnewsentry">Teamnews Beitrag erfassen</a></li>	
 							<li><a href="index.php?go=picture">Teambild Upload</a></li>	
 				            <li><a href="index.php?go=logout">log out</a></li>
 						</ul>
@@ -85,5 +87,5 @@
 			}
 		?>
 					<li class="zeitung"><a href="index.php?go=clubResults" title="Letzte Resultate Club" class="zeitung"></a></li> 
-					<li class="knaecke"><a href="index.php?go=blog" title="Kn&auml;ckeblog" class="knaecke"></a></li> 
+					<li class="knaecke"><a href="index.php?go=blog&del=1" title="Kn&auml;ckeblog" class="knaecke"></a></li> 
 	</ul>

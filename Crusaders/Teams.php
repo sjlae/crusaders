@@ -6,7 +6,7 @@ class Teams{
 		$teamArray = array();
 		$link = Db::getConnection();
 		
-		$abfrage = "Select * from teams";
+		$abfrage = "Select * from teams order by teamid";
 
 		$ergebnis = mysql_query($abfrage);
 		$counter = 0;
