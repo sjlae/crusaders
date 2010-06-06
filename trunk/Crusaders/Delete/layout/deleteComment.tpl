@@ -18,7 +18,7 @@
 					<td style="padding-left: 5px"><?php echo $comment['nachname']; ?></td>
 					<td style="padding-left: 5px"><?php echo $comment['timestamp']; ?></td>
 					<td style="padding-left: 5px"><?php echo $comment['text']; ?></td>
-					<td style="padding-left: 5px"><?php echo $comment['type'] == 1 ? Newskommentar : Blogkommentar; ?></td>
+					<td style="padding-left: 5px"><?php echo $comment['type'] == 1 || $comment['type'] == 3 ? Newskommentar : Blogkommentar; ?></td>
 				</tr>
 				<?php $i++; ?>
 			<?php endforeach; ?>
