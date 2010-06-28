@@ -13,10 +13,10 @@
 
 #spiegel {position:absolute;left:710px;top:130px;height: 280px;width: 350px;overflow: auto;	z-index:11;margin:0px; padding:0px;}
 
-#stats {padding:0; margin:0; position:absolute;left:286px;top:541px; height:132px; width: 117px; }
+#stats {padding:0; margin:0; position:absolute;left:325px;top:537px; height:138px; width: 121px; }
 .stats {position:relative; height:131px; width:118px; border: 0; display: block; text-indent:-1000em;}
 
-#teamshit {padding:0; margin:0; position:absolute;left:445px;top:571px; height:102px; width: 89px; }
+#teamshit {padding:0; margin:0; position:absolute;left:418px;top:733px; height:92px; width: 271px; }
 
 #gallery {padding:0; margin:0; position:absolute;left:553px;top:590px; height:83px; width: 108px; }
 
