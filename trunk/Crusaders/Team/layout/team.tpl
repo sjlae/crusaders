@@ -91,7 +91,7 @@
 </div>
 
 <div id="teamshit" title="Team News">
-	<a href="index.php?go=teamnews&teamid=<?php echo $this->teamid ?>&del=1"><img src="images/shit.gif" border="0"></a>
+	<a href="index.php?go=teamnews&teamid=<?php echo $this->teamid ?>&del=1"><img src="images/team.gif" border="0"></a>
 </div>
 
 <!--
