@@ -94,11 +94,11 @@
 	<a href="index.php?go=teamnews&teamid=<?php echo $this->teamid ?>&del=1"><img src="images/team.gif" border="0"></a>
 </div>
 
-<!--
+<%--
 <div id="gallery" title="Gallerie">
 	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/gallery.gif" border="0"></a>
 </div>
---!>
+--%>
 
 <div id="spiegel">
 	<?php if($this->gruppe != 0){ ?>
