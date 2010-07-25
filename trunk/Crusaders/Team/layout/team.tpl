@@ -1,5 +1,11 @@
 <div id="content">
-<h1 id="team_name"><?php echo $this->name?></h1>
+<h1 id="team_name"><?php echo $this->name?>
+	<?php
+		if($this->spielgemeinschaft == 1){
+			echo ' - Spielgemeinschaft mit THS Adliswil';
+		}
+	?>
+</h1>
 <table cellpadding="5px" cellspacing="0" border="0">
 	<tr>
 		<td valign="top">
