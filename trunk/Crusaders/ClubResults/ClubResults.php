@@ -17,7 +17,7 @@ class ClubResults extends HTMLPage implements Page{
 	}
 	
 	private function getResults(){
-		$abfrage = "Select * from teams";
+		$abfrage = "Select * from teams order by teamid";
 		
 		$ergebnis = mysql_query($abfrage);
 		$counter = 0;
