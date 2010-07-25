@@ -50,7 +50,7 @@ User erfassen
 		<tr>
 			<td style="padding-top: 10px">
 				<input type="submit" value="Erfassen" />
-			</td
+			</td>
 		</tr>
 	</table>
 </form>

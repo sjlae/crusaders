@@ -28,6 +28,14 @@ class Guestbook extends HTMLPage implements Page{
 			return;
 		}
 		
+		if(isset($_SESSION['captcha_spam']) && $_POST["sicherheitscode"] == $_SESSION['captcha_spam']){
+			unset($_SESSION['captcha_spam']);
+		}
+		else{
+			$_SESSION['errors'][] = "Der eingegebene Code ist falsch!";
+			return;
+		}
+		
 		if($this->text != null){
 			$this->text = htmlentities(trim($this->text), ENT_QUOTES, 'UTF-8');
 			$abfrage = "Insert into guestbook (vorname, nachname, text) values ('".$this->vorname."', '".$this->nachname."', '".$this->text."')";

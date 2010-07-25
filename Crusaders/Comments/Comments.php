@@ -29,6 +29,14 @@ class Comments extends HTMLPage implements Page{
 		$type = htmlentities(trim($_GET['type']), ENT_QUOTES, 'UTF-8');
 		$this->text = htmlentities(trim($_POST['text']), ENT_QUOTES, 'UTF-8');
 		
+		if(isset($_SESSION['captcha_spam']) && $_POST["sicherheitscode"] == $_SESSION['captcha_spam']){
+			unset($_SESSION['captcha_spam']);
+		}
+		else{
+			$_SESSION['errors'][] = "Der eingegebene Code ist falsch!";
+			return;
+		}
+		
 		if($this->vorname == '' || $this->nachname == '' || $this->text == ''){
 			$_SESSION['errors'][] = "Bitte alle Felder (Vorname, Nachname und Kommentar) ausf&uuml;llen!";
 			return;
