@@ -62,8 +62,10 @@
 						</tr>
 						<tr>
 							<td style="padding-top: 10px">
+								<img src="captcha/captcha.php" border="0" title="Sicherheitscode">
+								<input type="text" name="sicherheitscode" size="5" maxlength="5"><br>
 								<input type="submit" value="Erfassen" />
-							</td
+							</td>
 						</tr>
 					</table>
 				</form>
