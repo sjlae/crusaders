@@ -16,6 +16,7 @@ class Team extends HTMLPage implements Page{
 	private $gruppe = '';
 	private $verein = '';
 	
+	private $spielgemeinschaft = '';
 	private $trainingDay1_tag = '';
 	private $trainingDay1_halle = '';
 	private $trainingDay1_fromHour = '';
@@ -76,6 +77,7 @@ class Team extends HTMLPage implements Page{
 		
 		while($row = mysql_fetch_assoc($ergebnis))
 		{
+			$this->spielgemeinschaft = $row['spielgemeinschaft'];
 			$this->trainingDay1_tag = $row['trainingDay1_tag'];
 			$this->trainingDay1_halle = $row['trainingDay1_halle'];
 			$this->trainingDay1_fromHour = $row['trainingDay1_fromHour'];
