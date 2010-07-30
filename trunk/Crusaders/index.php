@@ -22,6 +22,7 @@ require_once('Guestbook/Guestbook.php');
 require_once('Vorstandsinfos/Vorstandsinfos.php');
 require_once('TeamNews/TeamNews.php');
 require_once('TeamNewsEntry/TeamNewsEntry.php');
+require_once('Members/Members.php');
 
 $go = isset($_GET['go']) ? $_GET['go'] : '';
 
@@ -69,6 +70,17 @@ switch($go) {
 			$home->getView();
 			break;
 		}
+	case 'members':
+		$members = new Members();
+		if(LoggedIn::isAdmin() || LoggedIn::isCoach()){
+			$members->getView();
+			break;
+		}
+		else{
+			$home = new Home();
+			$home->getView();
+			break;
+		}	
 	case 'teamnewsentry':
 		$teamnewsentry = new TeamNewsEntry();
 		if(LoggedIn::isAdmin() || LoggedIn::isCoach()){
