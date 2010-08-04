@@ -6,7 +6,7 @@ class Teams{
 		$teamArray = array();
 		$link = Db::getConnection();
 		
-		$abfrage = "Select * from teams order by teamid";
+		$abfrage = "Select * from teams where teamcode != 0 order by teamid";
 
 		$ergebnis = mysql_query($abfrage);
 		$counter = 0;
@@ -17,6 +17,24 @@ class Teams{
 			$teamArray[$counter]['teamcode'] = $row['teamcode'];
 			$teamArray[$counter]['teamgroup'] = $row['teamgroup'];
 			$teamArray[$counter]['club'] = $row['club'];
+			
+			$counter++;
+		}
+		
+		return $teamArray;
+	}
+	
+	public static function getTeamsMember(){
+		$teamArray = array();
+		$link = Db::getConnection();
+		
+		$abfrage = "Select * from teams order by teamid";
+
+		$ergebnis = mysql_query($abfrage);
+		$counter = 0;
+		while($row = mysql_fetch_assoc($ergebnis))
+		{
+			$teamArray[$counter]['teamname'] = $row['teamname'];
 			
 			$counter++;
 		}
