@@ -1,6 +1,7 @@
 <?php
 require_once('Page.php');
 require_once('Datenbank/db.php');
+require_once "Spreadsheet/Excel/Writer.php";
 
 class Members extends HTMLPage implements Page{
 
@@ -85,7 +86,7 @@ class Members extends HTMLPage implements Page{
 		$this->filter_bezahlt_jetzt = $_POST['filter_bezahlt_jetzt'];
 		$this->filter_nachname = $_POST['filter_nachname'];
 		
-		if($this->action == 'search'){
+		if($this->action == 'search' || $this->action == 'excel'){
 			$this->search();
 		}
 		
@@ -117,6 +118,24 @@ class Members extends HTMLPage implements Page{
 			$this->save();
 			$this->search();
 		}
+		
+		else if($this->action == 'season'){
+			$this->season();
+			$this->search();
+		}
+	}
+	
+	private function season(){
+		$abfrage = "Select * from members";
+		
+		$ergebnis = mysql_query($abfrage);
+		while($row = mysql_fetch_assoc($ergebnis))
+		{
+			$abfrage = "Update members set bezahlt_vor2='".$row['bezahlt_vor1']."', bezahlt_vor1='".$row['bezahlt_jetzt']."', bezahlt_jetzt='Nein' where id='".$row['id']."'";
+			
+			mysql_query($abfrage);
+		}
+		$_SESSION['infos'][] = "Die Datenbank wurde erfolgreich angepasst.";
 	}
 	
 	private function save(){
@@ -275,6 +294,48 @@ class Members extends HTMLPage implements Page{
 												name LIKE '$sql_nachname' order by name";
 		$ergebnis = mysql_query($abfrage);
 		$counter = 0;
+		
+		if($this->action == 'excel'){
+			$xls =& new Spreadsheet_Excel_Writer();
+			$xls->send("Export.xls");
+			$sheet =& $xls->addWorksheet('Export');
+			
+			$format =& $xls->addFormat();
+  			$format->setBold();
+			
+			$sheet->write($counter, 0, 'Status', $format);
+			$sheet->write($counter, 1, 'Name', $format);
+			$sheet->write($counter, 2, 'Vorname', $format);
+			$sheet->write($counter, 3, 'Adresse', $format);
+			$sheet->write($counter, 4, 'PLZ', $format);
+			$sheet->write($counter, 5, 'Ort', $format);
+			$sheet->write($counter, 6, 'Geburtsdatum', $format);
+			$sheet->write($counter, 7, 'Telefon', $format);
+			$sheet->write($counter, 8, 'Mobile', $format);
+			$sheet->write($counter, 9, 'Mobile 2', $format);
+			$sheet->write($counter, 10, 'E-Mail', $format);
+			$sheet->write($counter, 11, 'E-Mail 2', $format);
+			$sheet->write($counter, 12, 'Beitrittsdatum', $format);
+			$sheet->write($counter, 13, 'Lizenz-Kat.', $format);
+			$sheet->write($counter, 14, 'Lizenz-Nr.', $format);
+			$sheet->write($counter, 15, 'Lizenz-Status', $format);
+			$sheet->write($counter, 16, 'Lizenz bei', $format);
+			$sheet->write($counter, 17, 'Stammverein', $format);
+			$sheet->write($counter, 18, 'Teameinteilung', $format);
+			$sheet->write($counter, 19, 'Ablauf A-Teil', $format);
+			$sheet->write($counter, 20, 'Helfereinsatz', $format);
+			$sheet->write($counter, 21, 'Funktion 1', $format);
+			$sheet->write($counter, 22, 'Funktion 2', $format);
+			$sheet->write($counter, 23, 'Funktion 3', $format);
+			$sheet->write($counter, 24, 'In Ausbildung', $format);
+			$sheet->write($counter, 25, 'Geschwister', $format);
+			$sheet->write($counter, 26, 'Tenue Kat.', $format);
+			$sheet->write($counter, 27, 'Tenue Nr.', $format);
+			$sheet->write($counter, 28, 'Bez. vor 2', $format);
+			$sheet->write($counter, 29, 'Bez. vor 1', $format);
+			$sheet->write($counter, 30, 'Bez. aktuell', $format);
+		}
+		
 		while($row = mysql_fetch_assoc($ergebnis))
 		{
 			$this->result_array[$counter]['id'] = $row['id'];
@@ -309,8 +370,46 @@ class Members extends HTMLPage implements Page{
 			$this->result_array[$counter]['bezahlt_vor2'] = $row['bezahlt_vor2'];
 			$this->result_array[$counter]['bezahlt_vor1'] = $row['bezahlt_vor1'];
 			$this->result_array[$counter]['bezahlt_jetzt'] = $row['bezahlt_jetzt'];
+
+			if($this->action == 'excel'){
+				$sheet->write($counter + 1, 0, utf8_decode($this->result_array[$counter]['status']));
+				$sheet->write($counter + 1, 1, utf8_decode($this->result_array[$counter]['name']));
+				$sheet->write($counter + 1, 2, utf8_decode($this->result_array[$counter]['vorname']));
+				$sheet->write($counter + 1, 3, utf8_decode($this->result_array[$counter]['adresse']));
+				$sheet->write($counter + 1, 4, utf8_decode($this->result_array[$counter]['plz']));
+				$sheet->write($counter + 1, 5, utf8_decode($this->result_array[$counter]['ort']));
+				$sheet->write($counter + 1, 6, utf8_decode($this->result_array[$counter]['geburtsdatum']));
+				$sheet->write($counter + 1, 7, utf8_decode($this->result_array[$counter]['telefon']));
+				$sheet->write($counter + 1, 8, utf8_decode($this->result_array[$counter]['mobile']));
+				$sheet->write($counter + 1, 9, utf8_decode($this->result_array[$counter]['mobile2']));
+				$sheet->write($counter + 1, 10, utf8_decode($this->result_array[$counter]['email']));
+				$sheet->write($counter + 1, 11, utf8_decode($this->result_array[$counter]['email2']));
+				$sheet->write($counter + 1, 12, utf8_decode($this->result_array[$counter]['beitrittsdatum']));
+				$sheet->write($counter + 1, 13, utf8_decode($this->result_array[$counter]['lizenz_kategorie']));
+				$sheet->write($counter + 1, 14, utf8_decode($this->result_array[$counter]['lizenz_nummer']));
+				$sheet->write($counter + 1, 15, utf8_decode($this->result_array[$counter]['lizenz_status']));
+				$sheet->write($counter + 1, 16, utf8_decode($this->result_array[$counter]['lizenz_verein']));
+				$sheet->write($counter + 1, 17, utf8_decode($this->result_array[$counter]['stammverein']));
+				$sheet->write($counter + 1, 18, utf8_decode($this->result_array[$counter]['teameinteilung']));
+				$sheet->write($counter + 1, 19, utf8_decode($this->result_array[$counter]['ablauf_ateil']));
+				$sheet->write($counter + 1, 20, utf8_decode($this->result_array[$counter]['helfereinsatz']));
+				$sheet->write($counter + 1, 21, utf8_decode($this->result_array[$counter]['funktion1']));
+				$sheet->write($counter + 1, 22, utf8_decode($this->result_array[$counter]['funktion2']));
+				$sheet->write($counter + 1, 23, utf8_decode($this->result_array[$counter]['funktion3']));
+				$sheet->write($counter + 1, 24, utf8_decode($this->result_array[$counter]['ausbildung']));
+				$sheet->write($counter + 1, 25, utf8_decode($this->result_array[$counter]['geschwister']));
+				$sheet->write($counter + 1, 26, utf8_decode($this->result_array[$counter]['tenue_kategorie']));
+				$sheet->write($counter + 1, 27, utf8_decode($this->result_array[$counter]['tenue_nummer']));
+				$sheet->write($counter + 1, 28, utf8_decode($this->result_array[$counter]['bezahlt_vor2']));
+				$sheet->write($counter + 1, 29, utf8_decode($this->result_array[$counter]['bezahlt_vor1']));
+				$sheet->write($counter + 1, 30, utf8_decode($this->result_array[$counter]['bezahlt_jetzt']));
+			}
 			
 			$counter++;
+		}
+		
+		if($this->action == 'excel'){
+			$xls->close();
 		}
 	}
 	

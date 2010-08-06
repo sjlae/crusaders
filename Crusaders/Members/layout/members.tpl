@@ -299,7 +299,7 @@
 					</td>
 				</tr>
 			</table>
-			<?php if($this->action == 'search' || $this->action == 'save'){ ?>
+			<?php if($this->action == 'search' || $this->action == 'save' || $this->action == 'season'){ ?>
 			<h3><?php echo count($this->result_array) ?>&nbsp;Suchresultat(e)</h3>
 			<table cellpadding="0" cellspacing="0" border="0">
 				<?php if(count($this->result_array) != 0){ ?>
@@ -601,6 +601,8 @@
 					<tr>
 						<td colspan="31">
 							<input type="submit" value="&Auml;nderungen speichern" onclick="document.getElementById('action').value='save';"/>
+							&nbsp;&nbsp;
+							<input type="submit" value="Excel&nbsp;Export" onclick="document.getElementById('action').value='excel';"/>
 						</td>
 					</tr>
 				<?php } ?> 	
@@ -803,6 +805,33 @@
 				
 				<tr>
 					<td colspan="19">
+						<hr/>
+					</td>
+				</tr>
+			</table>
+			<h3>Neue Abrechnungsperiode erfassen</h3>
+			<table cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td>
+						Sobald auf den untenstehenden Button geklickt wird, werden in der Datenbank die Werte 'Bezahlt vor 2 Jahren',
+						'Bezahlt vor 1 Jahr' und 'Bezahlt aktuelles Jahr' bei ALLEN Datens&auml;tzen ver&auml;ndert!<br><br>
+						Es werden die aktuellen Werte von 'Bezahlt vor 1 Jahr' in das Feld 'Bezahlt vor 2 Jahren' kopiert und das gleiche
+						passiert mit dem Feld 'Bezahlt aktuelles Jahr', welches ins Feld 'Bezahlt vor 1 Jahr' <br>kopiert wird. Im Feld
+						'Bezahlt akutelles Jahr' wird bei ALLEN Datens&auml;tzen der Wert 'Nein' abgef&uuml;llt!
+					</td>
+				</tr>
+				<tr>
+					<td>
+						&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" value="Neue Abrechnungsperiode erfassen" onclick="document.getElementById('action').value='season';"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
 						<hr/>
 					</td>
 				</tr>
