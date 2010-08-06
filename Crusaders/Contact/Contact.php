@@ -39,7 +39,7 @@ class Contact extends HTMLPage implements Page{
 	}
 	
 	private function getCoachInfos(){
-		$abfrage = "Select * from teams order by teamid";
+		$abfrage = "Select * from teams where teamcode != 0 order by teamid";
 		
 		$ergebnis = mysql_query($abfrage);
 		$counter = 0;
