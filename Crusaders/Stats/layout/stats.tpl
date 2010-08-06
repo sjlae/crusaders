@@ -11,7 +11,7 @@
 				if($games->LeagueCode != 1011)
 				{		
 		?>
-					<tr>	
+					<tr style="white-space: nowrap;">	
 						<td style="width:15%;"><?php echo $games->Date; ?></td>	
 						<td style="width:25%;"><?php echo $games->HomeTeam; ?></td>	
 						<td style="width:5%;">-</td>
@@ -37,7 +37,7 @@
 		<?php
 			foreach($this->future as $games): 
 		?>
-				<tr>
+				<tr style="white-space: nowrap;">
 					<td><?php echo $games->Date; ?></td> 
 					<td><?php echo $games->Time; ?></td> 
 					<td><?php echo $games->HomeTeam; ?></td>
