@@ -28,7 +28,7 @@ class Teams{
 		$teamArray = array();
 		$link = Db::getConnection();
 		
-		$abfrage = "Select * from teams order by teamid";
+		$abfrage = "Select * from teams order by sortid ASC";
 
 		$ergebnis = mysql_query($abfrage);
 		$counter = 0;
