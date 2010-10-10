@@ -23,6 +23,7 @@ require_once('Vorstandsinfos/Vorstandsinfos.php');
 require_once('TeamNews/TeamNews.php');
 require_once('TeamNewsEntry/TeamNewsEntry.php');
 require_once('Members/Members.php');
+require_once('Skorer/Skorer.php');
 
 $go = isset($_GET['go']) ? $_GET['go'] : '';
 
@@ -63,6 +64,17 @@ switch($go) {
 		$news = new News();
 		if(LoggedIn::isAdmin() || LoggedIn::isCoach()){
 			$news->getView();
+			break;
+		}
+		else{
+			$home = new Home();
+			$home->getView();
+			break;
+		}
+	case 'skorer':
+		$skorer = new Skorer();
+		if(LoggedIn::isAdmin() || LoggedIn::isCoach()){
+			$skorer->getView();
 			break;
 		}
 		else{

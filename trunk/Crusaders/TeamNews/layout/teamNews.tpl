@@ -85,3 +85,11 @@
 <div id="teamshit" title="Team News">
 	<a href="index.php?go=teamnews&teamid=<?php echo $this->teamid ?>&del=1"><img src="images/team.gif" border="0"></a>
 </div>
+
+<div id="spiegel">
+	<?php 
+		if(file_exists('Skorerlists/'.$this->teamid.'.htm')){
+			include('Skorerlists/'.$this->teamid.'.htm'); 
+		}
+	?>
+</div>
