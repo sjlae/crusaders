@@ -1,8 +1,8 @@
 <?php
 require_once('Page.php');
 require_once('Datenbank/db.php');
-require_once "Spreadsheet/Excel/Writer.php";
-
+require_once('Spreadsheet/Excel/Writer.php');
+//require_once('/usr/local/php/lib/php/Spreadsheet');
 class Members extends HTMLPage implements Page{
 
 	private $link = '';
@@ -161,9 +161,9 @@ class Members extends HTMLPage implements Page{
 												geburtsdatum='".date('Y-m-d', strtotime($_POST['geburtsdatum'.$i]))."',  
 												telefon='".$_POST['telefon'.$i]."',  
 												mobile='".$_POST['mobile'.$i]."',  
-												mobile2='".$_POST['mobile2'.$i]."',  
+												mobile2='".$_POST['mobile2_'.$i]."',  
 												email='".$_POST['email'.$i]."',  
-												email2='".$_POST['email2'.$i]."',  
+												email2='".$_POST['email2_'.$i]."',  
 												beitrittsdatum='".date('Y-m-d', strtotime($_POST['beitrittsdatum'.$i]))."',  
 												lizenz_kategorie='".$_POST['lizenz_kategorie'.$i]."',  
 												lizenz_nummer='".$_POST['lizenz_nummer'.$i]."',  
