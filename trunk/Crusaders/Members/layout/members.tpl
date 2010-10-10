@@ -436,13 +436,13 @@
 							<input type="text" name="mobile<?php echo $counter ?>" value="<?php echo $result['mobile'] ?>" size="12"/>
 						</td>
 						<td style="padding-left: 5px;">
-							<input type="text" name="mobile2<?php echo $counter ?>" value="<?php echo $result['mobile2'] ?>" size="12"/>
+							<input type="text" name="mobile2_<?php echo $counter ?>" value="<?php echo $result['mobile2'] ?>" size="12"/>
 						</td>
 						<td style="padding-left: 5px;">
 							<input type="text" name="email<?php echo $counter ?>" value="<?php echo $result['email'] ?>" size="20"/>
 						</td>
 						<td style="padding-left: 5px;">
-							<input type="text" name="email2<?php echo $counter ?>" value="<?php echo $result['email2'] ?>" size="20"/>
+							<input type="text" name="email2_<?php echo $counter ?>" value="<?php echo $result['email2'] ?>" size="20"/>
 						</td>
 						<td style="padding-left: 5px;">
 							<input type="text" name="beitrittsdatum<?php echo $counter ?>" value="<?php echo $result['beitrittsdatum'] ?>" size="10"/>
