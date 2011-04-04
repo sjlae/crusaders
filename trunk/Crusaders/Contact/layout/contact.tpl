@@ -47,3 +47,16 @@
 		?>
 	</table>
 </div>
+
+<div id="spiegel">
+	<table cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td>
+				<h2>Postadresse:</h2>
+				<h3>UHC Crusaders<br/>
+				Postfach<br/>
+				8038 Z&uuml;rich</h3>
+			</td>
+		</tr>
+	</table>
+</div>
