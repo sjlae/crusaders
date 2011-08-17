@@ -24,6 +24,7 @@ require_once('TeamNews/TeamNews.php');
 require_once('TeamNewsEntry/TeamNewsEntry.php');
 require_once('Members/Members.php');
 require_once('Skorer/Skorer.php');
+require_once('Webmaster/Webmaster.php');
 
 $go = isset($_GET['go']) ? $_GET['go'] : '';
 
@@ -119,6 +120,17 @@ switch($go) {
 		$vorstandsinfos = new Vorstandsinfos();
 		if(LoggedIn::isAdmin()){
 			$vorstandsinfos->getView();
+			break;
+		}
+		else{
+			$home = new Home();
+			$home->getView();
+			break;
+		}
+	case 'webmaster':
+		$webmaster = new Webmaster();
+		if(LoggedIn::isAdmin()){
+			$webmaster->getView();
 			break;
 		}
 		else{

@@ -6,7 +6,7 @@ class Teams{
 		$teamArray = array();
 		$link = Db::getConnection();
 		
-		$abfrage = "Select * from teams where teamcode != 0 order by teamid";
+		$abfrage = "Select * from teams where teamcode != 0 order by sortid ASC";
 
 		$ergebnis = mysql_query($abfrage);
 		$counter = 0;
