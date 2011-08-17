@@ -56,6 +56,7 @@
 				            <li><a href="index.php?go=picture">Teambild Upload</a></li>
 				            <li><a href="index.php?go=skorer">Skorerliste Upload</a></li>	
 				            <li><a href="index.php?go=vorstandsinfos">Vorstandsinfos erfassen</a></li>
+				            <li><a href="index.php?go=webmaster">Webmaster Team Infos</a></li>
 				            <li><a href="index.php?go=members" target="_blank">Mitglieder-Datenbank</a></li>
 				            <li><a href="index.php?go=logout">log out</a></li>
 						</ul>
