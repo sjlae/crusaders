@@ -20,7 +20,7 @@ class TeamNewsEntry extends HTMLPage implements Page{
 		$userid = $_SESSION['userid'];
 		$teamid = $_POST['teamid'];
 		$this->titel = htmlentities(trim($_POST['titel']), ENT_QUOTES, 'UTF-8');
-		$this->text = htmlentities(trim($_POST['text']), ENT_QUOTES, 'UTF-8');
+		$this->text = nl2br(htmlentities(trim($_POST['text']), ENT_QUOTES, 'UTF-8'));
 		
 		if($this->titel == '' || $this->text == ''){
 			$_SESSION['errors'][] = "Bitte alle Felder (Titel und Text) ausf&uuml;llen!";
