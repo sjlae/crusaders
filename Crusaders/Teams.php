@@ -52,6 +52,7 @@ class Teams{
 		while($row = mysql_fetch_assoc($ergebnis))
 		{
 			$teamArray['teamid'] = $row['teamid'];
+			$teamArray['restteamid'] = $row['restteamid'];
 			$teamArray['teamname'] = $row['teamname'];
 			$teamArray['teamcode'] = $row['teamcode'];
 			$teamArray['teamgroup'] = $row['teamgroup'];

@@ -2,6 +2,7 @@
 require_once('Page.php');
 require_once('Teams.php');
 require_once('Datenbank/db.php');
+require_once('FloorballRestClient.php');
 class Team extends HTMLPage implements Page{
 
 	private $link = '';
@@ -12,9 +13,7 @@ class Team extends HTMLPage implements Page{
 	
 	private $teamid = '';
 	private $name = '';
-	private $ligaCode = '';
-	private $gruppe = '';
-	private $verein = '';
+	private $restteamid = '';
 	
 	private $spielgemeinschaft = '';
 	private $trainingDay1_tag = '';
@@ -50,9 +49,7 @@ class Team extends HTMLPage implements Page{
 			
 			$this->teamid 	= $team['teamid'];
 			$this->name 	= $team['teamname'];
-			$this->ligaCode = $team['teamcode'];
-			$this->gruppe 	= $team['teamgroup'];
-			$this->verein 	= $team['club'];
+			$this->restteamid = $team['restteamid'];
 			
 			if($this->name != ''){
 				$this->link = Db::getConnection();
@@ -102,20 +99,8 @@ class Team extends HTMLPage implements Page{
 	}
 	
 	private function getTeamRanking(){
-		$client = new
-		SoapClient("http://www.swissunihockey.ch/weblounge/webservices/league?wsdl");
-		
-		if($this->gruppe != 0){
-			$aResult = array('DevId'           => 1398,
-							 'DevCode'         => 'NXzGSazaqsyT6ofpXpOmBwfRdlk=',
-					 		 'Language'        => 1,
-					 		 'Season'          => 0,
-					 		 'LeagueCode' 	   => $this->ligaCode,
-					  		 'Group' 	       => $this->gruppe);
-					
-			// SOAP call ausf�hren 
-			$this->ranking = $client->__call("tableLeague", $aResult)->Table;
-		}
+		$fb = new FloorballRestClient('dummy-api-key');
+		$this->ranking = $fb->getTeamTable($this->restteamid);
 	}
 	
 	public function getHTML() {

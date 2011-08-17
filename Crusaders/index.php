@@ -25,8 +25,41 @@ require_once('TeamNewsEntry/TeamNewsEntry.php');
 require_once('Members/Members.php');
 require_once('Skorer/Skorer.php');
 require_once('Webmaster/Webmaster.php');
+require_once('FloorballRestClient.php');
+
+/*
+$fb = new FloorballRestClient('dummy-api-key');
+$games = $fb->getTeamGames('429157');
+
+echo '<h1>Games for 428357</h1>';
+echo '<pre>';
+print_r($games);
+echo '</pre>';
+
+$table = $fb->getTeamTable('428357');
+
+echo '<h1>Table for 428357</h1>';
+echo '<pre>';
+print_r($table);
+echo '</pre>';
+
+$games = $fb->getLeagueGames(126, 9);
+
+echo '<h1>Games for league 126, group 9</h1>';
+echo '<pre>';
+print_r($games);
+echo '</pre>';
+
+$table = $fb->getLeagueTable(126, 9);
+
+echo '<h1>Table for league 126, group 9</h1>';
+echo '<pre>';
+print_r($table);
+echo '</pre>';
+*/
 
 $go = isset($_GET['go']) ? $_GET['go'] : '';
+
 
 switch($go) {
 	case 'login':

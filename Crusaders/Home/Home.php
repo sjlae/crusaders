@@ -7,14 +7,12 @@ class Home extends HTMLPage implements Page{
  
 	private $link = '';
 	private $news = array();
-	private $results = array();
 	private $url = '';
 	
 	public function __construct() {
 		$this->link = Db::getConnection();
 		
 		$this->getNews();
-		$this->getResults();
 		$this->getUrl();
 	}
 	
@@ -92,22 +90,6 @@ class Home extends HTMLPage implements Page{
 				$counter++;
 			}
 		}
-	}
-	
-	private function getResults(){
-		$client = new
-		SoapClient("http://www.swissunihockey.ch/weblounge/webservices/league?wsdl");
-				
-		$aResult = array('DevId'           => 1398,
-						 'DevCode'         => 'NXzGSazaqsyT6ofpXpOmBwfRdlk=',
-				 		 'Language'        => 1,
-				 		 'Season'          => 0,
-				 		 'Club'            => "Crusaders 95",
-				 		 'Rounds'      	   => 1,
-						 'LatestGroupOnly' => 0);
-				
-		// SOAP call ausf�hren 
-		$this->results = $client->__call("resultsClub", $aResult)->Results;
 	}
 }
 
