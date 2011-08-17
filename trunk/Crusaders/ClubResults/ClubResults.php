@@ -17,7 +17,7 @@ class ClubResults extends HTMLPage implements Page{
 	}
 	
 	private function getResults(){
-		$abfrage = "Select * from teams where teamcode != 0 order by teamid";
+		$abfrage = "Select * from teams where restteamid != 0 order by sortid ASC";
 		
 		$ergebnis = mysql_query($abfrage);
 		$counter = 0;

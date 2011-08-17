@@ -1,17 +1,14 @@
 <?php
 require_once('Page.php');
 require_once('Teams.php');
+require_once('FloorballRestClient.php');
 class Stats extends HTMLPage implements Page{
 
-	private $teamid = '';
 	private $name = '';
-	private $ligaCode = '';
-	private $gruppe = '';
-	private $verein = '';
+	private $restteamid = '';
 	
 	private $ranking = array();
-	private $results = array();
-	private $future = array();
+	private $games = array();
 	
 	public function __construct() {
 		$this->getGames();
@@ -23,15 +20,11 @@ class Stats extends HTMLPage implements Page{
 		if($teamid != ''){ 
 			$team = Teams::getTeam($teamid); 
 			
-			$this->teamid 	= $team['teamid'];
 			$this->name 	= $team['teamname'];
-			$this->ligaCode = $team['teamcode'];
-			$this->gruppe 	= $team['teamgroup'];
-			$this->verein 	= $team['club'];
+			$this->restteamid = $team['restteamid'];
 			
 			if($this->name != ''){
 				$this->getTeamResults();
-				$this->getFutureGames();
 				$this->getTeamRanking();
 			}
 			else{
@@ -45,59 +38,14 @@ class Stats extends HTMLPage implements Page{
 		}
 	}
 	
-	private function getFutureGames(){
-		$client = new
-		SoapClient("http://www.swissunihockey.ch/weblounge/webservices/league?wsdl");
-
-		if($this->gruppe != 0){
-			$aResult = array('DevId'           => 1398,
-							 'DevCode'         => 'NXzGSazaqsyT6ofpXpOmBwfRdlk=',
-					 		 'Language'        => 1,
-					 		 'Season'          => 0,
-					 		 'Club'            => $this->verein,
-					 		 'LeagueCode' 	   => $this->ligaCode,
-					  		 'Group' 	       => $this->gruppe,
-					 		 'Rounds'      	   => 20);
-					
-			// SOAP call ausf�hren 
-			$this->future = $client->__call("gamesTeamGroup", $aResult)->Games;
-		}
-	}
-	
 	private function getTeamResults(){
-		$client = new
-		SoapClient("http://www.swissunihockey.ch/weblounge/webservices/league?wsdl");
-
-		if($this->gruppe != 0){
-			$aResult = array('DevId'           => 1398,
-							 'DevCode'         => 'NXzGSazaqsyT6ofpXpOmBwfRdlk=',
-					 		 'Language'        => 1,
-					 		 'Season'          => 0,
-					 		 'Club'            => $this->verein,
-					 		 'LeagueCode' 	   => $this->ligaCode,
-					  		 'Group' 	       => $this->gruppe,
-					 		 'Rounds'      	   => 0);
-					
-			// SOAP call ausf�hren 
-			$this->results = $client->__call("resultsTeamGroup", $aResult)->Results;
-		}
+		$fb = new FloorballRestClient('dummy-api-key');
+		$this->games = $fb->getTeamGames($this->restteamid);
 	}
 	
 	private function getTeamRanking(){
-		$client = new
-		SoapClient("http://www.swissunihockey.ch/weblounge/webservices/league?wsdl");
-		
-		if($this->gruppe != 0){
-			$aResult = array('DevId'           => 1398,
-							 'DevCode'         => 'NXzGSazaqsyT6ofpXpOmBwfRdlk=',
-					 		 'Language'        => 1,
-					 		 'Season'          => 0,
-					 		 'LeagueCode' 	   => $this->ligaCode,
-					  		 'Group' 	       => $this->gruppe);
-					
-			// SOAP call ausf�hren 
-			$this->ranking = $client->__call("tableLeague", $aResult)->Table;
-		}
+		$fb = new FloorballRestClient('dummy-api-key');
+		$this->ranking = $fb->getTeamTable($this->restteamid);
 	}
 	
 	public function getHTML() {
