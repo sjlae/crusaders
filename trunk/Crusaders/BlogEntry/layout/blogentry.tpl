@@ -8,7 +8,7 @@
 			Titel:
 		</td>
 		<td>
-			<input type="text" name="titel" maxlength="35" value="<?php echo $this->titel; ?>" style="width: 400px"/>
+			<input type="text" name="titel" maxlength="35" value="<?php echo $this->titel; ?>" style="width: 600px"/>
 		</td>
 	</tr>
 	<tr>
@@ -16,7 +16,7 @@
 			Text:
 		</td>
 		<td>
-			<textarea name="text" rows="5" style="width: 400px;"><?php echo $this->text ?></textarea>
+			<textarea name="text" rows="5" style="width: 600px;"><?php echo $this->text ?></textarea>
 		</td>
 	</tr>
 	<tr>
