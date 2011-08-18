@@ -4,6 +4,7 @@ require_once('Teams.php');
 require_once('FloorballRestClient.php');
 class Stats extends HTMLPage implements Page{
 
+	private $teamid = '';
 	private $name = '';
 	private $restteamid = '';
 	
@@ -20,6 +21,7 @@ class Stats extends HTMLPage implements Page{
 		if($teamid != ''){ 
 			$team = Teams::getTeam($teamid); 
 			
+			$this->teamid 	= $team['teamid'];
 			$this->name 	= $team['teamname'];
 			$this->restteamid = $team['restteamid'];
 			
