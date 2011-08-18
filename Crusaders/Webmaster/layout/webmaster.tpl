@@ -6,6 +6,9 @@
 					<b>SortID</b>
 				</td>
 				<td style="padding-left: 10px;">
+					<b>RestTeamId</b>
+				</td>
+				<td style="padding-left: 10px;">
 					<b>TeamName</b>
 				</td>
 				<td style="padding-left: 10px;">
@@ -28,6 +31,9 @@
 					<tr>
 						<td style="padding-top: 5px;">
 							<input type="text" name="sortid_<?php echo $info['teamid'] ?>" style="width: 30px" value="<?php echo $info['sortid'] ?>"/>
+						</td>
+						<td style="padding-left: 10px;padding-top: 5px;">
+							<input type="text" name="restteamid_<?php echo $info['teamid'] ?>" style="width: 50px" value="<?php echo $info['restteamid'] ?>"/>
 						</td>
 						<td style="padding-left: 10px;padding-top: 5px;">
 							<input type="text" name="teamname_<?php echo $info['teamid'] ?>" style="width: 150px" value="<?php echo $info['teamname'] ?>"/>
@@ -61,6 +67,9 @@
 			<tr>
 				<td style="padding-top: 5px;">
 					<input type="text" name="sortid" style="width: 30px"/>
+				</td>
+				<td style="padding-left: 10px;padding-top: 5px;">
+					<input type="text" name="restteamid" style="width: 50px"/>
 				</td>
 				<td style="padding-left: 10px;padding-top: 5px;">
 					<input type="text" name="teamname" style="width: 150px"/>

@@ -29,6 +29,7 @@ class Webmaster extends HTMLPage implements Page{
 			{
 				$this->infos[$counter]['teamid'] = $row['teamid'];
 				$this->infos[$counter]['sortid'] = $row['sortid'];
+				$this->infos[$counter]['restteamid'] = $row['restteamid'];
 				$this->infos[$counter]['teamname'] = $row['teamname'];
 				$this->infos[$counter]['teamcode'] = $row['teamcode'];
 				$this->infos[$counter]['teamgroup'] = $row['teamgroup'];
@@ -43,6 +44,7 @@ class Webmaster extends HTMLPage implements Page{
 	private function saveInfos(){
 		foreach($_POST['teamid'] as $id){
 			$abfrage = "Update teams set sortid='".$_POST['sortid_'.$id.'']."',
+			restteamid='".$_POST['restteamid_'.$id.'']."',
 			teamname='".$_POST['teamname_'.$id.'']."',
 			teamcode='".$_POST['teamcode_'.$id.'']."',
 			teamgroup='".$_POST['teamgroup_'.$id.'']."',
@@ -56,14 +58,15 @@ class Webmaster extends HTMLPage implements Page{
 	
 	private function newEntry(){
 		$sortid = $_POST['sortid'];
+		$restteamid = $_POST['restteamid'];
 		$teamname = $_POST['teamname'];
 		$teamcode = $_POST['teamcode'];
 		$teamgroup = $_POST['teamgroup'];
 		$club = $_POST['club'];
 		$spielgemeinschaft = $_POST['spielgemeinschaft'];
 		
-		$query = sprintf("Insert into teams(sortid, teamname, teamcode, teamgroup, club, spielgemeinschaft) 
-									   values('".$sortid."', '".$teamname."', '".$teamcode."', '".$teamgroup."', '".$club."', '".$spielgemeinschaft."')");
+		$query = sprintf("Insert into teams(sortid, restteamid, teamname, teamcode, teamgroup, club, spielgemeinschaft) 
+									   values('".$sortid."', '".$restteamid."', '".$teamname."', '".$teamcode."', '".$teamgroup."', '".$club."', '".$spielgemeinschaft."')");
 
 		mysql_query($query,$this->link);
 	}
