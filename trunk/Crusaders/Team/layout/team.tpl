@@ -101,39 +101,45 @@
 </div>
 
 <div id="spiegel">
-	<h2 id="team_name"><?php echo $this->name?></h2>
-	<table cellpadding="0" cellspacing="0" border="0">
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td style="text-align: right; padding-left: 10px;"><b>Sp</b></td>
-			<td style="text-align: right; padding-left: 10px;"><b>S</b></td>
-			<td style="text-align: right; padding-left: 10px;"><b>SnV</b></td>
-			<td style="text-align: right; padding-left: 10px;"><b>U</b></td>
-			<td style="text-align: right; padding-left: 10px;"><b>N</b></td>
-			<td style="text-align: right; padding-left: 10px;"><b>NnV</b></td>
-			<td style="text-align: center; padding-left: 10px;"><b>Tore</b></td>
-			<td style="text-align: right; padding-left: 10px;"><b>P</b></td>
-		</tr>
-		<?php
-			if(count($this->ranking) != 1){
-				foreach($this->ranking as $ranking): 
-		?>
-					<tr>
-						<td><?php echo $ranking->place; ?>.&nbsp;</td> 
-						<td><?php echo htmlentities($ranking->teamname); ?></td> 
-						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->games; ?></td>	
-						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->wins; ?></td>
-						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->wins-overtime; ?></td>
-						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->ties; ?></td>	
-						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->defeats; ?></td>
-						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->defeats-overtime; ?></td>
-						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->goals-scored; ?> : <?php echo $ranking->goals-received; ?></td>		
-						<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->points; ?></td>	
-					</tr>
-		<?php
-				endforeach;
-			}
-		?>
-	</table>
+	<?php
+		if($this->name != 'E-Junioren'){
+	?>
+			<h2 id="team_name"><?php echo $this->name?></h2>
+			<table cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td style="text-align: right; padding-left: 10px;"><b>Sp</b></td>
+					<td style="text-align: right; padding-left: 10px;"><b>S</b></td>
+					<td style="text-align: right; padding-left: 10px;"><b>SnV</b></td>
+					<td style="text-align: right; padding-left: 10px;"><b>U</b></td>
+					<td style="text-align: right; padding-left: 10px;"><b>N</b></td>
+					<td style="text-align: right; padding-left: 10px;"><b>NnV</b></td>
+					<td style="text-align: center; padding-left: 10px;"><b>Tore</b></td>
+					<td style="text-align: right; padding-left: 10px;"><b>P</b></td>
+				</tr>
+				<?php
+					if(count($this->ranking) != 1){
+						foreach($this->ranking as $ranking): 
+				?>
+							<tr>
+								<td><?php echo $ranking->place; ?>.&nbsp;</td> 
+								<td><?php echo htmlentities($ranking->teamname); ?></td> 
+								<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->games; ?></td>	
+								<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->wins; ?></td>
+								<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->wins-overtime; ?></td>
+								<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->ties; ?></td>	
+								<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->defeats; ?></td>
+								<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->defeats-overtime; ?></td>
+								<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->goals-scored; ?> : <?php echo $ranking->goals-received; ?></td>		
+								<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->points; ?></td>	
+							</tr>
+				<?php
+						endforeach;
+					}
+				?>
+			</table>
+	<?php
+		}
+	?>
 </div>
