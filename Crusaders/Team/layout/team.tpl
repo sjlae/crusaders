@@ -105,7 +105,7 @@
 		if($this->name != 'E-Junioren'){
 	?>
 			<h2 id="team_name"><?php echo $this->name?></h2>
-			<table cellpadding="0" cellspacing="0" border="0">
+			<table cellpadding="0" cellspacing="0" border="0" style="font-size: 10px;">
 				<tr>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
