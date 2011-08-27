@@ -45,11 +45,11 @@ class FloorballRestClient {
 		}
 		
 		$games = array();
-		
+
 		foreach($xml->children() as $game) {
 			$games[] = new Game($game);
 		}
-		
+
 		return $games;
 	}
 
@@ -173,6 +173,7 @@ class Data {
 		foreach($xml_node->attributes() as $k => $v) {
 			$key = str_replace('-', '_', (string)$k);
 			$val = (string)$v;
+
 			if ($val == 'false')
 				$val = false;
 			elseif ($val == 'true')
@@ -180,7 +181,24 @@ class Data {
 			else
 				$val = utf8_decode($val);
 			$this->{$key} = $val;
+			foreach($xml_node->children() as $gym) {
+				$this->gym = utf8_decode($gym);
+			}
 		}
+		
+		//print_r($xml_node->attributes());
+		/*foreach($xml_node->gym() as $g => $m) {
+			$key = str_replace('-', '_', (string)$g);
+			$val = (string)$m;
+			echo $val;
+			if ($val == 'false')
+				$val = false;
+			elseif ($val == 'true')
+				$val = true;
+			else
+				$val = utf8_decode($val);
+			$this->{$key} = $val;
+		}*/
 	}
 }
 
@@ -197,6 +215,7 @@ class Game extends Data {
 	public $goalshome = -1;
 	public $goalsaway = -1;
 	public $played = false;
+	public $gym;
 	
 	function __construct($xml_node) {
 		parent::__construct($xml_node);

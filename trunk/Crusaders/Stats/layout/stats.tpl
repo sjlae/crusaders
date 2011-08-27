@@ -2,54 +2,57 @@
 	if(count($this->games) != 1 && count($this->ranking) != 1){
 ?>
 		<div id="content">
-			<table cellpadding="1" cellspacing="0" border="0" style="font-size: 11px; width:80%;">
+			<table cellpadding="1" cellspacing="0" border="0" style="font-size: 11px;">
 					<tr>
-						<td style="font-size: 13px; font-weight: bold;" colspan="6">Resultate - <?php echo $this->name ?></td>	
+						<td style="font-size: 13px; font-weight: bold;" colspan="7">Resultate - <?php echo $this->name ?></td>	
 					</tr>
 					<tr>
-						<td style="font-size: 6px;" colspan="5">&nbsp;</td>	
+						<td style="font-size: 6px;" colspan="7">&nbsp;</td>	
 					</tr>
 				<?php
 					foreach($this->games as $games): 
-						if($games->cup != true && $games->goalshome != '-1')
+						if($games->played == true)
 						{		
 				?>
 							<tr style="white-space: nowrap;">	
-								<td style="width:15%;"><?php echo $games->date; ?></td>	
-								<td style="width:25%;"><?php echo htmlentities($games->hometeamname); ?></td>	
-								<td style="width:5%;">-</td>
-								<td style="width:25%;"><?php echo htmlentities($games->awayteamname); ?></td>
-								<td style="width:10%; text-align: center;"><?php echo $games->goalshome; ?>&nbsp; : &nbsp;<?php echo $games->goalsaway; ?></td>	
+								<td style="padding-right: 10px;"><?php echo $games->date; ?></td>	
+								<td style="padding-right: 10px;"><?php echo $games->leaguetype; ?></td>
+								<td style="padding-right: 10px;"><?php echo $games->roundtext; ?></td>
+								<td style="padding-right: 10px;"><?php echo htmlentities($games->hometeamname); ?></td>	
+								<td style="padding-right: 10px;">-</td>
+								<td style="padding-right: 10px;"><?php echo htmlentities($games->awayteamname); ?></td>
+								<td><?php echo $games->goalshome; ?>&nbsp; : &nbsp;<?php echo $games->goalsaway; ?></td>	
 							</tr>
 				<?php
 						}
 					endforeach;
 				?>
 			</table>
-			<table cellpadding="1" cellspacing="0" border="0" style="font-size: 11px; width:100%;">
+			<table cellpadding="1" cellspacing="0" border="0" style="font-size: 11px;">
 				<tr>
-					<td style="font-size: 6px;" colspan="7">&nbsp;</td>	
+					<td style="font-size: 6px;" colspan="8">&nbsp;</td>	
 				</tr>
 				<tr>
-					<td style="font-size: 13px; font-weight: bold;" colspan="7">Kommende Spiele - <?php echo $this->name ?></td>	
+					<td style="font-size: 13px; font-weight: bold;" colspan="8">Kommende Spiele - <?php echo $this->name ?></td>	
 				</tr>
 				<tr>
-					<td style="font-size: 6px;" colspan="7">&nbsp;</td>	
+					<td style="font-size: 6px;" colspan="8">&nbsp;</td>	
 				</tr>
 				
 				<?php
-					$now = mktime();
-					
 					foreach($this->games as $games): 
-						if($now < strtotime($games->date))
+						if($games->played != true)
 						{
 				?>
 							<tr style="white-space: nowrap;">
-								<td><?php echo $games->date; ?></td> 
-								<td><?php echo $games->time; ?></td> 
-								<td><?php echo htmlentities($games->hometeamname); ?></td>
-								<td>-</td>	
-								<td><?php echo htmlentities($games->awayteamname); ?></td>
+								<td style="padding-right: 10px;"><?php echo $games->date; ?></td> 
+								<td style="padding-right: 10px;"><?php echo $games->leaguetype; ?></td>
+								<td style="padding-right: 10px;"><?php echo $games->roundtext != '-' ? $games->roundtext : ''; ?></td>
+								<td style="padding-right: 10px;"><?php echo $games->time; ?></td> 
+								<td style="padding-right: 10px;"><?php echo htmlentities($games->hometeamname); ?></td>
+								<td style="padding-right: 10px;">-</td>	
+								<td style="padding-right: 10px;"><?php echo htmlentities($games->awayteamname); ?></td>
+								<td title="<?php echo htmlentities($games->gym); ?>"><img src="images/info.png" border="0" heigth="10" width="10"></td>
 							</tr>
 				<?php
 						}
@@ -71,7 +74,7 @@
 			if($this->name != 'E-Junioren'){
 		?>
 				<h2 id="team_name"><?php echo $this->name?></h2>
-				<table cellpadding="0" cellspacing="0" border="0">
+				<table cellpadding="0" cellspacing="0" border="0" style="font-size: 10px;">
 					<tr>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
