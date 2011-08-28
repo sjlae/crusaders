@@ -6,6 +6,7 @@ class ClubResults extends HTMLPage implements Page{
  
 	private $link = '';
 	private $results = array();
+	private $restteamid = '';
 	
 	public function __construct() {
 		$this->link = Db::getConnection();
@@ -25,24 +26,10 @@ class ClubResults extends HTMLPage implements Page{
 		if($ergebnis != null){
 			while($row = mysql_fetch_assoc($ergebnis))
 			{
-				$club = $row['club'];
-				$leagueCode = $row['teamcode'];
-				$group = $row['teamgroup'];
+				$this->restteamid = $row['restteamid'];
 				
-				$client = new
-				SoapClient("http://www.swissunihockey.ch/weblounge/webservices/league?wsdl");
-						
-				$aResult = array('DevId'           => 1398,
-								 'DevCode'         => 'NXzGSazaqsyT6ofpXpOmBwfRdlk=',
-						 		 'Language'        => 1,
-						 		 'Season'          => 0,
-						 		 'Club'            => $club,
-								 'LeagueCode'      => $leagueCode,
-						 		 'Group'      	   => $group,
-								 'Rounds'      	   => 1);
-						
-				// SOAP call ausf�hren 
-				$this->results[$counter] = $client->__call("resultsTeamGroup", $aResult)->Results;
+				$fb = new FloorballRestClient('dummy-api-key');
+				$this->results[$counter] = $fb->getLastTeamGames($this->restteamid);
 				$counter++;
 			}
 		}
