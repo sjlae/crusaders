@@ -5,40 +5,47 @@ class FloorballRestClient {
 	
 	private static $WS_TEAM_GAMES_PATH = '/teams/<id>/games';
 	private static $WS_TEAM_TABLE_PATH = '/teams/<id>/table';
-	private static $WS_LEAGUE_GAMES_PATH = '/leagues/<league>/groups/<group>/games';
-	private static $WS_LEAGUE_TABLE_PATH = '/leagues/<league>/groups/<group>/table';
 	
 	// Some globals
 	private $apikey; // Not yet in Use
-	private $season;
 	
 	/**
 	 * Initialisiert die Klasse
 	 * @param $apikey         Optional - API Schlüssel von swiss unihockey
-	 * @param $default_season Optional - Standardsaison für alle Request
 	 */
-	public function FloorballRestClient($apikey = '', $default_season = -1) {
-		if ($season < 0) {
-			$season = date('Y');
-			// Wenn Monat noch bis Juli, dann noch alte Saison verwenden
-			if (date('n') <= 7) {
-				$season--;
-			}
-		}
+	public function FloorballRestClient($apikey = '') {
 		$this->apikey = $apikey;
-		$this->season = $default_season;
 	}
 	
 	/**
 	 * Gibt alle Spiele für eine Mannschaft zurück
 	 * @param  $teamid Team ID
-	 * @param  $season Optional - Saison
 	 * @return Array mit Spielen
 	 */
-	public function getTeamGames($teamid, $season = -1) {
+	public function getTeamGames($teamid) {
 		
 		$path = str_replace('<id>', $teamid, self::$WS_TEAM_GAMES_PATH);
-		$xml = $this->doRequest($path, $season);
+		$path .= '?limit=-1';
+		$xml = $this->doRequest($path);
+		
+		if ($xml === false) {
+			return false;
+		}
+		
+		$games = array();
+
+		foreach($xml->children() as $game) {
+			$games[] = new Game($game);
+		}
+
+		return $games;
+	}
+	
+	public function getLastTeamGames($teamid) {
+		
+		$path = str_replace('<id>', $teamid, self::$WS_TEAM_GAMES_PATH);
+		$path .= '?status=played&limit=2&order=DESC';
+		$xml = $this->doRequest($path);
 		
 		if ($xml === false) {
 			return false;
@@ -56,65 +63,12 @@ class FloorballRestClient {
 	/**
 	 * Gibt die Tabelle für ein Team zurück
 	 * @param  $teamid Team ID
-	 * @param  $season Optional - Saison
 	 * @return Array mit Tabelleneinträgen
 	 */
-	public function getTeamTable($teamid, $season = -1) {
+	public function getTeamTable($teamid) {
 		
 		$path = str_replace('<id>', $teamid, self::$WS_TEAM_TABLE_PATH);
-		$xml = $this->doRequest($path, $season);
-		
-		if ($xml === false) {
-			return false;
-		}
-		
-		$table = array();
-		
-		foreach($xml->children() as $game) {
-			$table[] = new Table($game);
-		}
-		
-		return $table;
-	}
-	
-	/**
-	 * Gibt alle Spiele für eine Liga/Gruppe
-	 * @param  $league Liga-Code
-	 * @param  $group  Gruppe
-	 * @param  $season Optional - Saison
-	 * @return Array mit Spielen
-	 */
-	public function getLeagueGames($league, $group, $season = -1) {
-		
-		$path = str_replace(array('<league>', '<group>'), array($league, $group), 
-			self::$WS_LEAGUE_GAMES_PATH);
-		$xml = $this->doRequest($path, $season);
-		
-		if ($xml === false) {
-			return false;
-		}
-		
-		$games = array();
-		
-		foreach($xml->children() as $game) {
-			$games[] = new Game($game);
-		}
-		
-		return $games;
-	}
-	
-	/**
-	 * Gibt die Tabelle für ein Team zurück
-	 * @param  $league Liga-Code
-	 * @param  $group  Gruppe
-	 * @param  $season Optional - Saison
-	 * @return Array mit Tabelleneinträgen
-	 */
-	public function getLeagueTable($league, $group, $season = -1) {
-		
-		$path = str_replace(array('<league>', '<group>'), array($league, $group), 
-			self::$WS_LEAGUE_TABLE_PATH);
-		$xml = $this->doRequest($path, $season);
+		$xml = $this->doRequest($path);
 		
 		if ($xml === false) {
 			return false;
@@ -132,13 +86,9 @@ class FloorballRestClient {
 	/**
 	 * Führt die eigentliche Anfrage durch
 	 */
-	private function doRequest($path, $season) {
+	private function doRequest($path) {
 		$url = self::$WS_URL.$path;
-		if ($season > -1) 
-			$url .= '?season='.$season;
-		elseif ($this->season > -1)
-			$url .= '?season='.$this->season;
-		
+
 		// Curl initialisieren
 		if (($curl = curl_init($url)) === false) {
 			return false;
@@ -185,20 +135,6 @@ class Data {
 				$this->gym = utf8_decode($gym);
 			}
 		}
-		
-		//print_r($xml_node->attributes());
-		/*foreach($xml_node->gym() as $g => $m) {
-			$key = str_replace('-', '_', (string)$g);
-			$val = (string)$m;
-			echo $val;
-			if ($val == 'false')
-				$val = false;
-			elseif ($val == 'true')
-				$val = true;
-			else
-				$val = utf8_decode($val);
-			$this->{$key} = $val;
-		}*/
 	}
 }
 

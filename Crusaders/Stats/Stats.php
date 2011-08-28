@@ -43,7 +43,6 @@ class Stats extends HTMLPage implements Page{
 	private function getTeamResults(){
 		$fb = new FloorballRestClient('dummy-api-key');
 		$this->games = $fb->getTeamGames($this->restteamid);
-		//print_r($this->games);
 	}
 	
 	private function getTeamRanking(){
