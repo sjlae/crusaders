@@ -55,7 +55,8 @@
 				<h2>Postadresse:</h2>
 				<h3>UHC Crusaders<br/>
 				Postfach<br/>
-				8038 Z&uuml;rich</h3>
+				8038 Z&uuml;rich<br/>
+				80-63588-1</h3>
 			</td>
 		</tr>
 	</table>
