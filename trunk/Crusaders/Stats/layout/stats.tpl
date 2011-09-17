@@ -96,11 +96,11 @@
 									<td><?php echo htmlentities($ranking->teamname); ?></td> 
 									<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->games; ?></td>	
 									<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->wins; ?></td>
-									<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->wins-overtime; ?></td>
+									<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->wins_overtime; ?></td>
 									<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->ties; ?></td>	
 									<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->defeats; ?></td>
-									<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->defeats-overtime; ?></td>
-									<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->goals-scored; ?> : <?php echo $ranking->goals-received; ?></td>		
+									<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->defeats_overtime; ?></td>
+									<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->goals_scored; ?> : <?php echo $ranking->goals_received; ?></td>		
 									<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->points; ?></td>	
 								</tr>
 					<?php
