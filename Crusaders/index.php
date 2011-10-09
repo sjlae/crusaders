@@ -26,6 +26,7 @@ require_once('Members/Members.php');
 require_once('Skorer/Skorer.php');
 require_once('Webmaster/Webmaster.php');
 require_once('FloorballRestClient.php');
+require_once('Spielerliste/Spielerliste.php');
 
 $go = isset($_GET['go']) ? $_GET['go'] : '';
 
@@ -121,6 +122,17 @@ switch($go) {
 		$vorstandsinfos = new Vorstandsinfos();
 		if(LoggedIn::isAdmin()){
 			$vorstandsinfos->getView();
+			break;
+		}
+		else{
+			$home = new Home();
+			$home->getView();
+			break;
+		}
+	case 'spielerliste':
+		$spielerliste = new Spielerliste();
+		if(LoggedIn::isAdmin()){
+			$spielerliste->getView();
 			break;
 		}
 		else{

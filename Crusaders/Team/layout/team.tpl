@@ -4,6 +4,12 @@
 		if($this->spielgemeinschaft == 1){
 			echo ' - Spielgemeinschaft mit THS Adliswil';
 		}
+		$filename = 'spielerlistenfiles/'.$this->teamid.'.pdf';
+		if((LoggedIn::isAdmin() || LoggedIn::isCoach()) && file_exists($filename)){
+	?>
+			<a href="spielerlistenfiles/<?php echo $this->teamid ?>.pdf" target="_blank">Teamblatt &ouml;ffnen</a>
+	<?php	
+		}
 	?>
 </h1>
 <table cellpadding="5px" cellspacing="0" border="0">
