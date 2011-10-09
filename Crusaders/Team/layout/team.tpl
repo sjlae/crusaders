@@ -108,7 +108,7 @@
 
 <div id="spiegel">
 	<?php
-		if($this->name != 'E-Junioren'){
+		if($this->name != 'E-Junioren' && $this->name != 'D-Junioren' ){
 	?>
 			<h2 id="team_name"><?php echo $this->name?></h2>
 			<table cellpadding="0" cellspacing="0" border="0" style="font-size: 10px;">
@@ -145,6 +145,11 @@
 					}
 				?>
 			</table>
+	<?php
+		}
+		else if($this->name == 'D-Junioren' ){
+	?>
+			Resultate, Tabelle und Spielplan k&ouml;nnen <a href="http://www.juniorenliga.ch/cms/front_content.php?idcat=36&lang=1&gamesets=1&liga=13" target="_blank">hier</a> entnommen werden.
 	<?php
 		}
 	?>
