@@ -71,7 +71,8 @@ class TeamNews extends HTMLPage implements Page{
 				$newsid = $row['newsid'];
 				$count = "SELECT COUNT(*) FROM comments where newsfsid=$newsid and type=3";
 				$countComments = mysql_query($count);
-							
+
+				$this->news[$counter]['userid'] = $userId;
 				$this->news[$counter]['vorname'] = $row_user['vorname'];
 				$this->news[$counter]['nachname'] = $row_user['nachname'];
 				$this->news[$counter]['newsid'] = $newsid;

@@ -47,7 +47,8 @@ class Blog extends HTMLPage implements Page{
 				$blogid = $row['blogid'];
 				$count = "SELECT COUNT(*) FROM comments where newsfsid=$blogid and type=2";
 				$countComments = mysql_query($count);
-							
+
+				$this->blog[$counter]['userid'] = $userId;
 				$this->blog[$counter]['vorname'] = $row_user['vorname'];
 				$this->blog[$counter]['nachname'] = $row_user['nachname'];
 				$this->blog[$counter]['blogid'] = $blogid;

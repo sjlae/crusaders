@@ -10,6 +10,11 @@
 		
 		<link rel="stylesheet" href="Layout/style.css" type="text/css"/>
 		<script type="text/javascript" src="script/js_functions.js"></script>
+		<script type="text/javascript" src="script/jquery-1.6.3.min.js"></script>
+		<style>
+		  .pointer { cursor: pointer; }
+		  .background { background-color: aqua; }
+		</style>
 	</head>
 <body id="body">
 <div id="main">

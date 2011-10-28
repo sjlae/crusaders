@@ -68,7 +68,7 @@ class Home extends HTMLPage implements Page{
 			{
 				$userId = $row['userfsid'];
 				
-				$userQuery = "Select vorname, nachname from user where userid=$userId";
+				$userQuery = "Select userid, vorname, nachname from user where userid=$userId";
 				$userData = mysql_query($userQuery);
 				$row_user = mysql_fetch_assoc($userData);
 				
@@ -76,6 +76,7 @@ class Home extends HTMLPage implements Page{
 				$count = "SELECT COUNT(*) FROM comments where newsfsid=$newsid and type=1";
 				$countComments = mysql_query($count);
 							
+				$this->news[$counter]['userid'] = $row_user['userid'];
 				$this->news[$counter]['vorname'] = $row_user['vorname'];
 				$this->news[$counter]['nachname'] = $row_user['nachname'];
 				$this->news[$counter]['newsid'] = $newsid;
