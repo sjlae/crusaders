@@ -1,6 +1,7 @@
 <?php
 require_once('Page.php');
 require_once('Datenbank/db.php');
+require_once('Constants.php');
 
 class Video extends HTMLPage implements Page{
 	
@@ -22,16 +23,25 @@ class Video extends HTMLPage implements Page{
 	
 	private function checkvideo()
 	{
-		$newUrl = htmlspecialchars($_POST["url"], ENT_NOQUOTES);
+		if(Constants::isLocal()){
+			$newUrl = htmlspecialchars($_POST["url"], ENT_NOQUOTES);
 		
-		preg_match('/width=\\\"([0-9]*)/i', $newUrl, $width);
-		preg_match('/height=\\\"([0-9]*)/i', $newUrl, $height);
+			preg_match('/width=\\\"([0-9]*)/i', $newUrl, $width);
+			preg_match('/height=\\\"([0-9]*)/i', $newUrl, $height);
+		}
+		else{
+			$newUrl = $_POST["url"];
 		
-	    $newUrl = str_replace($width[1], "345", $newUrl);
+			preg_match('/width=\"([0-9]*)/i', $newUrl, $width);
+			preg_match('/height=\"([0-9]*)/i', $newUrl, $height);
+		}
+
+		$newUrl = str_replace($width[1], "345", $newUrl);
 	    $newUrl = str_replace($height[1], "275", $newUrl);
 	    
 	    $this->url = $newUrl;
 	}
+	
 	
 	public function getHTML() {
 		include('layout/video.tpl');
