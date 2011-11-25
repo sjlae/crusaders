@@ -5,7 +5,7 @@ require_once('Datenbank/db.php');
 class Video extends HTMLPage implements Page{
 	
 	private $link = '';
-	
+	private $url = '';
 	public function __construct() {
 		$action = isset($_GET['action']) ? $_GET['action'] : '';
 		if($action != ''){
@@ -15,9 +15,22 @@ class Video extends HTMLPage implements Page{
 	}
 	
 	public function saveVideo(){
-		$url = $_POST['url'];
-		$abfrage = "Update video set url='".$url."'";
+		$this->checkvideo();
+		$abfrage = "Update video set url='".htmlspecialchars_decode($this->url, ENT_NOQUOTES)."'";
 		mysql_query($abfrage,$this->link);
+	}
+	
+	private function checkvideo()
+	{
+		$newUrl = htmlspecialchars($_POST["url"], ENT_NOQUOTES);
+		
+		preg_match('/width=\\\"([0-9]*)/i', $newUrl, $width);
+		preg_match('/height=\\\"([0-9]*)/i', $newUrl, $height);
+		
+	    $newUrl = str_replace($width[1], "345", $newUrl);
+	    $newUrl = str_replace($height[1], "275", $newUrl);
+	    
+	    $this->url = $newUrl;
 	}
 	
 	public function getHTML() {
