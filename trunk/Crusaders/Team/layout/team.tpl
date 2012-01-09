@@ -149,7 +149,7 @@
 		}
 		else if($this->name == 'D-Junioren' ){
 	?>
-			Resultate, Tabelle und Spielplan k&ouml;nnen <a href="http://www.juniorenliga.ch/cms/front_content.php?idcat=36&lang=1&gamesets=1&liga=13" target="_blank">hier</a> entnommen werden.
+			Resultate, Tabelle und Spielplan k&ouml;nnen <a href="http://www.juniorenliga.ch/cms/front_content.php?idcat=36&lang=1&table=1&liga=10" target="_blank">hier</a> entnommen werden.
 	<?php
 		}
 	?>
