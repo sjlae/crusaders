@@ -37,7 +37,7 @@
 				
 		<li class="gaestebuch"><a href="index.php?go=guestbook" title="G&auml;stebuch" class="top"></a></li>
 		<?php
-			if(!$_SESSION['eingeloggt']){
+			if(!isset($_SESSION['eingeloggt'])){
 		?>
 				<li class="login"><a href="index.php?go=login" title="Login" class="top"></a></li>
 		<?php

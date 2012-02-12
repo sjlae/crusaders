@@ -155,7 +155,7 @@ class Game extends Data {
 	
 	function __construct($xml_node) {
 		parent::__construct($xml_node);
-		if ($goalshome > -1) {
+		if ($this->goalshome > -1) {
 			$played = true;
 		}
 	}

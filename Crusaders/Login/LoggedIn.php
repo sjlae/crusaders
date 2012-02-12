@@ -2,7 +2,7 @@
 
 class LoggedIn{
 	public static function isAdmin() {
-		$registered = $_SESSION['eingeloggt'];
+		$registered = isset($_SESSION['eingeloggt']);
 		if($registered){
 			if($_SESSION['admin']) {
 				return true;
@@ -14,7 +14,7 @@ class LoggedIn{
 		return false;
 	}
 	public static function isCoach() {
-		$registered = $_SESSION['eingeloggt'];
+		$registered = isset($_SESSION['eingeloggt']);
 		if($registered){
 			if($_SESSION['coach']) {
 				return true;

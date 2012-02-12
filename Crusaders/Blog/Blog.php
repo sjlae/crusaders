@@ -57,7 +57,7 @@ class Blog extends HTMLPage implements Page{
 				$this->blog[$counter]['text'] = $row['text'];
 				$this->blog[$counter]['comments'] = mysql_result($countComments,0);
 				
-				echo $this->blog['titel'];
+				echo isset($this->blog['titel']);
 				$counter++;
 			}
 		}

@@ -15,7 +15,7 @@ class Comments extends HTMLPage implements Page{
 	private $teamid= '';
 	
 	public function __construct() {
-		$this->action = isset($_GET['action']) ? $_GET['action'] : $this->action;
+		$this->action = isset($_GET['action']);
 		$this->link = Db::getConnection();
 		if($this->action == 'save'){
 			$this->saveComment();
