@@ -11,7 +11,7 @@ class Guestbook extends HTMLPage implements Page{
 	private $text = '';
 	
 	public function __construct() {
-		$action = isset($_GET['action']) ? $_GET['action'] : $this->action;
+		$action = isset($_GET['action']) ? $_GET['action'] : '';
 		$this->link = Db::getConnection();
 		if($action == 'save'){
 			$this->saveEntry();
