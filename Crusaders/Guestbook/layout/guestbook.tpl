@@ -56,7 +56,3 @@
 		</form>
 	</div>
 </div>
-		
-<div id="spiegel">
-		<?php echo $this->url ?>
-</div>	
