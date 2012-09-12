@@ -99,7 +99,13 @@
 </div>
 
 <div id="stats" title="Resultate und Spielplan">
-	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/zahlen.gif" border="0"></a>
+	<?php
+		if($this->restteamid != 0){
+	?>	
+			<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/zahlen.gif" border="0"></a>
+	<?php
+		}
+	?>
 </div>
 
 <div id="teamshit" title="Team News">
@@ -108,7 +114,7 @@
 
 <div id="spiegel">
 	<?php
-		if($this->name != 'E-Junioren' && $this->name != 'D-Junioren' ){
+		if($this->name != 'E-Junioren' && $this->name != 'E-Junioren 2' && $this->restteamid != 0){
 	?>
 			<h2 id="team_name"><?php echo $this->name?></h2>
 			<table cellpadding="0" cellspacing="0" border="0" style="font-size: 9px;">
@@ -149,7 +155,9 @@
 		}
 		else if($this->name == 'D-Junioren' ){
 	?>
-			Resultate, Tabelle und Spielplan k&ouml;nnen <a href="http://www.juniorenliga.ch/cms/front_content.php?idcat=36&lang=1&table=1&liga=10" target="_blank">hier</a> entnommen werden.
+			Spielplan: &nbsp;<a href="http://extern.juniorenliga.ch/spielbetrieb/saison-201213.html?action=games&teamid=234" target="_blank">hier klicken</a><br>
+			Resultate: <a href="http://extern.juniorenliga.ch/spielbetrieb/saison-201213.html?action=results&teamid=234" target="_blank">hier klicken</a><br>
+			Tabelle: &nbsp;&nbsp;&nbsp;<a href="http://extern.juniorenliga.ch/spielbetrieb/saison-201213.html?action=table&teamid=234" target="_blank">hier klicken</a>
 	<?php
 		}
 	?>

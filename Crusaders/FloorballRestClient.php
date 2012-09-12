@@ -7,14 +7,13 @@ class FloorballRestClient {
 	private static $WS_TEAM_TABLE_PATH = '/teams/<id>/table';
 	
 	// Some globals
-	private $apikey; // Not yet in Use
+	private $apikey = 'NXzGSazaqsyT6ofpXpOmBwfRdlk=';
 	
 	/**
 	 * Initialisiert die Klasse
 	 * @param $apikey         Optional - API Schlüssel von swiss unihockey
 	 */
-	public function FloorballRestClient($apikey = '') {
-		$this->apikey = $apikey;
+	public function FloorballRestClient() {
 	}
 	
 	/**
@@ -23,9 +22,8 @@ class FloorballRestClient {
 	 * @return Array mit Spielen
 	 */
 	public function getTeamGames($teamid) {
-		
-		$path = str_replace('<id>', $teamid, self::$WS_TEAM_GAMES_PATH);
-		$path .= '?limit=-1';
+		$path = str_replace('<id>', $teamid, self::$WS_TEAM_GAMES_PATH).'?apikey='.$this->apikey;
+		$path .= '&limit=-1';
 		$xml = $this->doRequest($path);
 		
 		if ($xml === false) {
@@ -43,8 +41,8 @@ class FloorballRestClient {
 	
 	public function getLastTeamGames($teamid) {
 		
-		$path = str_replace('<id>', $teamid, self::$WS_TEAM_GAMES_PATH);
-		$path .= '?status=played&limit=2&order=DESC';
+		$path = str_replace('<id>', $teamid, self::$WS_TEAM_GAMES_PATH).'?apikey='.$this->apikey;
+		$path .= '&status=played&limit=2&order=DESC';
 		$xml = $this->doRequest($path);
 		
 		if ($xml === false) {
@@ -67,7 +65,7 @@ class FloorballRestClient {
 	 */
 	public function getTeamTable($teamid) {
 		
-		$path = str_replace('<id>', $teamid, self::$WS_TEAM_TABLE_PATH);
+		$path = str_replace('<id>', $teamid, self::$WS_TEAM_TABLE_PATH).'?apikey='.$this->apikey;
 		$xml = $this->doRequest($path);
 		
 		if ($xml === false) {
