@@ -71,7 +71,7 @@
 		
 		<div id="spiegel">
 		<?php
-			if($this->name != 'E-Junioren'){
+			if($this->name != 'E-Junioren' && $this->name != 'E-Junioren 2' && $this->restteamid != 0){
 		?>
 				<h2 id="team_name"><?php echo $this->name?></h2>
 				<table cellpadding="0" cellspacing="0" border="0" style="font-size: 9px;">
