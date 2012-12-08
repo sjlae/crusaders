@@ -8,10 +8,10 @@
 			<tr>
 				<td><?php echo $entry['text'] ?></td>
 			</tr>
-			<hr noshade="noshade" width="100%"/>
+			<hr noshade="noshade" width="95%"/>
 		</table>
 	<?php endforeach; ?>
-	<hr noshade="noshade" width="100%"/>
+	<hr noshade="noshade" width="95%"/>
 	</div>
 	
 	<div class="bookwrite">
@@ -42,7 +42,7 @@
 				</tr>
 				<tr>
 					<td>
-						<textarea name="text" rows="2" style="width: 100%"><?php echo $this->text ?></textarea>
+						<textarea name="text" rows="8" style="width: 100%"><?php echo $this->text ?></textarea>
 					</td>
 				</tr>
 				<tr>
@@ -56,3 +56,7 @@
 		</form>
 	</div>
 </div>
+		
+<div id="spiegel">
+		<?php echo $this->url ?>
+</div>	
