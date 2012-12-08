@@ -57,7 +57,7 @@
 						</tr>
 						<tr>
 							<td>
-								<textarea name="text" rows="2" style="width: 100%"><?php echo $this->text ?></textarea>
+								<textarea name="text" rows="8" style="width: 100%"><?php echo $this->text ?></textarea>
 							</td>
 						</tr>
 						<tr>

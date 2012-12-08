@@ -102,7 +102,7 @@
 	<?php
 		if($this->restteamid != 0){
 	?>	
-			<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/zahlen.gif" border="0"></a>
+			<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/zahlen.png" border="0"></a>
 	<?php
 		}
 	?>

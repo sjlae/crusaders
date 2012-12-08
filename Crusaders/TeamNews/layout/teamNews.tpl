@@ -12,8 +12,8 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" style="font-size: 6px;">	
-					&nbsp;
+				<td colspan="2" style="font-size: 6px;">&nbsp;	
+					
 				</td>
 			</tr>
 			<tr>
@@ -46,8 +46,8 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" style="font-size: 12px;">	
-					&nbsp;
+				<td colspan="2" style="font-size: 12px;">&nbsp;	
+					
 				</td>
 			</tr>		
 				
@@ -88,7 +88,7 @@
 </div>
 
 <div id="stats" title="Resultate und Spielplan">
-	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/zahlen.gif" border="0"></a>
+	<a href="index.php?go=stats&teamid=<?php echo $this->teamid ?>"><img src="images/zahlen.png" border="0"></a>
 </div>
 
 <div id="teamshit" title="Team News">

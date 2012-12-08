@@ -4,7 +4,7 @@
 		<tr>
 			<td width="60%" valign="top">
 				<div style="width: 100%; height: 350px; margin: 0; overflow:auto;">
-					<table cellpadding="0" cellspacing="0" border="0">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%">
 						<?php
 							if($this->comments != ''){
 								foreach($this->comments as $comment): 
@@ -16,8 +16,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td width="40%">
-										<?php echo $comment['text']; ?>	
+									<td>									<?php echo $comment['text']; ?>	
 										&nbsp;
 									</td>
 								</tr>
@@ -57,7 +56,7 @@
 						</tr>
 						<tr>
 							<td>
-								<textarea name="text" rows="2" style="width: 100%"><?php echo $this->text ?></textarea>
+								<textarea name="text" rows="8" style="width: 100%"><?php echo $this->text ?></textarea>
 							</td>
 						</tr>
 						<tr>
