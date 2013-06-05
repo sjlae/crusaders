@@ -18,9 +18,9 @@
 								<td style="padding-right: 10px;"><?php echo $games->date; ?></td>	
 								<td style="padding-right: 10px;"><?php echo $games->leaguetype; ?></td>
 								<td style="padding-right: 10px;"><?php echo $games->roundtext; ?></td>
-								<td style="padding-right: 10px;"><?php echo htmlentities($games->hometeamname); ?></td>	
+								<td style="padding-right: 10px;"><?php echo substr(htmlentities($games->hometeamname), 0, 27); ?></td>	
 								<td style="padding-right: 10px;">-</td>
-								<td style="padding-right: 10px;"><?php echo htmlentities($games->awayteamname); ?></td>
+								<td style="padding-right: 10px;"><?php echo substr(htmlentities($games->awayteamname), 0, 27); ?></td>
 								<td><?php echo $games->goalshome; ?>&nbsp; : &nbsp;<?php echo $games->goalsaway; ?></td>	
 							</tr>
 				<?php
@@ -49,9 +49,9 @@
 								<td style="padding-right: 10px;"><?php echo $games->leaguetype; ?></td>
 								<td style="padding-right: 10px;"><?php echo $games->roundtext != '-' ? $games->roundtext : ''; ?></td>
 								<td style="padding-right: 10px;"><?php echo $games->time; ?></td> 
-								<td style="padding-right: 10px;"><?php echo htmlentities($games->hometeamname); ?></td>
+								<td style="padding-right: 10px;"><?php echo substr(htmlentities($games->hometeamname), 0, 27); ?></td>
 								<td style="padding-right: 10px;">-</td>	
-								<td style="padding-right: 10px;"><?php echo htmlentities($games->awayteamname); ?></td>
+								<td style="padding-right: 10px;"><?php echo substr(htmlentities($games->awayteamname), 0, 27); ?></td>
 								<td title="<?php echo htmlentities($games->gym); ?>"><img src="images/info.png" border="0" heigth="10" width="10"></td>
 							</tr>
 				<?php
