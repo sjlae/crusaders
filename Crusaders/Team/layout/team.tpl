@@ -155,9 +155,9 @@
 		}
 		else if($this->name == 'D-Junioren' ){
 	?>
-			Spielplan: &nbsp;<a href="http://extern.juniorenliga.ch/spielbetrieb/saison-201213.html?action=games&teamid=234" target="_blank">hier klicken</a><br>
-			Resultate: <a href="http://extern.juniorenliga.ch/spielbetrieb/saison-201213.html?action=results&teamid=234" target="_blank">hier klicken</a><br>
-			Tabelle: &nbsp;&nbsp;&nbsp;<a href="http://extern.juniorenliga.ch/spielbetrieb/saison-201213.html?action=table&teamid=234" target="_blank">hier klicken</a>
+			Spielplan: &nbsp;<a href="http://extern.juniorenliga.ch/spielbetrieb/saison-201314.html?action=games&teamid=1077" target="_blank">hier klicken</a><br>
+			Resultate: <a href="http://extern.juniorenliga.ch/spielbetrieb/saison-201314.html?action=results&teamid=1077" target="_blank">hier klicken</a><br>
+			Tabelle: &nbsp;&nbsp;&nbsp;<a href="http://extern.juniorenliga.ch/spielbetrieb/saison-201314.html?action=table&teamid=1077" target="_blank">hier klicken</a>
 	<?php
 		}
 	?>
