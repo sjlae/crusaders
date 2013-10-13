@@ -93,7 +93,15 @@
 					?>
 								<tr>
 									<td><?php echo $ranking->place; ?>.&nbsp;</td> 
-									<td><?php echo htmlentities($ranking->teamname); ?></td> 
+									<td><?php 
+											if(strlen($ranking->teamname) < 29){
+										 		echo htmlentities($ranking->teamname);
+										 	}
+										 	else{
+										 		echo htmlentities(substr($ranking->teamname, 0, 25)).'...';
+										 	}
+										?>
+									</td> 
 									<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->games; ?></td>	
 									<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->wins; ?></td>
 									<td style="text-align: right; padding-left: 10px;"><?php echo $ranking->wins_overtime; ?></td>
